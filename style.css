@@ -1,0 +1,85 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Palette */
+  --color-primary: #0b5fb8;
+  --color-primary-dark: #063a73;
+  --color-primary-darker: #052a54;
+  --color-primary-light: #eaf3fc;
+  --color-accent: #2f8fea;
+  --color-white: #ffffff;
+  --color-text: #10233f;
+  --color-text-muted: #5c6e88;
+  --color-border: #dbe6f4;
+
+  /* Type */
+  --font-base: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+
+  /* Layout */
+  --container-width: 1180px;
+  --header-height: 72px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background: var(--color-white);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+button { font-family: inherit; cursor: pointer; }
+img, svg { display: block; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1.5px solid transparent;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.btn--primary:hover { background: var(--color-primary-dark); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-border);
+}
+.btn--ghost:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
