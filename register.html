@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إنشاء حساب جديد - العيادة الذكية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pro-login-page">
+
+  <div class="pro-login-container register-container">
+    
+    <div class="pro-login-card">
+      
+      <div class="pro-card-header">
+        <a href="index.html" class="pro-brand-logo">
+          <span class="logo-icon">🦷</span>
+          <span class="logo-text">عيادتي الذكية</span>
+        </a>
+        <h2 id="form-title">إنشاء حساب مريض</h2>
+        <p id="form-subtitle">اختر نوع الحساب لإكمال التسجيل بالمكونات المناسبة</p>
+      </div>
+
+      <!-- اختيار نوع الحساب -->
+      <div class="user-type-selector">
+        <button type="button" class="type-btn active" onclick="switchRole('patient', this)">مريض</button>
+        <button type="button" class="type-btn" onclick="switchRole('doctor', this)">طبيب</button>
+        <button type="button" class="type-btn" onclick="switchRole('applicant', this)">متقدم لوظيفة</button>
+      </div>
+
+      <!-- نموذج التسجيل -->
+      <form class="pro-form" id="registerForm" onsubmit="handleRegister(event)">
+        
+        <!-- حقول مشتركة: الاسم الكامل -->
+        <div class="pro-input-group">
+          <label for="fullname">الاسم الكامل</label>
+          <div class="pro-input-box">
+            <span class="field-icon">👤</span>
+            <input type="text" id="fullname" placeholder="الاسم ثلاثي" required>
+          </div>
+        </div>
+
+        <!-- 1. حقول خاصة بالمريض -->
+        <div id="patient-fields" class="role-fields">
+          <div class="form-row">
+            <div class="pro-input-group flex-1">
+              <label for="dob">تاريخ الميلاد</label>
+              <div class="pro-input-box">
+                <input type="date" id="dob">
+              </div>
+            </div>
+            <div class="pro-input-group flex-1">
+              <label for="gender">الجنس</label>
+              <div class="pro-input-box">
+                <select id="gender">
+                  <option value="male">ذكر</option>
+                  <option value="female">أنثى</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="pro-input-group">
+            <label for="phone">رقم الهاتف</label>
+            <div class="pro-input-box">
+              <span class="field-icon">📱</span>
+              <input type="tel" id="phone" placeholder="059XXXXXXX">
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. حقول خاصة بالطبيب -->
+        <div id="doctor-fields" class="role-fields hidden">
+          <div class="pro-input-group">
+            <label for="specialty">التخصص</label>
+            <div class="pro-input-box">
+              <span class="field-icon">🩺</span>
+              <select id="specialty">
+                <option value="general">تقويم الأسنان</option>
+                <option value="surgery">جراحة الفم والأسنان</option>
+                <option value="pediatric">طب أسنان الأطفال</option>
+                <option value="cosmetic">تجميل الأسنان</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="pro-input-group">
+            <label for="license">رقم الترخيص الطبي</label>
+            <div class="pro-input-box">
+              <span class="field-icon">🔢</span>
+              <input type="text" id="license" placeholder="PS-DEN-XXXXX">
+            </div>
+          </div>
+
+          <div class="pro-input-group">
+            <label for="clinic-loc">موقع العيادة</label>
+            <div class="pro-input-box">
+              <span class="field-icon">📍</span>
+              <input type="text" id="clinic-loc" placeholder="نابلس - عيادة الحكيم">
+            </div>
+          </div>
+
+          <div class="pro-input-group">
+            <label for="license-doc">إثبات الترخيص (PDF / صورة)</label>
+            <div class="file-upload-box">
+              <input type="file" id="license-doc" accept=".pdf,image/*">
+              <span class="upload-icon">📄</span>
+              <span class="upload-text">أسقط الملف هنا أو اضغط للختيار</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. حقول خاصة بالمتقدم لوظيفة (خريج / طالب) -->
+        <div id="applicant-fields" class="role-fields hidden">
+          <div class="pro-input-group">
+            <label for="experience">سنوات الخبرة</label>
+            <div class="pro-input-box">
+              <select id="experience">
+                <option value="fresh">بدون خبرة (حديث التخرج)</option>
+                <option value="1-2">1 - 2 سنة</option>
+                <option value="3+">3 سنوات أو أكثر</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="pro-input-group">
+            <label for="cv-file">السيرة الذاتية (CV)</label>
+            <div class="file-upload-box">
+              <input type="file" id="cv-file" accept=".pdf,.doc,.docx">
+              <span class="upload-icon">📎</span>
+              <span class="upload-text">ارفق ملف الـ CV (PDF)</span>
+            </div>
+          </div>
+
+          <div class="pro-input-group">
+            <label for="bio">وصف التقديم (اختياري)</label>
+            <div class="pro-input-box">
+              <textarea id="bio" rows="3" placeholder="أكتب نبذة قصيرة عن نفسك..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- حقول مشتركة: البريد وكلمة المرور -->
+        <div class="pro-input-group">
+          <label for="email">البريد الإلكتروني</label>
+          <div class="pro-input-box">
+            <span class="field-icon">✉️</span>
+            <input type="email" id="email" placeholder="sara@email.com" required>
+          </div>
+        </div>
+
+        <div class="pro-input-group">
+          <label for="password">كلمة المرور</label>
+          <div class="pro-input-box">
+            <span class="field-icon">🔒</span>
+            <input type="password" id="password" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <!-- زر الإرسال -->
+        <button type="submit" class="btn btn--primary pro-submit-btn" id="submit-btn">
+          <span>إنشاء الحساب</span>
+          <span class="btn-arrow">←</span>
+        </button>
+
+      </form>
+
+      <!-- شاشة مراجعة حساب الطبيب (تظهر عند التسجيل كطبيب) -->
+      <div id="review-status" class="review-box hidden">
+        <div class="hourglass-icon">⏳</div>
+        <h3>حسابك قيد المراجعة</h3>
+        <p>تم استلام طلبك بنجاح. سيقوم فريق الإدارة بمراجعة بيانات الترخيص والتأكد منها، وستصلك رسالة عبر البريد الإلكتروني فور تفعيل الحساب (خلال 24-48 ساعة).</p>
+        <a href="login.html" class="btn btn--ghost style-review-btn">العودة لتسجيل الدخول</a>
+      </div>
+
+      <div class="pro-card-footer" id="card-footer">
+        <p>لديك حساب بالفعل؟ <a href="login.html" class="highlight-link">تسجيل الدخول</a></p>
+      </div>
+
+    </div>
+
+    <a href="index.html" class="pro-back-home">
+      <span>🏠</span> العودة للصفحة الرئيسية
+    </a>
+
+  </div>
+
+  <script>
+    let currentRole = 'patient';
+
+    function switchRole(role, btn) {
+      currentRole = role;
+      document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.role-fields').forEach(f => f.classList.add('hidden'));
+
+      const title = document.getElementById('form-title');
+      const submitBtn = document.getElementById('submit-btn').querySelector('span');
+
+      if (role === 'patient') {
+        document.getElementById('patient-fields').classList.remove('hidden');
+        title.innerText = 'حساب مريض';
+        submitBtn.innerText = 'إنشاء الحساب';
+      } else if (role === 'doctor') {
+        document.getElementById('doctor-fields').classList.remove('hidden');
+        title.innerText = 'حساب طبيب';
+        submitBtn.innerText = 'إرسال للمراجعة';
+      } else if (role === 'applicant') {
+        document.getElementById('applicant-fields').classList.remove('hidden');
+        title.innerText = 'حساب متقدم لوظيفة';
+        submitBtn.innerText = 'إنشاء الحساب';
+      }
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      if (currentRole === 'doctor') {
+        // إخفاء النموذج وإظهار شاشة الانتظار والمراجعة للطبيب
+        document.getElementById('registerForm').classList.add('hidden');
+        document.querySelector('.user-type-selector').classList.add('hidden');
+        document.getElementById('card-footer').classList.add('hidden');
+        document.getElementById('review-status').classList.remove('hidden');
+      } else {
+        alert('تم إنشاء الحساب بنجاح!');
+        window.location.href = 'login.html';
+      }
+    }
+  </script>
+
+</body>
+</html>

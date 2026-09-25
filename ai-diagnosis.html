@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التشخيص الذكي - عيادتي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="ai-chat-body">
+
+  <!-- تضمين الهيدر تلقائياً -->
+  <div id="header-placeholder"></div>
+
+  <main class="ai-chat-wrapper">
+    <div class="container">
+      
+      <div class="ai-chat-container">
+        
+        <!-- هيدر الشات -->
+        <div class="chat-header">
+          <div class="ai-profile">
+            <div class="ai-avatar">🤖</div>
+            <div class="ai-info">
+              <h3>المساعد الطبي الذكي</h3>
+              <span class="status-badge"><span class="pulse-dot"></span> متصل الان</span>
+            </div>
+          </div>
+          <button class="btn-reset-chat" onclick="resetChat()" type="button">🔄 محادثة جديدة</button>
+        </div>
+
+        <!-- تنبيه طبي بسيط -->
+        <div class="ai-disclaimer">
+          ⚠️ <span>هذا المساعد يقدم استشارة أولية مبنية على الذكاء الاصطناعي ولا يغني عن زيارة الطبيب.</span>
+        </div>
+
+        <!-- نافذة عرض الرسائل -->
+        <div class="chat-messages" id="chatMessages">
+          
+          <!-- رسالة الترحب الأولى -->
+          <div class="chat-message bot-message">
+            <div class="message-content">
+              أهلاً بك في خدمة التشخيص الذكي! 🦷<br>
+              كيف يمكنني مساعدتك اليوم؟ صف لي الأعراض أو الآلام التي تشعر بها.
+            </div>
+            <span class="message-time">الآن</span>
+          </div>
+
+        </div>
+
+        <!-- مؤشر جاري الكتابة -->
+        <div class="typing-indicator hidden" id="typingIndicator">
+          <span></span><span></span><span></span>
+          <small>المساعد الذكي يكتب الآن...</small>
+        </div>
+
+        <!-- شريط الإدخال والإرسال -->
+        <form class="chat-input-area" onsubmit="handleSendMessage(event)">
+          <input 
+            type="text" 
+            id="userQuery" 
+            placeholder="اكتب أعراضك هنا..." 
+            autocomplete="off"
+            required
+          >
+          <button type="submit" class="btn-send">
+            <span>إرسال</span>
+            <span class="send-icon">🚀</span>
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- تضمين الفوتر تلقائياً -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // دالة التعامل مع إرسال الرسائل
+    function handleSendMessage(e) {
+      e.preventDefault();
+      const inputEl = document.getElementById('userQuery');
+      const userText = inputEl.value.trim();
+
+      if (!userText) return;
+
+      // 1. عرض رسالة المستخدم
+      appendMessage('user', userText);
+      inputEl.value = '';
+
+      // 2. إظهار مؤشر الكتابة
+      showTyping(true);
+
+      // 3. رد آلي بسيط بعد ثانية واحدة (لإعطاء مظهر شات بوت حقيقي)
+      setTimeout(() => {
+        showTyping(false);
+        appendMessage('bot', 'شكراً لمشاركة هذه التفاصيل. تم تسجيل الأعراض بنجاح وسنقوم بتحليلها وموافاتك بالتفاصيل قريباً.');
+      }, 1000);
+    }
+
+    // إضافية الرسائل للواجهة
+    function appendMessage(sender, text) {
+      const container = document.getElementById('chatMessages');
+      const timeStr = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `chat-message ${sender === 'user' ? 'user-message' : 'bot-message'}`;
+      
+      msgDiv.innerHTML = `
+        <div class="message-content">${escapeHTML(text)}</div>
+        <span class="message-time">${timeStr}</span>
+      `;
+
+      container.appendChild(msgDiv);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function showTyping(show) {
+      const indicator = document.getElementById('typingIndicator');
+      if (show) indicator.classList.remove('hidden');
+      else indicator.classList.add('hidden');
+      const container = document.getElementById('chatMessages');
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function resetChat() {
+      if(confirm("هل تريد إعادة فتح المحادثة من جديد؟")) {
+        location.reload();
+      }
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+      );
+    }
+
+    // جلب الهيدر والفوتر تلقائياً
+    fetch('header.html').then(r => r.text()).then(d => document.getElementById('header-placeholder').innerHTML = d);
+    fetch('footer.html').then(r => r.text()).then(d => document.getElementById('footer-placeholder').innerHTML = d);
+  </script>
+
+</body>
+</html>
