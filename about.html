@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن - المنصة الذكية لطب الأسنان (عيادتي)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ========================= -->
+  <!-- Header Placeholder -->
+  <!-- ========================= -->
+  <div id="header-placeholder"></div>
+
+  <!-- ========================= -->
+  <!-- Main Content -->
+  <!-- ========================= -->
+  <main>
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>عن منصة عيادتي</h2>
+          <p>مشروع تخرج هندسة برمجيات يهدف إلى إحداث نقلة نوعية في قطاع طب الأسنان في فلسطين</p>
+        </div>
+
+        <!-- محتوى من نحن -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+          
+          <!-- رؤيتنا -->
+          <div class="service-card" style="text-align: right;">
+            <div class="service-icon">🎯</div>
+            <h3>رؤيتنا</h3>
+            <p>الريادة في تقديم حلول رقمية ذكية تجمع بين المرضى وأطباء الأسنان، وتسهيل حصول الخريجين والطلاب على فرص تدريب وتوظيف حقيقية ترفع من كفاءة القطاع الصحي.</p>
+          </div>
+
+          <!-- رسالتنا -->
+          <div class="service-card" style="text-align: right;">
+            <div class="service-icon">💡</div>
+            <h3>رسالتنا</h3>
+            <p>تسخير التكنولوجيا الحديثة والذكاء الاصطناعي لتوفير تشخيص أولي سريع وموثوق، وتنظيم العمل داخل العيادات الطبية، وسد الفجوة بين الأكاديميا وسوق العمل الطبي.</p>
+          </div>
+
+          <!-- أهدافنا -->
+          <div class="service-card" style="text-align: right;">
+            <div class="service-icon">⭐</div>
+            <h3>أهدافنا الأساسية</h3>
+            <p>
+              • توفير مساعد ذكي لتوجيه المرضى للتخصص المناسب.<br>
+              • تسهيل حجز المواعيد وإدارة العيادات بكفاءة.<br>
+              • خلق بيئة تفاعلية لتوظيف الخريجين وتدريب طلاب طب الأسنان.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================= -->
+  <!-- Footer Placeholder -->
+  <!-- ========================= -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ========================= -->
+  <!-- JavaScript -->
+  <!-- ========================= -->
+  <script>
+    // جلب الهيدر والفوتر تلقائياً
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Header error:', error));
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Footer error:', error));
+  </script>
+
+</body>
+
+</html>

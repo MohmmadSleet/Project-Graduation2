@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسة الخصوصية - المنصة الذكية لطب الأسنان (عيادتي)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ========================= -->
+  <!-- Header Placeholder -->
+  <!-- ========================= -->
+  <div id="header-placeholder"></div>
+
+  <!-- ========================= -->
+  <!-- Main Content -->
+  <!-- ========================= -->
+  <main>
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>سياسة الخصوصية</h2>
+          <p>نحن نلتزم بحماية خصوصية بياناتك الطبية والشخصية بكل أمان ومسؤولية</p>
+        </div>
+
+        <!-- محتوى سياسة الخصوصية -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; text-align: right;">
+          
+          <div class="service-card" style="text-align: right; width: 100%;">
+            <h3>1. جمع المعلومات</h3>
+            <p>نقوم بجمع بعض المعلومات الأساسية عند استخدامك للمنصة مثل: الاسم، البريد الإلكتروني، بيانات الأعراض الطبية عند استخدام خاصية التشخيص الذكي، وتاريخ الحجوزات، وذلك بهدف تحسين تجربة الخدمة الطبية وربطك بالمختصين.</p>
+          </div>
+
+          <div class="service-card" style="text-align: right; width: 100%;">
+            <h3>2. استخدام البيانات</h3>
+            <p>تُستخدم البيانات المدخلة حصراً لتسهيل عملية حجز المواعيد، تقديم استشارات التشخيص الأولي عبر خوارزميات الذكاء الاصطناعي، وتوفير فرص التدريب والتواصل بين الخريجين والعيادات الطبية داخل المنصة.</p>
+          </div>
+
+          <div class="service-card" style="text-align: right; width: 100%;">
+            <h3>3. أمان وحماية المعلومات</h3>
+            <p>نطبق أعلى معايير الحماية والأمان الرقمي لضمان سرية البيانات الطبية ومنع الوصول غيرAuthorized أو كشفها لأي طرف ثالث، مع الالتزام التام بالمعايير الأخلاقية لحفظ سرية المريض.</p>
+          </div>
+
+          <div class="service-card" style="text-align: right; width: 100%;">
+            <h3>4. حقوق المستخدم</h3>
+            <p>يحق لأي مستخدم طلب تعديل أو حذف بياناته الشخصية المسجلة على المنصة في أي وقت عبر التواصل مع فريق الدعم الفني أو إدارة النظام.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================= -->
+  <!-- Footer Placeholder -->
+  <!-- ========================= -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ========================= -->
+  <!-- JavaScript -->
+  <!-- ========================= -->
+  <script>
+    // جلب الهيدر والفوتر تلقائياً
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Header error:', error));
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Footer error:', error));
+  </script>
+
+</body>
+
+</html>

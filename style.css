@@ -12,12 +12,27 @@
   --color-text-muted: #5c6e88;
   --color-border: #dbe6f4;
 
+  /* متوافقة مع التسميات القديمة لضمان عدم تعطل أي كود سابق */
+  --bs-primary: #0b5fb8;
+  --bs-primary-rgb: 11, 95, 184;
+  --ink: #10233f;
+  --muted: #5c6e88;
+  --soft: #eaf3fc;
+  --line: #dbe6f4;
+
   /* Type */
   --font-base: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
 
   /* Layout */
   --container-width: 1180px;
   --header-height: 72px;
+
+  /* Radius & Shadows */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.4rem;
+  --shadow-sm: 0 1px 2px 0 rgba(11, 95, 184, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(11, 95, 184, 0.1);
 }
 
 * { box-sizing: border-box; }

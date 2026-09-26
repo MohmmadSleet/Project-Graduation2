@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأطباء - المنصة الذكية لطب الأسنان</title>
+  <link rel="stylesheet" href="../style.css"> <!-- انتبه لمسار ملف الـ CSS لأن الملف داخل مجلد فرعي -->
+</head>
+
+<body>
+
+  <!-- ========================= -->
+  <!-- Header Placeholder -->
+  <!-- ========================= -->
+  <div id="header-placeholder"></div>
+
+  <!-- ========================= -->
+  <!-- Main Content -->
+  <!-- ========================= -->
+  <main>
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>نخبة من أطباء الأسنان</h2>
+          <p>تصفح قائمة الأطباء المعتمدين واحجز موعدك مع المختص المناسب لك</p>
+        </div>
+
+        <!-- شبكة عرض الأطباء -->
+        <div class="services-grid">
+          
+          <!-- طبيب 1 -->
+          <div class="service-card">
+            <div class="service-icon">👨‍⚕️</div>
+            <h3>د. أحمد خالد</h3>
+            <p><strong>التخصص:</strong> جراحة الفم والفكين وتقويم الأسنان</p>
+            <p>خريج جامعة النجاح الوطنية، خبرة لأكثر من 8 سنوات في زراعة وتجميل الأسنان.</p>
+            <br>
+            <a href="booking.html?doctor=ahmad" class="btn btn--primary" style="display: inline-block; text-align: center; width: 100%; text-decoration: none;">احجز موعد</a>
+          </div>
+
+          <!-- طبيب 2 -->
+          <div class="service-card">
+            <div class="service-icon">👩‍⚕️</div>
+            <h3>د. سارة محمود</h3>
+            <p><strong>التخصص:</strong> طب أسنان الأطفال وعلاج اللثة</p>
+            <p>متخصصة في العناية بأسنان الأطفال وإلصاق الحافظات التقويمية وعلاج اللثة المتقدم.</p>
+            <br>
+            <a href="booking.html?doctor=sara" class="btn btn--primary" style="display: inline-block; text-align: center; width: 100%; text-decoration: none;">احجز موعد</a>
+          </div>
+
+          <!-- طبيب 3 -->
+          <div class="service-card">
+            <div class="service-icon">👨‍⚕️</div>
+            <h3>د. رامي إبراهيم</h3>
+            <p><strong>التخصص:</strong> التركيبات الثابتة وتجميل الأسنان</p>
+            <p>خبرة واسعة في تصميم الابتسامة الرقمية (Hollywood Smile) وتركيبات الـ Zirconia.</p>
+            <br>
+            <a href="booking.html?doctor=rami" class="btn btn--primary" style="display: inline-block; text-align: center; width: 100%; text-decoration: none;">احجز موعد</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================= -->
+  <!-- Footer Placeholder -->
+  <!-- ========================= -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ========================= -->
+  <!-- JavaScript -->
+  <!-- ========================= -->
+  <script>
+    // جلب الهيدر والفوتر (مع تعديل مسار الملفات للخلف خطوة لأننا داخل مجلد فرعي)
+    fetch('../header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Header error:', error));
+
+    fetch('../footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Footer error:', error));
+  </script>
+
+</body>
+
+</html>

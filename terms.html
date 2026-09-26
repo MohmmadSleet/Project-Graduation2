@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الشروط والأحكام - المنصة الذكية لطب الأسنان (عيادتي)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ========================= -->
+  <!-- Header Placeholder -->
+  <!-- ========================= -->
+  <div id="header-placeholder"></div>
+
+  <!-- ========================= -->
+  <!-- Main Content -->
+  <!-- ========================= -->
+  <main>
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>الشروط والأحكام</h2>
+          <p>يرجى قراءة هذه الشروط بعناية قبل استخدام منصة عيادتي الخدماتية والتعليمية</p>
+        </div>
+
+        <!-- محتوى الشروط والأحكام -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; text-align: right;">
+          
+          <div class="service-card" style="text-align: right; width: 100%;">
+            <h3>1. قبول الشروط</h3>
+            <p>من خلال تصفحك أو استخدامك لمنصة "عيادتي"، فإنك توافق بالكامل على الالتزام بهذه الشروط والأحكام، وكافة القوانين واللوائح المعمول بها.</p>
+          </div>
+
+          <div class="service-card" style="text-align: right; width: 100%;">
+            <h3>2. طبيعة الخدمات الطبية (إخلاء مسؤولية)</h3>
+            <p>خدمة "التشخيص الذكي" المتاحة على المنصة هي أدوات توجيهية واستشارية أولية تعتمد على الذكاء الاصطناعي، ولا تُغني بأي حال من الأحوال عن الاستشارة الطبية المباشرة والفحص السريري من قِبل طبيب أسنان مرخص.</p>
+          </div>
+
+          <div class="service-card" style="text-align: right; width: 100%;">
+            <h3>3. حسابات المستخدمين والتسجيل</h3>
+            <p>يتحمل المستخدم المسؤولية الكاملة عن سرية بيانات حسابه، وعن كافة الأنشطة التي تتم من خلاله، سواء كان مستخدماً (مريضاً)، أو طبيباً، أو خريجاً يبحث عن فرص تدريب وتوظيف.</p>
+          </div>
+
+          <div class="service-card" style="text-align: right; width: 100%;">
+            <h3>4. الملكية الفكرية</h3>
+            <p>كافة محتويات المنصة من برمجيات، وتصميمات، ونصوص، وشعارات، وخوارزميات هي ملكية خاصة لمشروع "عيادتي" ولا يحق لأي جهة إعادة استخدامها أو نسخها دون إذن خطي مسبق.</p>
+          </div>
+
+          <div class="service-card" style="text-align: right; width: 100%;">
+            <h3>5. تعديل الشروط</h3>
+            <p>تحتفظ إدارة المنصة بحق تعديل أو تغيير هذه الشروط في أي وقت، ويُعتبر استمرارك في استخدام المنصة بعد التعديلات موافقة ضمنية عليها.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================= -->
+  <!-- Footer Placeholder -->
+  <!-- ========================= -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ========================= -->
+  <!-- JavaScript -->
+  <!-- ========================= -->
+  <script>
+    // جلب الهيدر والفوتر تلقائياً
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Header error:', error));
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Footer error:', error));
+  </script>
+
+</body>
+
+</html>
