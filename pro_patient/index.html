@@ -64,7 +64,7 @@
       <nav class="nav-links" id="mainNav">
         <ul>
           <li><a href="index.html" class="active">الرئيسية</a></li>
-          <li><a href="/diagnosis">التشخيص الذكي</a></li>
+          <li><a href="../ai-diagnosis.html">التشخيص الذكي</a></li>
           <li><a href="doctors.html">الأطباء</a></li>
           <li><a href="doctors-select.html">حجز موعد</a></li>
           <li><a href="medical-record.html">سجلي الطبي</a></li>
@@ -113,7 +113,8 @@
     <p class="mb-3 small" style="color:rgba(255,255,255,.85)">
         صف أعراضك واحصل على تقييم أولي فوري
     </p>
-<button class="ai-start-btn">
+<button onclick="window.location.href='../ai-diagnosis.html'" class="ai-start-btn">
+
     ابدأ الآن
     <span>←</span>
 </button>
@@ -127,20 +128,18 @@
         <span class="fw-bold text-dark small">سجلي الطبي</span>
       </a>
     </div>
-    <div class="col-4">
+    <!-- <div class="col-4">
       <a href="search.html" class="soft-card d-block text-center text-decoration-none p-3 h-100">
         <i class="bi bi-search fs-3 d-block mb-2" style="color:#1e6fe8"></i>
         <span class="fw-bold text-dark small">بحث عن طبيب</span>
       </a>
-    </div>
+    </div> -->
     <div class="col-4">
       <a href="doctors-select.html" class="soft-card d-block text-center text-decoration-none p-3 h-100">
         <i class="bi bi-calendar2-week fs-3 d-block mb-2" style="color:#1e6fe8"></i>
         <span class="fw-bold text-dark small">حجز موعد</span>
       </a>
     </div>
-  </div>
-
     <div class="col-4">
       <a href="appointments.html" class="soft-card d-block text-center text-decoration-none p-3 h-100">
         <i class="bi bi-calendar2-week fs-3 d-block mb-2" style="color:#1e6fe8"></i>
@@ -148,13 +147,16 @@
       </a>
     </div>
   </div>
+  </div>
+
+   
 
   <!-- upcoming appointment -->
   <div class="d-flex align-items-center justify-content-between mb-3">
     <h2 class="section-title mb-0">موعدك القادم</h2>
     <a href="appointments.html" class="small fw-bold text-decoration-none" style="color:#1e6fe8">عرض الكل</a>
   </div>
-  <a href="appointment-details.html" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none mb-4">
+  <a href="appointments.html" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none mb-4">
     <span class="avatar-circle">د.م</span>
     <div class="flex-grow-1">
       <div class="fw-bold text-dark">د. محمد عبد الكريم</div>
