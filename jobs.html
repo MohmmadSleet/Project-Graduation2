@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>الوظائف - العيادة الذكية لطب الأسنان</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* =========================
+       إعدادات الألوان
+    ========================== */
+
+    :root {
+      --primary: #1565c0;
+      --primary-dark: #0d47a1;
+
+      --accent: #42a5f5;
+      --accent-dark: #1e88e5;
+
+      --background: #f5f9fc;
+      --card: #ffffff;
+
+      --text: #1f2937;
+      --muted: #7b8794;
+
+      --border: #dce6ef;
+
+      --soft-blue: #eaf4ff;
+      --soft-blue-2: #e8f3ff;
+
+      --shadow: 0 10px 30px rgba(21, 101, 192, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Tahoma", Arial, sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       Container
+    ========================== */
+
+    .jobs-container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+
+    /* =========================
+       Hero Section
+    ========================== */
+
+    .jobs-hero {
+      background:
+        linear-gradient(
+          135deg,
+          #0d47a1 0%,
+          #1565c0 50%,
+          #42a5f5 100%
+        );
+
+      padding: 75px 0 110px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .jobs-hero::before {
+      content: "";
+      position: absolute;
+
+      width: 320px;
+      height: 320px;
+
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+
+      top: -120px;
+      left: -80px;
+    }
+
+    .jobs-hero::after {
+      content: "";
+      position: absolute;
+
+      width: 220px;
+      height: 220px;
+
+      border-radius: 50%;
+      background: rgba(144, 202, 249, 0.22);
+
+      bottom: -110px;
+      right: 4%;
+    }
+
+    .jobs-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .jobs-hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 5vw, 48px);
+    }
+
+    .jobs-hero p {
+      margin: 0;
+      max-width: 700px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.88);
+      font-size: 17px;
+    }
+
+
+    /* =========================
+       الصفحة الرئيسية للوظائف
+    ========================== */
+
+    .jobs-main {
+      margin-top: -55px;
+      position: relative;
+      z-index: 5;
+      padding-bottom: 80px;
+    }
+
+    .dashboard-card {
+      background: var(--card);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .welcome-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .welcome-user {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .user-avatar {
+      width: 60px;
+      height: 60px;
+
+      border-radius: 50%;
+
+      background: var(--primary);
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 24px;
+      font-weight: bold;
+
+      box-shadow: 0 8px 20px rgba(21,101,192,0.22);
+    }
+
+    .welcome-user h2 {
+      margin: 0 0 6px;
+      font-size: 22px;
+    }
+
+    .welcome-user p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .all-jobs-btn {
+      border: none;
+
+      background: var(--primary);
+      color: white;
+
+      padding: 13px 24px;
+      border-radius: 12px;
+
+      font-size: 15px;
+      font-weight: bold;
+
+      transition: 0.25s;
+    }
+
+    .all-jobs-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       Titles
+    ========================== */
+
+    .section-title {
+      margin-top: 35px;
+      margin-bottom: 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .section-title h3 {
+      margin: 0;
+      font-size: 20px;
+      color: var(--primary-dark);
+    }
+
+    .section-title span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       Job Cards
+    ========================== */
+
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .job-card {
+      background: white;
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+      padding: 22px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 18px;
+
+      transition: 0.25s;
+
+      cursor: pointer;
+    }
+
+    .job-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: #bbdefb;
+    }
+
+    .job-info h4 {
+      margin: 0 0 9px;
+      font-size: 17px;
+      color: #1e3a5f;
+    }
+
+    .job-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .job-icon {
+      flex: 0 0 52px;
+
+      width: 52px;
+      height: 52px;
+
+      border-radius: 14px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--soft-blue);
+      color: var(--primary);
+
+      font-size: 23px;
+    }
+
+    .job-card.disabled {
+      opacity: 0.55;
+    }
+
+    .closed-badge {
+      display: inline-block;
+
+      background: #eef4fa;
+      color: #607d8b;
+
+      padding: 5px 10px;
+      border-radius: 20px;
+
+      margin-top: 10px;
+
+      font-size: 12px;
+    }
+
+
+    /* =========================
+       Filter Section
+    ========================== */
+
+    .filter-box {
+      margin-top: 22px;
+
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: white;
+
+      padding: 10px 19px;
+      border-radius: 50px;
+
+      color: #555;
+      font-weight: bold;
+
+      transition: 0.25s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+
+    /* =========================
+       الصفحات الداخلية
+    ========================== */
+
+    .page-section {
+      display: none;
+      padding: 55px 0 80px;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    .inner-card {
+      max-width: 850px;
+      margin: auto;
+
+      background: white;
+      border-radius: 24px;
+      padding: 35px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 25px;
+    }
+
+    .page-header h2 {
+      margin: 0;
+      font-size: 26px;
+      color: var(--primary-dark);
+    }
+
+    .back-btn {
+      border: none;
+      background: var(--soft-blue);
+
+      width: 42px;
+      height: 42px;
+
+      border-radius: 50%;
+      font-size: 20px;
+      color: var(--primary-dark);
+
+      transition: 0.2s;
+    }
+
+    .back-btn:hover {
+      background: #d7eaff;
+    }
+
+
+    /* =========================
+       Job Details
+    ========================== */
+
+    .selected-job {
+      background: #f7fbff;
+      padding: 20px;
+
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+
+      gap: 15px;
+
+      border: 1px solid #e3effb;
+    }
+
+    .selected-job h3 {
+      margin: 0 0 7px;
+      color: var(--primary-dark);
+    }
+
+    .selected-job p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .details-table {
+      margin-top: 25px;
+    }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+
+      gap: 20px;
+    }
+
+    .detail-label {
+      color: var(--muted);
+    }
+
+    .details-description {
+      margin-top: 30px;
+    }
+
+    .details-description h3 {
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+    }
+
+    .details-description p {
+      line-height: 2;
+      color: #555;
+    }
+
+    .requirements-list {
+      line-height: 2;
+      color: #555;
+    }
+
+
+    /* =========================
+       Buttons
+    ========================== */
+
+    .primary-button {
+      width: 100%;
+      border: none;
+
+      background: var(--primary);
+      color: white;
+
+      padding: 15px;
+
+      border-radius: 12px;
+
+      font-size: 16px;
+      font-weight: bold;
+
+      margin-top: 28px;
+
+      transition: 0.25s;
+    }
+
+    .primary-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .green-button {
+      width: 100%;
+
+      border: none;
+      background: var(--primary);
+      color: white;
+
+      padding: 15px;
+
+      border-radius: 12px;
+
+      font-weight: bold;
+      font-size: 16px;
+
+      transition: 0.25s;
+    }
+
+    .green-button:hover {
+      background: var(--primary-dark);
+    }
+
+
+    /* =========================
+       Application form
+    ========================== */
+
+    .application-form {
+      display: grid;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      font-size: 14px;
+      color: #455a64;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+
+      border: 1px solid var(--border);
+      border-radius: 11px;
+
+      padding: 13px 15px;
+
+      outline: none;
+      background: white;
+
+      transition: 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(21,101,192,0.12);
+    }
+
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .upload-box {
+      border: 2px dashed #b9d6f2;
+      border-radius: 14px;
+
+      padding: 25px;
+      text-align: center;
+
+      color: var(--muted);
+      cursor: pointer;
+
+      transition: 0.2s;
+
+      background: #fbfdff;
+    }
+
+    .upload-box:hover {
+      border-color: var(--primary);
+      background: var(--soft-blue);
+    }
+
+
+    /* =========================
+       Success & Closed
+    ========================== */
+
+    .center-message {
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .status-icon {
+      width: 90px;
+      height: 90px;
+
+      border-radius: 50%;
+
+      margin: auto auto 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 40px;
+    }
+
+    .status-icon.success {
+      background: var(--soft-blue-2);
+      color: var(--primary);
+    }
+
+    .status-icon.closed {
+      background: #eef4fa;
+      color: #607d8b;
+    }
+
+    .center-message h2 {
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+    }
+
+    .center-message p {
+      color: var(--muted);
+      line-height: 1.9;
+
+      max-width: 520px;
+      margin: 0 auto 30px;
+    }
+
+
+    /* =========================
+       Responsive
+    ========================== */
+
+    @media (max-width: 850px) {
+
+      .jobs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .inner-card {
+        padding: 25px 20px;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .jobs-hero {
+        padding: 55px 0 90px;
+      }
+
+      .dashboard-card {
+        padding: 20px;
+      }
+
+      .welcome-row {
+        align-items: flex-start;
+      }
+
+      .all-jobs-btn {
+        width: 100%;
+      }
+
+      .job-card {
+        padding: 17px;
+      }
+
+      .filter-box {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+      }
+
+      .filter-btn {
+        flex: 0 0 auto;
+      }
+
+      .page-header h2 {
+        font-size: 21px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- Header -->
+
+<div id="header-placeholder"></div>
+
+
+
+<!-- =========================
+     الصفحة الرئيسية للوظائف
+========================== -->
+
+<div id="jobsHome" class="page-screen">
+
+  <section class="jobs-hero">
+
+    <div class="jobs-container jobs-hero-content">
+
+      <h1>فرص التوظيف والتدريب</h1>
+
+      <p>
+        اكتشف أحدث فرص العمل والتدريب في عيادات ومراكز طب الأسنان،
+        وقدّم طلبك بسهولة من خلال منصة عيادتي.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <main class="jobs-main">
+
+    <div class="jobs-container">
+
+      <div class="dashboard-card">
+
+
+        <div class="welcome-row">
+
+          <div class="welcome-user">
+
+            <div class="user-avatar">
+              ل
+            </div>
+
+            <div>
+              <h2>أهلاً بك، ليان قاسم</h2>
+              <p>وظائف جديدة قد تناسبك</p>
+            </div>
+
+          </div>
+
+
+          <button
+            class="all-jobs-btn"
+            onclick="showAllJobs()">
+
+            تصفح جميع الوظائف
+
+          </button>
+
+        </div>
+
+
+
+        <div class="section-title">
+
+          <h3>وظائف مقترحة لك</h3>
+
+          <span>بناءً على ملفك الشخصي</span>
+
+        </div>
+
+
+        <div class="jobs-grid">
+
+          <div
+            class="job-card"
+            onclick="openJobDetails()">
+
+            <div class="job-info">
+
+              <h4>مساعدة / طبيب أسنان</h4>
+
+              <div class="job-meta">
+
+                <span>📍 نابلس</span>
+
+                <span>💰 2500 - 3000 شيكل</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="job-icon">
+              💼
+            </div>
+
+          </div>
+
+
+
+          <div class="job-card">
+
+            <div class="job-info">
+
+              <h4>استقبال ومواعيد</h4>
+
+              <div class="job-meta">
+
+                <span>📍 نابلس</span>
+
+                <span>💰 3000 - 3400 شيكل</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="job-icon">
+              💼
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="section-title">
+
+          <h3>آخر طلب قمت بتقديمه</h3>
+
+        </div>
+
+
+        <div class="job-card">
+
+          <div class="job-info">
+
+            <h4>مساعدة / طبيب أسنان</h4>
+
+            <div class="job-meta">
+
+              <span>تم التقديم منذ 3 أيام</span>
+
+            </div>
+
+            <span class="closed-badge">
+              قيد المراجعة
+            </span>
+
+          </div>
+
+
+          <div class="job-icon">
+            💼
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+
+
+<!-- =========================
+     كل الوظائف
+========================== -->
+
+<section
+  id="allJobs"
+  class="page-section">
+
+  <div class="jobs-container">
+
+    <div class="inner-card">
+
+      <div class="page-header">
+
+        <h2>الوظائف المتاحة</h2>
+
+        <button
+          class="back-btn"
+          onclick="goHome()">
+
+          ←
+
+        </button>
+
+      </div>
+
+
+      <div class="filter-box">
+
+        <button class="filter-btn active">
+          الكل
+        </button>
+
+        <button class="filter-btn">
+          نابلس
+        </button>
+
+        <button class="filter-btn">
+          رام الله
+        </button>
+
+        <button class="filter-btn">
+          مرتب أعلى
+        </button>
+
+      </div>
+
+
+      <div
+        class="jobs-grid"
+        style="margin-top: 25px;">
+
+
+        <div
+          class="job-card"
+          onclick="openJobDetails()">
+
+          <div class="job-info">
+
+            <h4>مساعدة / طبيب أسنان</h4>
+
+            <div class="job-meta">
+
+              <span>📍 نابلس</span>
+
+              <span>2500 - 3000 شيكل</span>
+
+            </div>
+
+          </div>
+
+          <div class="job-icon">
+            💼
+          </div>
+
+        </div>
+
+
+
+        <div class="job-card">
+
+          <div class="job-info">
+
+            <h4>استقبال ومواعيد</h4>
+
+            <div class="job-meta">
+
+              <span>📍 نابلس</span>
+
+              <span>3000 - 3400 شيكل</span>
+
+            </div>
+
+          </div>
+
+          <div class="job-icon">
+            💼
+          </div>
+
+        </div>
+
+
+
+        <div class="job-card">
+
+          <div class="job-info">
+
+            <h4>فني مختبر أسنان</h4>
+
+            <div class="job-meta">
+
+              <span>📍 رام الله</span>
+
+              <span>3200 - 3600 شيكل</span>
+
+            </div>
+
+          </div>
+
+          <div class="job-icon">
+            💼
+          </div>
+
+        </div>
+
+
+
+        <div
+          class="job-card disabled"
+          onclick="openClosedJob()">
+
+          <div class="job-info">
+
+            <h4>منسق توعية صحية</h4>
+
+            <div class="job-meta">
+
+              <span>📍 نابلس</span>
+
+              <span>2800 - 3200 شيكل</span>
+
+            </div>
+
+            <span class="closed-badge">
+              منتهية
+            </span>
+
+          </div>
+
+          <div class="job-icon">
+            💼
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     تفاصيل الوظيفة
+========================== -->
+
+<section
+  id="jobDetails"
+  class="page-section">
+
+  <div class="jobs-container">
+
+    <div class="inner-card">
+
+
+      <div class="page-header">
+
+        <h2>تفاصيل الوظيفة</h2>
+
+        <button
+          class="back-btn"
+          onclick="showAllJobs()">
+
+          ←
+
+        </button>
+
+      </div>
+
+
+
+      <div class="selected-job">
+
+        <div class="job-icon">
+          💼
+        </div>
+
+        <div>
+
+          <h3>مساعدة / طبيب أسنان</h3>
+
+          <p>نابلس • دوام كامل</p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="details-table">
+
+
+        <div class="detail-row">
+
+          <div class="detail-label">
+            الراتب الشهري
+          </div>
+
+          <div>
+            2500 - 3000 شيكل
+          </div>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <div class="detail-label">
+            المؤهل المطلوب
+          </div>
+
+          <div>
+            دبلوم تمريض أسنان أو ما يعادله
+          </div>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <div class="detail-label">
+            الخبرة
+          </div>
+
+          <div>
+            سنة واحدة على الأقل
+          </div>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <div class="detail-label">
+            نوع الدوام
+          </div>
+
+          <div>
+            دوام كامل
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="details-description">
+
+        <h3>وصف الوظيفة</h3>
+
+        <p>
+          مساعدة الطبيب في تحضير غرفة العلاج،
+          وتعقيم الأدوات، واستقبال المرضى،
+          وتجهيز الملفات والأدوات اليومية اللازمة
+          للعمل داخل العيادة.
+        </p>
+
+      </div>
+
+
+
+      <div class="details-description">
+
+        <h3>الشروط المسبقة</h3>
+
+        <ul class="requirements-list">
+
+          <li>إجادة التعامل مع المرضى.</li>
+
+          <li>الالتزام بمعايير التعقيم والنظافة.</li>
+
+          <li>توفر شهادة دبلوم معتمدة.</li>
+
+          <li>القدرة على العمل ضمن فريق.</li>
+
+        </ul>
+
+      </div>
+
+
+
+      <button
+        class="primary-button"
+        onclick="openApplication()">
+
+        تقديم طلب
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     الوظيفة منتهية
+========================== -->
+
+<section
+  id="closedJob"
+  class="page-section">
+
+  <div class="jobs-container">
+
+    <div class="inner-card">
+
+
+      <div class="page-header">
+
+        <h2>تفاصيل الوظيفة</h2>
+
+        <button
+          class="back-btn"
+          onclick="showAllJobs()">
+
+          ←
+
+        </button>
+
+      </div>
+
+
+      <div class="center-message">
+
+        <div class="status-icon closed">
+          ⏳
+        </div>
+
+        <h2>هذه الوظيفة لم تعد متاحة</h2>
+
+        <p>
+          انتهت فترة التقديم على هذه الوظيفة.
+          يمكنك تصفح وظائف أخرى متاحة على منصة عيادتي.
+        </p>
+
+        <button
+          class="green-button"
+          onclick="showAllJobs()">
+
+          عرض وظائف أخرى متاحة
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     نموذج التقديم
+========================== -->
+
+<section
+  id="applicationPage"
+  class="page-section">
+
+  <div class="jobs-container">
+
+    <div class="inner-card">
+
+
+      <div class="page-header">
+
+        <h2>نموذج التقديم</h2>
+
+        <button
+          class="back-btn"
+          onclick="openJobDetails()">
+
+          ←
+
+        </button>
+
+      </div>
+
+
+
+      <form
+        class="application-form"
+        onsubmit="submitApplication(event)">
+
+
+        <div class="form-group">
+
+          <label>الاسم الكامل</label>
+
+          <input
+            type="text"
+            value="ليان قاسم"
+            required>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label>رقم الهاتف</label>
+
+          <input
+            type="tel"
+            placeholder="0599 123 456"
+            required>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label>سنوات الخبرة</label>
+
+          <input
+            type="number"
+            min="0"
+            placeholder="مثلاً: سنتان">
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label>السيرة الذاتية (CV)</label>
+
+          <label class="upload-box">
+
+            📎 اضغط لرفع ملف PDF
+
+            <input
+              type="file"
+              accept=".pdf"
+              style="display:none;">
+
+          </label>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label>خطاب التقديم</label>
+
+          <textarea
+            placeholder="لماذا أنت مناسب لهذه الوظيفة؟"></textarea>
+
+        </div>
+
+
+
+        <button
+          type="submit"
+          class="primary-button">
+
+          إرسال الطلب
+
+        </button>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     نجاح إرسال الطلب
+========================== -->
+
+<section
+  id="successPage"
+  class="page-section">
+
+  <div class="jobs-container">
+
+    <div class="inner-card">
+
+
+      <div class="center-message">
+
+        <div class="status-icon success">
+          ✓
+        </div>
+
+        <h2>تم إرسال طلبك بنجاح</h2>
+
+        <p>
+          سيراجع فريق التوظيف طلبك لوظيفة
+          مساعدة / طبيب أسنان،
+          وسيتم إشعارك بأي تحديث.
+        </p>
+
+        <button
+          class="green-button"
+          onclick="goHome()">
+
+          متابعة طلباتي
+
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- Footer -->
+
+<div id="footer-placeholder"></div>
+
+
+
+<script>
+
+  /* Header */
+
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById(
+        'header-placeholder'
+      ).innerHTML = data;
+    });
+
+
+  /* Footer */
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById(
+        'footer-placeholder'
+      ).innerHTML = data;
+    });
+
+
+
+  /* =========================
+     التنقل بين الأقسام
+  ========================== */
+
+  function hideAllPages() {
+
+    document
+      .querySelectorAll('.page-section')
+      .forEach(section => {
+
+        section.classList.remove('active');
+
+      });
+
+
+    document.getElementById(
+      'jobsHome'
+    ).style.display = 'none';
+
+  }
+
+
+
+  function goHome() {
+
+    hideAllPages();
+
+    document.getElementById(
+      'jobsHome'
+    ).style.display = 'block';
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+  }
+
+
+
+  function showAllJobs() {
+
+    hideAllPages();
+
+    document.getElementById(
+      'allJobs'
+    ).classList.add('active');
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+  }
+
+
+
+  function openJobDetails() {
+
+    hideAllPages();
+
+    document.getElementById(
+      'jobDetails'
+    ).classList.add('active');
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+  }
+
+
+
+  function openClosedJob() {
+
+    hideAllPages();
+
+    document.getElementById(
+      'closedJob'
+    ).classList.add('active');
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+  }
+
+
+
+  function openApplication() {
+
+    hideAllPages();
+
+    document.getElementById(
+      'applicationPage'
+    ).classList.add('active');
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+  }
+
+
+
+  function submitApplication(event) {
+
+    event.preventDefault();
+
+    hideAllPages();
+
+    document.getElementById(
+      'successPage'
+    ).classList.add('active');
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+  }
+
+
+
+  /* =========================
+     أزرار الفلترة
+  ========================== */
+
+  const filterButtons =
+    document.querySelectorAll('.filter-btn');
+
+
+  filterButtons.forEach(button => {
+
+    button.addEventListener(
+      'click',
+      function() {
+
+        filterButtons.forEach(btn =>
+          btn.classList.remove('active')
+        );
+
+        this.classList.add('active');
+
+      }
+    );
+
+  });
+
+</script>
+
+
+</body>
+</html>
