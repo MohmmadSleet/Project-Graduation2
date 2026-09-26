@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة تحكم الطبيب | العيادة الذكية</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3c-1.7 0-3 1.3-3 3v3.2c0 1.6-.6 3.2-1.7 4.4C3.1 14.8 2.5 16.5 2.5 18c0 2.2 1.8 4 4 4 1.8 0 3.4-1.2 3.8-3l1-4.3c.2-.9 1-1.5 1.9-1.5s1.7.6 1.9 1.5l1 4.3c.4 1.8 2 3 3.8 3 2.2 0 4-1.8 4-4 0-1.5-.6-3.2-1.8-4.4-1.1-1.2-1.7-2.8-1.7-4.4V6c0-1.7-1.3-3-3-3"/></svg>
+        </div>
+        <div class="logo-text">
+          <strong>العيادة الذكية</strong>
+          <small>لوحة تحكم الطبيب</small>
+        </div>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links">
+        <ul>
+          <li><a href="#" class="active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>
+            الرئيسية
+          </a></li>
+          <li><a href="patients.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            المرضى
+          </a></li>
+          <li><a href="appointments.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+            المواعيد
+          </a></li>
+          <li><a href="reports.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l1 3h3v17H5V5h3z"/><path d="M9 11h6M9 15h6"/></svg>
+            التقارير
+          </a></li>
+          <li><a href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 014 4v3a5 5 0 01-8 0V6a4 4 0 014-4z"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+            المساعد الذكي
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+
+        <div class="status-toggle" id="statusToggle" role="button" tabindex="0" aria-pressed="true">
+          <span class="dot"></span>
+          <span class="label">متاح الآن</span>
+        </div>
+
+        <button class="icon-btn" aria-label="الإشعارات" id="notifBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
+          <span class="badge">3</span>
+        </button>
+
+        <button class="lang-btn" id="langBtn">EN</button>
+
+        <div class="profile-menu">
+          <button class="profile-trigger" id="profileTrigger" aria-haspopup="true" aria-expanded="false">
+            <div class="avatar">أح</div>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown" id="profileDropdown">
+            <div class="dropdown-header">
+              <strong>د. أحمد المصري</strong>
+              <span>أخصائي علاج الأسنان</span>
+            </div>
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              الملف الشخصي
+            </a>
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.6V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.6-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.6-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.6V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.6 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.6 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.6 1z"/></svg>
+              الإعدادات
+            </a>
+            <button class="danger">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+              تسجيل الخروج
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="container">
+
+    <div class="page-heading">
+      <h1>مرحبًا د. أحمد 👋</h1>
+      <p>إليك ملخص عيادتك لهذا اليوم — <span id="todayDateText">...</span></p>
+    </div>
+
+    <section class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-icon blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        </div>
+        <div class="stat-body"><strong id="statTodayAppointments">0</strong><span>مواعيد اليوم</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="stat-body"><strong id="statTotalPatients">0</strong><span>إجمالي المرضى</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div class="stat-body"><strong id="statWaitingToday">0</strong><span>في الانتظار</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div class="stat-body"><strong id="statCompletedToday">0</strong><span>مكتملة اليوم</span></div>
+      </div>
+    </section>
+
+    <section class="grid-2col">
+      <div class="panel">
+        <div class="panel-header">
+          <h2>مواعيد اليوم</h2>
+          <a href="appointments.html" class="panel-link">عرض الكل</a>
+        </div>
+        <div class="panel-body" id="apptList">
+          <!-- تُعبّأ ديناميكيًا عبر script.js -->
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>التقارير</h2>
+          <a href="reports.html" class="panel-link">عرض الكل</a>
+        </div>
+        <div class="panel-body reports-quick-panel">
+          <div class="reports-quick-icon">📋</div>
+          <p>أنشئ تقريرًا طبيًا لأي مريض خلال ثوانٍ</p>
+          <a class="btn-add" href="create-report.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            إنشاء تقرير
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-2col">
+      <div class="panel">
+        <div class="panel-header">
+          <h2>المرضى الأخيرون</h2>
+          <a href="patients.html" class="panel-link">عرض الكل</a>
+        </div>
+        <div class="panel-body no-pad" id="recentPatientsList">
+          <!-- تُعبّأ ديناميكيًا عبر script.js -->
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>الإجراءات السريعة</h2>
+        </div>
+        <div class="quick-actions">
+          <button class="quick-action">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+            إضافة مريض جديد
+          </button>
+          <button class="quick-action">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M12 14v4M10 16h4"/></svg>
+            حجز موعد جديد
+          </button>
+          <button class="quick-action">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l1 3h3v17H5V5h3z"/><path d="M9 11h6M9 15h6"/></svg>
+            فتح سجل طبي
+          </button>
+          <a class="quick-action" href="availability.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            التوفر
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-panel">
+      <div class="ai-panel-text">
+        <div class="ai-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 014 4v3a5 5 0 01-8 0V6a4 4 0 014-4z"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+        </div>
+        <div>
+          <strong>المساعد الذكي</strong>
+          <span>حلّل بيانات مريض، فسّر أشعة، أو أنشئ تقريرًا في ثوانٍ</span>
+        </div>
+      </div>
+      <div class="ai-actions">
+        <button class="ai-btn">تحليل بيانات المريض</button>
+        <button class="ai-btn">تحليل الأشعة</button>
+        <button class="ai-btn">إنشاء تقرير</button>
+      </div>
+    </section>
+
+    <section class="panel summary-panel">
+      <div class="panel-header" style="padding:0 0 16px; border:none;">
+        <h2>ملخص العلاجات هذا الشهر</h2>
+      </div>
+      <div class="summary-bars">
+        <div class="summary-bar-row">
+          <span class="summary-bar-label">فحص دوري</span>
+          <div class="summary-bar-track"><div class="summary-bar-fill" style="width:70%"></div></div>
+          <span class="summary-bar-value">42</span>
+        </div>
+        <div class="summary-bar-row">
+          <span class="summary-bar-label">تنظيف أسنان</span>
+          <div class="summary-bar-track"><div class="summary-bar-fill" style="width:55%"></div></div>
+          <span class="summary-bar-value">33</span>
+        </div>
+        <div class="summary-bar-row">
+          <span class="summary-bar-label">علاج عصب</span>
+          <div class="summary-bar-track"><div class="summary-bar-fill" style="width:30%"></div></div>
+          <span class="summary-bar-value">18</span>
+        </div>
+        <div class="summary-bar-row">
+          <span class="summary-bar-label">تقويم</span>
+          <div class="summary-bar-track"><div class="summary-bar-fill" style="width:20%"></div></div>
+          <span class="summary-bar-value">12</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

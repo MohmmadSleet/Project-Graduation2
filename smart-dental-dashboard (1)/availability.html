@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>التوفر | العيادة الذكية</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3c-1.7 0-3 1.3-3 3v3.2c0 1.6-.6 3.2-1.7 4.4C3.1 14.8 2.5 16.5 2.5 18c0 2.2 1.8 4 4 4 1.8 0 3.4-1.2 3.8-3l1-4.3c.2-.9 1-1.5 1.9-1.5s1.7.6 1.9 1.5l1 4.3c.4 1.8 2 3 3.8 3 2.2 0 4-1.8 4-4 0-1.5-.6-3.2-1.8-4.4-1.1-1.2-1.7-2.8-1.7-4.4V6c0-1.7-1.3-3-3-3"/></svg>
+        </div>
+        <div class="logo-text">
+          <strong>العيادة الذكية</strong>
+          <small>لوحة تحكم الطبيب</small>
+        </div>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>
+            الرئيسية
+          </a></li>
+          <li><a href="patients.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            المرضى
+          </a></li>
+          <li><a href="appointments.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+            المواعيد
+          </a></li>
+          <li><a href="reports.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l1 3h3v17H5V5h3z"/><path d="M9 11h6M9 15h6"/></svg>
+            التقارير
+          </a></li>
+          <li><a href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 014 4v3a5 5 0 01-8 0V6a4 4 0 014-4z"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+            المساعد الذكي
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+
+        <div class="status-toggle" id="statusToggle" role="button" tabindex="0" aria-pressed="true">
+          <span class="dot"></span>
+          <span class="label">متاح الآن</span>
+        </div>
+
+        <button class="icon-btn" aria-label="الإشعارات" id="notifBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
+          <span class="badge">3</span>
+        </button>
+
+        <button class="lang-btn" id="langBtn">EN</button>
+
+        <div class="profile-menu">
+          <button class="profile-trigger" id="profileTrigger" aria-haspopup="true" aria-expanded="false">
+            <div class="avatar">أح</div>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown" id="profileDropdown">
+            <div class="dropdown-header">
+              <strong>د. أحمد المصري</strong>
+              <span>أخصائي علاج الأسنان</span>
+            </div>
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              الملف الشخصي
+            </a>
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.6V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.6-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.6-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.6V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.6 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.6 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.6 1z"/></svg>
+              الإعدادات
+            </a>
+            <button class="danger">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+              تسجيل الخروج
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="container">
+
+    <section class="page-banner">
+      <h1>🕐 التوفر</h1>
+      <p>إدارة أوقات العمل الأسبوعية والإجازات والاستثناءات</p>
+    </section>
+
+    <h2 class="section-title">📅 جدول أوقات العمل الأسبوعي</h2>
+    <section class="table-panel" style="margin-bottom: 20px;">
+      <div style="overflow-x:auto;">
+        <table class="patients-table">
+          <thead>
+            <tr>
+              <th>اليوم</th>
+              <th>الحالة</th>
+              <th>الأوقات</th>
+              <th class="actions-cell">إجراء</th>
+            </tr>
+          </thead>
+          <tbody id="weeklyScheduleBody">
+            <!-- تُعبّأ ديناميكيًا عبر script.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="availability-actions-row">
+      <button class="btn-outline" id="toggleAddSlotBtn">➕ إضافة وقت متاح</button>
+      <button class="btn-outline" id="toggleEditSlotBtn">✏️ تعديل أوقات العمل</button>
+      <button class="btn-outline danger" id="toggleDisableDayBtn">🚫 تعطيل يوم / إجازة</button>
+    </div>
+
+    <!-- ➕ إضافة وقت متاح -->
+    <div class="availability-panel" id="addSlotPanel" hidden>
+      <h3>➕ إضافة وقت متاح</h3>
+      <div class="form-group">
+        <label for="addSlotDay">اليوم</label>
+        <select id="addSlotDay" class="form-control"></select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="addSlotStart">من</label>
+          <input type="time" id="addSlotStart" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="addSlotEnd">إلى</label>
+          <input type="time" id="addSlotEnd" class="form-control">
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn-outline primary" id="confirmAddSlotBtn">إضافة</button>
+      </div>
+      <p id="addSlotMsg" class="form-error" hidden></p>
+    </div>
+
+    <!-- ✏️ تعديل أوقات العمل -->
+    <div class="availability-panel" id="editSlotPanel" hidden>
+      <h3>✏️ تعديل أوقات العمل</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="editSlotDay">اليوم</label>
+          <select id="editSlotDay" class="form-control"></select>
+        </div>
+        <div class="form-group">
+          <label for="editSlotSelect">الوقت الحالي</label>
+          <select id="editSlotSelect" class="form-control"></select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="editSlotStart">من</label>
+          <input type="time" id="editSlotStart" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="editSlotEnd">إلى</label>
+          <input type="time" id="editSlotEnd" class="form-control">
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn-outline primary" id="confirmEditSlotBtn">حفظ التعديل</button>
+      </div>
+      <p id="editSlotMsg" class="form-error" hidden></p>
+    </div>
+
+    <!-- 🚫 تعطيل يوم / إجازة (مرتبط بتاريخ محدد فعلي، وليس بيوم أسبوعي متكرر) -->
+    <div class="availability-panel" id="disableDayPanel" hidden>
+      <h3>🚫 تعطيل يوم / إجازة</h3>
+      <div class="form-group">
+        <label for="disableDate">التاريخ</label>
+        <input type="date" id="disableDate" class="form-control">
+      </div>
+      <div class="form-actions">
+        <button class="btn-outline danger" id="confirmDisableDayBtn">تعطيل هذا التاريخ</button>
+      </div>
+      <p id="disableDayMsg" class="form-error" hidden></p>
+    </div>
+
+    <h2 class="section-title">📌 الاستثناءات</h2>
+    <div class="availability-actions-row">
+      <button class="btn-outline" id="toggleCustomHoursBtn">تغيير ساعات يوم محدد</button>
+    </div>
+
+    <!-- تغيير ساعات يوم محدد -->
+    <div class="availability-panel" id="customHoursPanel" hidden>
+      <h3>تغيير ساعات يوم محدد</h3>
+      <div class="form-group">
+        <label for="customHoursDate">التاريخ</label>
+        <input type="date" id="customHoursDate" class="form-control">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="customHoursStart">من</label>
+          <input type="time" id="customHoursStart" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="customHoursEnd">إلى</label>
+          <input type="time" id="customHoursEnd" class="form-control">
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn-outline primary" id="confirmCustomHoursBtn">حفظ</button>
+      </div>
+      <p id="customHoursMsg" class="form-error" hidden></p>
+    </div>
+
+    <h3 style="margin: 24px 0 14px; font-size: 1rem; font-weight: 800; color: var(--color-primary-darker);">الاستثناءات المضافة</h3>
+    <section class="table-panel">
+      <div style="overflow-x:auto;">
+        <table class="patients-table">
+          <thead>
+            <tr>
+              <th>التاريخ</th>
+              <th>النوع</th>
+              <th>التفاصيل</th>
+              <th class="actions-cell">حذف</th>
+            </tr>
+          </thead>
+          <tbody id="exceptionsBody">
+            <!-- تُعبّأ ديناميكيًا عبر script.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

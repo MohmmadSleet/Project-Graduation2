@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المواعيد | العيادة الذكية</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3c-1.7 0-3 1.3-3 3v3.2c0 1.6-.6 3.2-1.7 4.4C3.1 14.8 2.5 16.5 2.5 18c0 2.2 1.8 4 4 4 1.8 0 3.4-1.2 3.8-3l1-4.3c.2-.9 1-1.5 1.9-1.5s1.7.6 1.9 1.5l1 4.3c.4 1.8 2 3 3.8 3 2.2 0 4-1.8 4-4 0-1.5-.6-3.2-1.8-4.4-1.1-1.2-1.7-2.8-1.7-4.4V6c0-1.7-1.3-3-3-3"/></svg>
+        </div>
+        <div class="logo-text">
+          <strong>العيادة الذكية</strong>
+          <small>لوحة تحكم الطبيب</small>
+        </div>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>
+            الرئيسية
+          </a></li>
+          <li><a href="patients.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            المرضى
+          </a></li>
+          <li><a href="appointments.html" class="active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+            المواعيد
+          </a></li>
+          <li><a href="reports.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l1 3h3v17H5V5h3z"/><path d="M9 11h6M9 15h6"/></svg>
+            التقارير
+          </a></li>
+          <li><a href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 014 4v3a5 5 0 01-8 0V6a4 4 0 014-4z"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+            المساعد الذكي
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+
+        <div class="status-toggle" id="statusToggle" role="button" tabindex="0" aria-pressed="true">
+          <span class="dot"></span>
+          <span class="label">متاح الآن</span>
+        </div>
+
+        <button class="icon-btn" aria-label="الإشعارات" id="notifBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
+          <span class="badge">3</span>
+        </button>
+
+        <button class="lang-btn" id="langBtn">EN</button>
+
+        <div class="profile-menu">
+          <button class="profile-trigger" id="profileTrigger" aria-haspopup="true" aria-expanded="false">
+            <div class="avatar">أح</div>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown" id="profileDropdown">
+            <div class="dropdown-header">
+              <strong>د. أحمد المصري</strong>
+              <span>أخصائي علاج الأسنان</span>
+            </div>
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              الملف الشخصي
+            </a>
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.6V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.6-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.6-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.6V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.6 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.6 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.6 1z"/></svg>
+              الإعدادات
+            </a>
+            <button class="danger">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+              تسجيل الخروج
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="container">
+
+    <section class="page-banner">
+      <h1>المواعيد</h1>
+      <p>إدارة ومتابعة مواعيد المرضى</p>
+      <div class="banner-cta">
+        <a class="btn-add on-banner" href="add-appointment.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          إضافة موعد
+        </a>
+      </div>
+    </section>
+
+    <h2 class="section-title">📅 مواعيد اليوم</h2>
+    <section class="appt-cards-grid" id="todayList">
+      <!-- تُعبّأ ديناميكيًا عبر script.js -->
+    </section>
+
+    <h2 class="section-title">📅 مواعيد الأسبوع</h2>
+    <section class="week-grid" id="weekGrid">
+      <div class="week-day" data-weekday="السبت">
+        <div class="week-day-header">السبت</div>
+        <div class="week-day-body"></div>
+      </div>
+      <div class="week-day" data-weekday="الأحد">
+        <div class="week-day-header">الأحد</div>
+        <div class="week-day-body"></div>
+      </div>
+      <div class="week-day" data-weekday="الإثنين">
+        <div class="week-day-header">الإثنين</div>
+        <div class="week-day-body"></div>
+      </div>
+      <div class="week-day" data-weekday="الثلاثاء">
+        <div class="week-day-header">الثلاثاء</div>
+        <div class="week-day-body"></div>
+      </div>
+      <div class="week-day" data-weekday="الأربعاء">
+        <div class="week-day-header">الأربعاء</div>
+        <div class="week-day-body"></div>
+      </div>
+      <div class="week-day" data-weekday="الخميس">
+        <div class="week-day-header">الخميس</div>
+        <div class="week-day-body"></div>
+      </div>
+      <div class="week-day" data-weekday="الجمعة">
+        <div class="week-day-header">الجمعة</div>
+        <div class="week-day-body"></div>
+      </div>
+    </section>
+
+    <h2 class="section-title">📋 كل المواعيد</h2>
+    <section class="table-panel" style="margin-bottom: 20px;">
+      <div style="overflow-x:auto;">
+        <table class="patients-table">
+          <thead>
+            <tr>
+              <th>المريض</th>
+              <th>التاريخ</th>
+              <th>الوقت</th>
+              <th>الخدمة</th>
+              <th>الحالة</th>
+              <th class="actions-cell">الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="allAppointmentsBody">
+            <!-- تُعبّأ ديناميكيًا عبر script.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

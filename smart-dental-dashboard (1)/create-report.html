@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إنشاء تقرير طبي | العيادة الذكية</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3c-1.7 0-3 1.3-3 3v3.2c0 1.6-.6 3.2-1.7 4.4C3.1 14.8 2.5 16.5 2.5 18c0 2.2 1.8 4 4 4 1.8 0 3.4-1.2 3.8-3l1-4.3c.2-.9 1-1.5 1.9-1.5s1.7.6 1.9 1.5l1 4.3c.4 1.8 2 3 3.8 3 2.2 0 4-1.8 4-4 0-1.5-.6-3.2-1.8-4.4-1.1-1.2-1.7-2.8-1.7-4.4V6c0-1.7-1.3-3-3-3"/></svg>
+        </div>
+        <div class="logo-text">
+          <strong>العيادة الذكية</strong>
+          <small>لوحة تحكم الطبيب</small>
+        </div>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>
+            الرئيسية
+          </a></li>
+          <li><a href="patients.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            المرضى
+          </a></li>
+          <li><a href="appointments.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+            المواعيد
+          </a></li>
+          <li><a href="reports.html" class="active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l1 3h3v17H5V5h3z"/><path d="M9 11h6M9 15h6"/></svg>
+            التقارير
+          </a></li>
+          <li><a href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 014 4v3a5 5 0 01-8 0V6a4 4 0 014-4z"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+            المساعد الذكي
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+
+        <div class="status-toggle" id="statusToggle" role="button" tabindex="0" aria-pressed="true">
+          <span class="dot"></span>
+          <span class="label">متاح الآن</span>
+        </div>
+
+        <button class="icon-btn" aria-label="الإشعارات" id="notifBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
+          <span class="badge">3</span>
+        </button>
+
+        <button class="lang-btn" id="langBtn">EN</button>
+
+        <div class="profile-menu">
+          <button class="profile-trigger" id="profileTrigger" aria-haspopup="true" aria-expanded="false">
+            <div class="avatar">أح</div>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown" id="profileDropdown">
+            <div class="dropdown-header">
+              <strong>د. أحمد المصري</strong>
+              <span>أخصائي علاج الأسنان</span>
+            </div>
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              الملف الشخصي
+            </a>
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.6V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.6-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.6-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.6V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.6 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.6 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.6 1z"/></svg>
+              الإعدادات
+            </a>
+            <button class="danger">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+              تسجيل الخروج
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="container form-wrap">
+
+    <a href="reports.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M5 12l6-6M5 12l6 6"/></svg>
+      العودة إلى التقارير
+    </a>
+
+    <div class="form-card">
+      <h1>إنشاء تقرير طبي</h1>
+      <div class="form-divider"></div>
+
+      <form id="createReportForm">
+
+        <div class="form-group">
+          <label for="reportPatientSearch">اسم المريض</label>
+          <input type="text" id="reportPatientSearch" class="form-control" list="reportPatientsList" placeholder="ابحث عن مريض..." autocomplete="off" required>
+          <datalist id="reportPatientsList">
+            <!-- تُعبّأ ديناميكيًا بأسماء المرضى الفعليين من صفحة المرضى -->
+          </datalist>
+
+          <div class="patient-info-box" id="reportPatientInfo" hidden>
+            <span><span class="info-icon">👤</span> المريض: <strong id="infoPatientName">—</strong></span>
+            <span><span class="info-icon">🆔</span> رقم المريض: <strong id="infoPatientId">—</strong></span>
+            <span><span class="info-icon">📅</span> تاريخ الزيارة: <strong id="infoVisitDate">—</strong></span>
+          </div>
+        </div>
+
+        <div class="form-divider"></div>
+
+        <div class="form-group">
+          <label for="reportType">نوع التقرير</label>
+          <select id="reportType" class="form-control" required>
+            <option value="تقرير زيارة">تقرير زيارة</option>
+            <option value="تقرير أشعة">تقرير أشعة</option>
+            <option value="تقرير علاج">تقرير علاج</option>
+            <option value="تقرير متابعة">تقرير متابعة</option>
+            <option value="تقرير طارئ">تقرير طارئ</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="reportDiagnosis">التشخيص</label>
+          <textarea id="reportDiagnosis" class="form-control" placeholder="مثال: تسوس بالضرس السفلي الأيمن..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="reportSymptoms">الأعراض / الشكوى</label>
+          <textarea id="reportSymptoms" class="form-control" placeholder="مثال: ألم عند المضغ منذ أسبوع..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="reportTreatment">العلاج / الإجراء</label>
+          <textarea id="reportTreatment" class="form-control" placeholder="مثال: حشو ضوئي + وصف مسكن..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="reportNotes">ملاحظات الطبيب</label>
+          <textarea id="reportNotes" class="form-control" placeholder="أي ملاحظات إضافية أو توصيات للمتابعة..."></textarea>
+        </div>
+
+        <p id="formError" class="form-error" hidden></p>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-outline primary">حفظ التقرير</button>
+          <a href="reports.html" class="btn-outline ghost">إلغاء</a>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
