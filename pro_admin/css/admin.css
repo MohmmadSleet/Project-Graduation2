@@ -109,3 +109,22 @@ body{background:var(--admin-bg);}
 }
 
 .admin-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0d4745;color:#fff;padding:12px 18px;border-radius:12px;box-shadow:0 8px 25px #0002;z-index:9999;font-size:.9rem;}
+
+/* ===== Admin full-control additions ===== */
+.admin-edit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.admin-grid-full{grid-column:1/-1;}
+.admin-filter-select{min-height:50px;border-color:#ddd4c5;border-radius:12px;background:#fff;}
+.admin-appointment-card{display:flex;align-items:center;gap:14px;padding:16px;}
+.admin-appt-date{min-width:110px;display:flex;flex-direction:column;gap:3px;}
+.admin-appt-date small{color:var(--admin-muted);}
+.admin-appointment-card .btn{white-space:nowrap;}
+.activity-row small{line-height:1.6;}
+.modal-content{border:0;border-radius:18px;box-shadow:0 20px 70px #0002;}
+.modal-header,.modal-footer{border-color:var(--admin-border);}
+@media (max-width:767px){
+  .admin-edit-grid{grid-template-columns:1fr;}
+  .admin-grid-full{grid-column:auto;}
+  .admin-appointment-card{align-items:flex-start;flex-wrap:wrap;}
+  .admin-appointment-card .flex-grow-1{min-width:calc(100% - 130px);}
+  .admin-appt-date{min-width:100px;}
+}

@@ -26,7 +26,7 @@
       </div>
 
       <!-- النموذج -->
-      <form class="pro-form" onsubmit="event.preventDefault(); alert('تم تسجيل الدخول بنجاح!');">
+      <form class="pro-form" id="loginForm">
         
         <div class="pro-input-group">
           <label for="email">البريد الإلكتروني</label>
@@ -68,5 +68,24 @@
 
   </div>
 
+<script src="js/site-data.js"></script>
+<script>
+document.getElementById('loginForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const result = DentalStore.login(email, password);
+  if (!result.ok) {
+    if (result.reason === 'pending') alert('حساب الطبيب ما زال بانتظار اعتماد الإدارة.');
+    else if (result.reason === 'disabled') alert('هذا الحساب معطّل. تواصل مع إدارة النظام.');
+    else alert('البريد الإلكتروني أو كلمة المرور غير صحيحة.');
+    return;
+  }
+  const user = result.user;
+  if (user.role === 'admin') window.location.href = 'pro_admin/admin-dashboard.html';
+  else if (user.role === 'doctor') window.location.href = 'doctor_dashboard/index.html';
+  else window.location.href = 'pro_patient/index.html';
+});
+</script>
 </body>
 </html>

@@ -4,6 +4,12 @@
    ========================================================== */
 const APPT_STORAGE_KEY = 'dental_appointments_v1';
 
+function auditDoctor(action, label, targetId, targetName, details, category = 'appointments') {
+  if (!window.DentalStore) return;
+  const actor = DentalStore.getCurrentUser() || { id: 'doctor-local', name: 'الطبيب', role: 'doctor' };
+  DentalStore.addLog({ category, action, label, actor, targetId: targetId || '', targetName: targetName || '', details: details || '' });
+}
+
 // "اليوم" مرتبط فعليًا بتاريخ جهاز المستخدم الحقيقي (مو تاريخ ثابت بالكود)
 function getTodayISO() {
   const d = new Date();
@@ -453,6 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!window.confirm('هل تريد تسجيل هذا الموعد كزيارة مكتملة؟')) return;
         appt.status = 'مكتمل';
         saveAppointments(appointments.map(a => a.id === appt.id ? appt : a));
+        auditDoctor('DOCTOR_APPOINTMENT_COMPLETED', 'إنهاء زيارة', appt.id, appt.patientName, 'قام الطبيب بتسجيل الموعد كمكتمل.');
         window.location.href = 'appointments.html';
       });
 
@@ -462,6 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!window.confirm('هل أنت متأكد من إلغاء هذا الموعد؟')) return;
         appt.status = 'ملغى';
         saveAppointments(appointments.map(a => a.id === appt.id ? appt : a));
+        auditDoctor('DOCTOR_APPOINTMENT_CANCELLED', 'إلغاء موعد بواسطة الطبيب', appt.id, appt.patientName, 'قام الطبيب بإلغاء الموعد.');
         window.location.href = 'appointments.html';
       });
     }
@@ -598,6 +606,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       appointments.push(newAppt);
       saveAppointments(appointments);
+      auditDoctor('DOCTOR_APPOINTMENT_CREATED', 'إنشاء موعد بواسطة الطبيب', newAppt.id, newAppt.patientName, `أنشأ الطبيب موعدًا بتاريخ ${newAppt.date} الساعة ${newAppt.time}.`);
       window.location.href = 'appointments.html';
     });
   }
@@ -633,6 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       patients.push(newPatient);
       savePatients(patients);
+      auditDoctor('DOCTOR_PATIENT_RECORD_CREATED', 'إضافة سجل مريض', newPatient.id, newPatient.name, 'قام الطبيب بإضافة سجل مريض جديد.', 'users');
       window.location.href = 'patients.html';
     });
   }
@@ -710,6 +720,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       reports.push(newReport);
       saveReports(reports);
+      auditDoctor('DOCTOR_REPORT_CREATED', 'إنشاء تقرير طبي', newReport.id, newReport.patientName, `تم إنشاء تقرير من نوع ${newReport.reportType}.`, 'system');
       window.location.href = 'reports.html';
     });
   }
@@ -808,6 +819,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const availability = getAvailability();
       availability.weeklySchedule[btn.dataset.enableDay].enabled = true;
       saveAvailability(availability);
+      auditDoctor('DOCTOR_AVAILABILITY_UPDATED', 'تعديل توفر الطبيب', '', btn.dataset.enableDay, `تم تفعيل يوم ${btn.dataset.enableDay}.`, 'system');
       renderWeeklyTable();
     });
 
@@ -816,8 +828,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const btn = e.target.closest('[data-remove-exception]');
       if (!btn) return;
       const availability = getAvailability();
-      availability.exceptions.splice(Number(btn.dataset.removeException), 1);
+      const removedException = availability.exceptions.splice(Number(btn.dataset.removeException), 1)[0];
       saveAvailability(availability);
+      auditDoctor('DOCTOR_AVAILABILITY_EXCEPTION_REMOVED', 'حذف استثناء من التوفر', '', removedException ? removedException.date : '', 'قام الطبيب بحذف استثناء من جدول التوفر.', 'system');
       renderExceptionsTable();
     });
 
@@ -848,6 +861,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dayInfo.slots.push({ id: nextSlotId(dayInfo.slots), start, end });
       dayInfo.enabled = true;
       saveAvailability(availability);
+      auditDoctor('DOCTOR_AVAILABILITY_SLOT_ADDED', 'إضافة وقت متاح', '', day, `تمت إضافة الفترة ${start} - ${end} ليوم ${day}.`, 'system');
 
       renderWeeklyTable();
       showAvailabilityMsg(msg, `تمت إضافة الوقت ${start} - ${end} ليوم ${day}`, false);
@@ -883,6 +897,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const slot = availability.weeklySchedule[day].slots.find(s => s.id === slotId);
       if (slot) { slot.start = start; slot.end = end; }
       saveAvailability(availability);
+      auditDoctor('DOCTOR_AVAILABILITY_SLOT_EDITED', 'تعديل وقت متاح', '', day, `تم تعديل الفترة إلى ${start} - ${end} ليوم ${day}.`, 'system');
 
       renderWeeklyTable();
       refreshEditSlotOptions();
@@ -917,6 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       saveAppointments(appointments);
+      auditDoctor('DOCTOR_DAY_DISABLED', 'تعطيل يوم عمل', '', dateVal, `تم تعطيل التاريخ وإلغاء ${cancelledCount} موعد.`, 'system');
 
       renderExceptionsTable();
       showAvailabilityMsg(msg, `تم تعطيل تاريخ ${formatDateDisplay(dateVal)} (${weekdayName}) وإلغاء ${cancelledCount} موعد — ستظهر ملغاة بصفحة المواعيد`, false);
@@ -939,6 +955,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (existingIdx > -1) availability.exceptions[existingIdx] = newException;
       else availability.exceptions.push(newException);
       saveAvailability(availability);
+      auditDoctor('DOCTOR_CUSTOM_HOURS_UPDATED', 'تعديل ساعات يوم محدد', '', dateVal, `تم تحديد ساعات ${start} - ${end}.`, 'system');
 
       renderExceptionsTable();
       showAvailabilityMsg(msg, `تم حفظ ساعات مخصصة ليوم ${formatDateDisplay(dateVal)}`, false);

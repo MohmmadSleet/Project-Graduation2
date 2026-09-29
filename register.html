@@ -220,6 +220,7 @@
 
   </div>
 
+  <script src="js/site-data.js"></script>
   <script>
     let currentRole = 'patient';
 
@@ -291,15 +292,42 @@
         return;
       }
 
-      if (currentRole === 'doctor') {
-        // إخفاء النموذج وإظهار شاشة الانتظار والمراجعة للطبيب
-        document.getElementById('registerForm').classList.add('hidden');
-        document.querySelector('.user-type-selector').classList.add('hidden');
-        document.getElementById('card-footer').classList.add('hidden');
-        document.getElementById('review-status').classList.remove('hidden');
-      } else {
-        alert('تم إنشاء الحساب بنجاح!');
-        window.location.href = 'login.html';
+      try {
+        if (currentRole === 'doctor') {
+          DentalStore.createUser({
+            role: 'doctor',
+            firstName: document.getElementById('doctor-firstname').value.trim(),
+            lastName: document.getElementById('doctor-lastname').value.trim(),
+            name: 'د. ' + document.getElementById('doctor-firstname').value.trim() + ' ' + document.getElementById('doctor-lastname').value.trim(),
+            specialty: document.getElementById('specialty').selectedOptions[0].textContent,
+            license: document.getElementById('license').value.trim(),
+            clinic: document.getElementById('clinic-loc').value.trim(),
+            email: document.getElementById('doctor-email').value.trim(),
+            password: password,
+            status: 'pending'
+          });
+          document.getElementById('registerForm').classList.add('hidden');
+          document.querySelector('.user-type-selector').classList.add('hidden');
+          document.getElementById('card-footer').classList.add('hidden');
+          document.getElementById('review-status').classList.remove('hidden');
+        } else {
+          DentalStore.createUser({
+            role: 'patient',
+            firstName: document.getElementById('patient-firstname').value.trim(),
+            lastName: document.getElementById('patient-lastname').value.trim(),
+            name: document.getElementById('patient-firstname').value.trim() + ' ' + document.getElementById('patient-lastname').value.trim(),
+            dob: document.getElementById('dob').value,
+            gender: document.getElementById('gender').value,
+            phone: document.getElementById('phone').value.trim(),
+            email: document.getElementById('patient-email').value.trim(),
+            password: password,
+            status: 'active'
+          });
+          alert('تم إنشاء الحساب بنجاح!');
+          window.location.href = 'login.html';
+        }
+      } catch (error) {
+        alert(error.message || 'تعذر إنشاء الحساب.');
       }
     }
   </script>
