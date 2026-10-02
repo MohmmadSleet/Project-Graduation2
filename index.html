@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -12,223 +11,117 @@
 <body>
 
   <!-- ========================= -->
-  <!-- Header -->
+  <!-- Header Placeholder -->
   <!-- ========================= -->
+<<<<<<< HEAD
 
 
 
 
+=======
+  <div id="header-placeholder"></div>
+>>>>>>> d0e81b4b3794007d80909c1b001cff90cf167dfa
 
   <!-- ========================= -->
   <!-- Main Content -->
   <!-- ========================= -->
-
   <main>
-
 
     <!-- Hero Section -->
     <section class="hero-section">
-
       <div class="container hero-container">
-
-
         <div class="hero-text">
-
           <h1>
             منصة رقمية شاملة تجمع التشخيص الأول بالذكاء الاصطناعي
           </h1>
-
           <p>
             نظام موحد لخدمة المرضى والأطباء،
             وتوفير فرص التوظيف للخريجين الجدد
             وفرص التدريب الميداني لطلاب طب الأسنان في فلسطين.
           </p>
-
-
           <div class="hero-buttons">
-
-            <a href="ai-diagnosis.html" class="btn btn--light">
+            <a href="login.html" class="btn btn--light">
               🤖 بدء التشخيص الذكي
             </a>
-
             <a href="register.html" class="btn btn--primary">
               إنشاء حساب جديد
             </a>
-
           </div>
-
         </div>
-
-
 
         <div class="hero-badge">
-
-          <span class="hero-badge-icon">
-            🦷
-          </span>
-
-          <h3>
-            تشخيص فوري
-          </h3>
-
-          <p>
-            حلل أعراضك خلال ثوانٍ وبدقة عالية
-          </p>
-
+          <span class="hero-badge-icon">🦷</span>
+          <h3>تشخيص فوري</h3>
+          <p>حلل أعراضك خلال ثوانٍ وبدقة عالية</p>
         </div>
-
-
       </div>
-
     </section>
 
-
-
-    <!-- ========================= -->
     <!-- Services Section -->
-    <!-- ========================= -->
-
     <section class="features-section">
-
       <div class="container">
-
-
         <div class="section-header">
-
-          <h2>
-            خدمات منصة عيادتي
-          </h2>
-
-          <p>
-            نقدم حلولاً متكاملة تجمع كافة أطراف العملية الطبية
-          </p>
-
+          <h2>خدمات منصة عيادتي</h2>
+          <p>نقدم حلولاً متكاملة تجمع كافة أطراف العملية الطبية</p>
         </div>
 
-
-
         <div class="services-grid">
-
-
           <!-- AI Diagnosis -->
           <div class="service-card">
-
-            <div class="service-icon">
-              🤖
-            </div>
-
-            <h3>
-              التشخيص الذكي
-            </h3>
-
-            <p>
-              مساعد ذكي يستمع لأعراضك
-              ويوجهك للتخصص الطبي المناسب فوراً.
-            </p>
-
+            <div class="service-icon">🤖</div>
+            <h3>التشخيص الذكي</h3>
+            <p>مساعد ذكي يستمع لأعراضك ويوجهك للتخصص الطبي المناسب فوراً.</p>
           </div>
-
-
 
           <!-- Appointment -->
           <div class="service-card">
-
-            <div class="service-icon">
-              📅
-            </div>
-
-            <h3>
-              حجز المواعيد
-            </h3>
-
-            <p>
-              إمكانية استعراض جداول الأطباء
-              وحجز المواعيد بسهولة وسرعة.
-            </p>
-
+            <div class="service-icon">📅</div>
+            <h3>حجز المواعيد</h3>
+            <p>إمكانية استعراض جداول الأطباء وحجز المواعيد بسهولة وسرعة.</p>
           </div>
 
-
-
           <!-- Jobs -->
-          <a href="jobs.html"
-            class="service-card service-card-link">
-
-            <div class="service-icon">
-              💼
-            </div>
-
-            <h3>
-              فرص التوظيف والتدريب
-            </h3>
-
-            <p>
-              ربط الخريجين والطلاب بالمراكز
-              والعيادات للحصول على تدريب وفرص عمل.
-            </p>
-
-          </a>
-
-
+          <div class="service-card service-card-link">
+            <div class="service-icon">💼</div>
+            <h3>فرص التوظيف والتدريب</h3>
+            <p>ربط الخريجين والطلاب بالمراكز والعيادات للحصول على تدريب وفرص عمل.</p>
+          </div>
         </div>
-
       </div>
-
     </section>
-
 
   </main>
 
-
-
   <!-- ========================= -->
-  <!-- Footer -->
+  <!-- Footer Placeholder -->
   <!-- ========================= -->
-
   <div id="footer-placeholder"></div>
-
-
 
   <!-- ========================= -->
   <!-- JavaScript -->
   <!-- ========================= -->
-
   <script>
-
-    /* Mobile Menu */
-
-    const navbar = document.getElementById('navbar');
-    const menuBtn = document.getElementById('menuBtn');
-
-    if (menuBtn) {
-
-      menuBtn.addEventListener('click', function () {
-
-        navbar.classList.toggle('active');
-
-      });
-
-    }
-
-
-    /* Footer */
+    // جلب الهيدر والفوتر تلقائياً
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Header error:', error));
 
     fetch('footer.html')
       .then(response => response.text())
       .then(data => {
-
         document.getElementById('footer-placeholder').innerHTML = data;
-
       })
-      .catch(error => {
-
-        console.error('Footer error:', error);
-
-      });
-
+      .catch(error => console.error('Footer error:', error));
   </script>
 
-
+<script src="js/site-data.js"></script>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> d0e81b4b3794007d80909c1b001cff90cf167dfa

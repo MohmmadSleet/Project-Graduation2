@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>المتابعات | Smart Dental Clinic</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css" rel="stylesheet"/><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet"/><link href="assets/styles.css" rel="stylesheet"/></head><body>
+<nav class="navbar clinic-navbar bg-white border-bottom sticky-top">
+<div class="container-fluid clinic-nav-layout px-3 px-lg-4">
+<a aria-label="الصفحة الرئيسية" class="clinic-brand clinic-brand-left" href="index.html">
+<span class="clinic-brand-mark"><i class="bi bi-heart-pulse-fill"></i></span>
+<span class="clinic-brand-copy"><strong>عيادة الابتسامة الحديثة</strong><small>Smart Dental Clinic</small></span>
+</a>
+<div class="clinic-desktop-nav d-none d-xl-flex justify-content-center">
+<ul class="navbar-nav flex-row align-items-center"><li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li><li class="nav-item"><a class="nav-link" href="appointments.html">المواعيد</a></li><li class="nav-item"><a class="nav-link" href="patients.html">المرضى</a></li><li class="nav-item"><a class="nav-link" href="doctors.html">الأطباء</a></li><li class="nav-item"><a class="nav-link" href="invoices.html">الفواتير</a></li><li class="nav-item"><a class="nav-link" href="job-applicants.html">المتقدمون</a></li></ul>
+</div>
+<div class="clinic-nav-actions">
+<div class="dropdown">
+<button aria-label="اختيار اللغة" class="top-action mobile-compact-action" data-bs-toggle="dropdown" title="اللغة" type="button">
+<i class="bi bi-globe2"></i><span class="d-none d-xxl-inline">AR</span>
+</button>
+<ul class="dropdown-menu dropdown-menu-end clean-dropdown language-menu">
+<li><button class="dropdown-item active" data-language="ar">العربية <small class="float-start text-secondary">AR</small></button></li>
+<li><button class="dropdown-item" data-language="en">English <small class="float-start text-secondary">EN</small></button></li>
+</ul>
+</div>
+<div class="dropdown notification-dropdown">
+<button aria-label="الإشعارات" class="top-action mobile-compact-action" data-bs-display="static" data-bs-toggle="dropdown" title="الإشعارات" type="button">
+<i class="bi bi-bell"></i><span class="notification-dot">5</span>
+</button>
+<div class="dropdown-menu clean-dropdown notification-menu mobile-notification-menu notification-menu-safe">
+<div class="px-3 py-2 d-flex justify-content-between align-items-center"><strong>الإشعارات</strong><span class="badge text-bg-primary rounded-pill">5</span></div>
+<div class="dropdown-divider"></div>
+<a class="notification-entry" href="appointments.html"><strong>طلب حجز جديد</strong><div class="small text-secondary">طلب يحتاج موافقة.</div></a>
+<a class="notification-entry" href="recalls.html"><strong>متابعة مستحقة</strong><div class="small text-secondary">متابعة بانتظار الحجز.</div></a>
+<a class="notification-entry" href="lab-cases.html"><strong>حالة مخبرية</strong><div class="small text-secondary">تم استلام حالة من المختبر.</div></a>
+<a class="notification-entry" href="job-applicants.html"><strong>متقدم جديد</strong><div class="small text-secondary">طلب توظيف جديد بانتظار المراجعة.</div></a>
+</div>
+</div>
+<div class="dropdown profile-action-dropdown">
+<button aria-label="حساب العيادة" class="clinic-profile-trigger compact-profile-trigger" data-bs-display="static" data-bs-toggle="dropdown" title="الملف الشخصي" type="button">
+<span class="clinic-avatar">ع</span><i class="bi bi-chevron-down small text-secondary d-none d-sm-inline"></i>
+</button>
+<div class="dropdown-menu dropdown-menu-end clean-dropdown profile-dropdown-menu">
+<a class="dropdown-item" href="profile.html"><i class="bi bi-hospital"></i>ملف العيادة</a>
+<a class="dropdown-item" href="staff.html"><i class="bi bi-person-gear"></i>الموظفون والصلاحيات</a><a class="dropdown-item" href="account-settings.html"><i class="bi bi-gear"></i>إعدادات الحساب</a>
+<a class="dropdown-item" href="job-applicants.html"><i class="bi bi-person-lines-fill"></i>المتقدمون للوظائف</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item text-primary fw-bold" href="../doctor/index.html"><i class="bi bi-arrow-left-right"></i>تبديل لمساحة الطبيب</a>
+<div class="px-3 py-2 bg-light rounded-3 mx-2 mb-2">
+<small class="text-secondary d-block">الحساب الحالي</small>
+<strong class="small">د. عمر ناصر • مالك ومدير العيادة</strong>
+</div>
+<button class="dropdown-item text-danger" data-logout=""><i class="bi bi-box-arrow-right"></i>تسجيل الخروج</button>
+</div>
+</div>
+<button aria-controls="sectionsDrawer" aria-label="كل الأقسام" class="btn btn-outline-primary sections-trigger mobile-sections-trigger" data-bs-target="#sectionsDrawer" data-bs-toggle="offcanvas" title="كل الأقسام" type="button">
+<i class="bi bi-grid-3x3-gap"></i><span class="d-none d-xxl-inline me-1">كل الأقسام</span>
+</button>
+</div>
+</div>
+</nav>
+<div class="offcanvas offcanvas-start mobile-drawer sections-drawer" id="sectionsDrawer" tabindex="-1">
+<div class="drawer-header">
+<div class="drawer-clinic"><div class="drawer-avatar">ع</div><div><h6 class="mb-1 fw-bold">عيادة الابتسامة الحديثة</h6><small class="opacity-75">كل الأقسام</small></div></div>
+<button aria-label="إغلاق" class="drawer-close" data-bs-dismiss="offcanvas"><i class="bi bi-x-lg"></i></button>
+</div>
+<div class="offcanvas-body p-0"><div class="drawer-content"><div class="drawer-title mt-3">الأساسية</div><a class="drawer-link" href="index.html">
+<span class="drawer-icon"><i class="bi bi-house"></i></span>
+<span class="flex-grow-1">الرئيسية</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="appointments.html">
+<span class="drawer-icon"><i class="bi bi-calendar2-check"></i></span>
+<span class="flex-grow-1">المواعيد</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="new-appointment.html">
+<span class="drawer-icon"><i class="bi bi-calendar2-plus"></i></span>
+<span class="flex-grow-1">إضافة موعد</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="patients.html">
+<span class="drawer-icon"><i class="bi bi-people"></i></span>
+<span class="flex-grow-1">المرضى</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="doctors.html">
+<span class="drawer-icon"><i class="bi bi-person-badge"></i></span>
+<span class="flex-grow-1">الأطباء</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="services.html">
+<span class="drawer-icon"><i class="bi bi-list-check"></i></span>
+<span class="flex-grow-1">الخدمات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="specialties.html">
+<span class="drawer-icon"><i class="bi bi-grid"></i></span>
+<span class="flex-grow-1">التخصصات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="invoices.html">
+<span class="drawer-icon"><i class="bi bi-receipt"></i></span>
+<span class="flex-grow-1">الفواتير</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-3">التشغيل</div><a class="drawer-link" href="operations.html">
+<span class="drawer-icon"><i class="bi bi-clipboard2-pulse"></i></span>
+<span class="flex-grow-1">التشغيل اليومي</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="recalls.html">
+<span class="drawer-icon"><i class="bi bi-arrow-repeat"></i></span>
+<span class="flex-grow-1">المتابعات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="treatment-plans.html">
+<span class="drawer-icon"><i class="bi bi-journal-medical"></i></span>
+<span class="flex-grow-1">خطط العلاج</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="lab-cases.html">
+<span class="drawer-icon"><i class="bi bi-box-seam"></i></span>
+<span class="flex-grow-1">الحالات المخبرية</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="inventory.html">
+<span class="drawer-icon"><i class="bi bi-boxes"></i></span>
+<span class="flex-grow-1">المخزون</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="reports.html">
+<span class="drawer-icon"><i class="bi bi-bar-chart"></i></span>
+<span class="flex-grow-1">التقارير والتحليلات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-3">التوظيف والإدارة</div><a class="drawer-link" href="staff.html"><span class="drawer-icon"><i class="bi bi-person-gear"></i></span><span class="flex-grow-1">الموظفون والصلاحيات</span><i class="bi bi-chevron-left text-secondary small"></i></a><a class="drawer-link" href="jobs.html">
+<span class="drawer-icon"><i class="bi bi-briefcase"></i></span>
+<span class="flex-grow-1">الوظائف</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="job-applicants.html">
+<span class="drawer-icon"><i class="bi bi-person-lines-fill"></i></span>
+<span class="flex-grow-1">المتقدمون للوظائف</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="profile.html">
+<span class="drawer-icon"><i class="bi bi-hospital"></i></span>
+<span class="flex-grow-1">ملف العيادة</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="account-settings.html">
+<span class="drawer-icon"><i class="bi bi-gear"></i></span>
+<span class="flex-grow-1">إعدادات الحساب</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-4">الحساب</div><button class="drawer-link border-0 bg-transparent w-100 text-danger" data-logout=""><span class="drawer-icon"><i class="bi bi-box-arrow-right"></i></span><span class="flex-grow-1 text-end">تسجيل الخروج</span></button>
+<div class="drawer-title mt-4">تبديل المساحة</div>
+<a class="drawer-link" href="../doctor/index.html"><span class="drawer-icon"><i class="bi bi-arrow-left-right"></i></span><span class="flex-grow-1">الانتقال لمساحة الطبيب</span><i class="bi bi-chevron-left text-secondary small"></i></a>
+<a class="drawer-link" href="settlements.html"><span class="drawer-icon"><i class="bi bi-wallet2"></i></span><span class="flex-grow-1">تسويات المنصة</span></a></div></div>
+</div>
+<main class="page-shell"><section class="container py-4 py-lg-5"><div class="mb-4"><span class="badge badge-soft mb-2">Recall &amp; Follow-up</span><h1 class="fw-bold">المتابعات</h1><p class="text-secondary mb-0">تُنشأ من الموعد المقترح الذي يضعه الطبيب في تقرير المريض.</p></div><div class="alert alert-primary border-0 rounded-4"><i class="bi bi-info-circle ms-2"></i>إذا حجز <strong>المريض</strong> الموعد من حسابه أو حجزته <strong>العيادة</strong>، تتغير حالة المتابعة تلقائياً إلى <strong>تم الحجز</strong>.</div><div class="d-flex flex-wrap gap-2 mb-4 recall-status-tabs"><button class="btn btn-primary recall-filter-btn active" data-recall-status="all">الكل <span class="badge bg-white text-primary me-1">4</span></button><button class="btn btn-light recall-filter-btn" data-recall-status="waiting">بانتظار الحجز <span class="badge text-bg-warning me-1">1</span></button><button class="btn btn-light recall-filter-btn" data-recall-status="booked">تم الحجز <span class="badge text-bg-success me-1">2</span></button><button class="btn btn-light recall-filter-btn" data-recall-status="overdue">متأخرة <span class="badge text-bg-danger me-1">1</span></button></div><div class="filter-panel mb-4"><div class="input-group"><span class="input-group-text bg-white"><i class="bi bi-search"></i></span><input class="form-control" id="recallSearchV9" placeholder="ابحث باسم المريض، الطبيب أو نوع المتابعة"/></div></div><div class="row g-4" id="recallGridV9">
+<div class="col-md-6 recall-card-v9" data-search="أحمد خالد عمر ناصر علاج جذور 11 أكتوبر خطة علاج السن 46" data-status="booked"><div class="patient-card h-100"><div class="d-flex justify-content-between gap-3"><div><h5 class="fw-bold mb-1">أحمد خالد</h5><div class="small text-secondary">متابعة علاج جذور • د. عمر ناصر</div></div><span class="badge text-bg-success h-100">تم الحجز</span></div><div class="row g-2 mt-3 small"><div class="col-6"><span class="text-secondary">الموعد المقترح:</span><div class="fw-bold">11 أكتوبر 2026</div></div><div class="col-6"><span class="text-secondary">الموعد المحجوز:</span><div class="fw-bold">11 أكتوبر • 10:00 ص</div></div></div><div class="small text-primary mt-3"><i class="bi bi-diagram-3 ms-1"></i>مرتبط بخطة علاج جذور السن 46 • الجلسة 2 من 3.</div><div class="mt-3"><a class="btn btn-outline-primary btn-sm" href="appointments.html">عرض الموعد</a> <a class="btn btn-light btn-sm" href="treatment-plans.html">ملخص الخطة</a></div></div></div>
+<div class="col-md-6 recall-card-v9" data-search="سارة جميل يوسف حماد تنظيف دوري 11 أكتوبر" data-status="booked"><div class="patient-card h-100"><div class="d-flex justify-content-between gap-3"><div><h5 class="fw-bold mb-1">سارة جميل</h5><div class="small text-secondary">تنظيف دوري • د. يوسف حماد</div></div><span class="badge text-bg-success h-100">تم الحجز</span></div><div class="row g-2 mt-3 small"><div class="col-6"><span class="text-secondary">الموعد المقترح:</span><div class="fw-bold">11 أكتوبر 2026</div></div><div class="col-6"><span class="text-secondary">الموعد المحجوز:</span><div class="fw-bold">11 أكتوبر • 11:30 ص</div></div></div><div class="mt-3"><a class="btn btn-outline-primary btn-sm" href="appointments.html">عرض الموعد</a></div></div></div>
+<div class="col-md-6 recall-card-v9" data-search="ريم ناصر سارة عادل تجميل 28 سبتمبر" data-status="overdue"><div class="patient-card h-100"><div class="d-flex justify-content-between gap-3"><div><h5 class="fw-bold mb-1">ريم ناصر</h5><div class="small text-secondary">مراجعة إجراء تجميلي • د. سارة عادل</div></div><span class="badge text-bg-danger h-100">متأخرة</span></div><div class="row g-2 mt-3 small"><div class="col-6"><span class="text-secondary">الموعد المقترح:</span><div class="fw-bold">28 سبتمبر 2026</div></div><div class="col-6"><span class="text-secondary">الحالة:</span><div class="fw-bold text-danger">لم يتم الحجز</div></div></div><div class="mt-3"><a class="btn btn-primary btn-sm" href="new-appointment.html?patient=reem&amp;type=followup">حجز الآن</a></div></div></div>
+<div class="col-md-6 recall-card-v9" data-search="محمد سمير ليان الخطيب تقويم 18 أكتوبر" data-status="waiting"><div class="patient-card h-100"><div class="d-flex justify-content-between gap-3"><div><h5 class="fw-bold mb-1">محمد سمير</h5><div class="small text-secondary">متابعة تقويم • د. ليان الخطيب</div></div><span class="badge text-bg-warning h-100">بانتظار الحجز</span></div><div class="row g-2 mt-3 small"><div class="col-6"><span class="text-secondary">الموعد المقترح:</span><div class="fw-bold">18 أكتوبر 2026</div></div><div class="col-6"><span class="text-secondary">مصدر المتابعة:</span><div class="fw-bold">تقرير الطبيب</div></div></div><div class="mt-3"><a class="btn btn-primary btn-sm" href="new-appointment.html?patient=mohammad&amp;type=followup">حجز الموعد</a></div></div></div>
+</div><div class="empty-state d-none mt-4" id="recallEmptyV9"><i class="bi bi-search fs-1"></i><h5 class="fw-bold mt-3">لا توجد متابعة مطابقة</h5></div></section></main>
+<footer class="site-footer mt-5"><div class="container py-5"><div class="row g-4"><div class="col-lg-5"><a class="footer-brand" href="index.html"><i class="bi bi-heart-pulse-fill ms-2"></i>Smart Dental Clinic</a><p class="footer-description mt-3 mb-0">واجهة إدارة العيادة للمواعيد، المرضى، الأطباء، المالية، التشغيل والتوظيف.</p></div><div class="col-6 col-lg-3"><h6 class="footer-title">التشغيل</h6><ul class="footer-links"><li><a href="operations.html">التشغيل اليومي</a></li><li><a href="recalls.html">المتابعات</a></li><li><a href="lab-cases.html">الحالات المخبرية</a></li><li><a href="inventory.html">المخزون</a></li></ul></div><div class="col-6 col-lg-4"><h6 class="footer-title">الإدارة</h6><ul class="footer-links"><li><a href="staff.html">الموظفون والصلاحيات</a></li><li><a href="invoices.html">الفواتير</a></li><li><a href="reports.html">التقارير التشغيلية</a></li><li><a href="job-applicants.html">المتقدمون للوظائف</a></li><li><a href="account-settings.html">إعدادات الحساب</a></li></ul></div></div><div class="footer-bottom mt-4 pt-4 d-flex flex-column flex-md-row justify-content-between gap-2"><div>© <span data-year=""></span> Smart Dental Clinic — Graduation Project</div><div>Clinic Management Front-end Demo</div></div></div></footer>
+<div class="toast-container position-fixed bottom-0 start-0 p-3"><div class="toast align-items-center text-bg-primary border-0" id="appToast"><div class="d-flex"><div class="toast-body">تمت العملية</div><button class="btn-close btn-close-white m-auto ms-2" data-bs-dismiss="toast"></button></div></div></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/app.js"></script></body></html>

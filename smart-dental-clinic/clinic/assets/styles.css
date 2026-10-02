@@ -1,0 +1,1652 @@
+
+:root{
+  --primary:#1e6fe8;
+  --primary-dark:#1559bd;
+  --soft:#eef5ff;
+  --navy:#0f172a;
+  --text:#172033;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --bg:#f7f9fc;
+  --success:#16a34a;
+  --warning:#d97706;
+  --danger:#dc2626;
+  --info:#0891b2;
+}
+*{box-sizing:border-box}
+body{
+  font-family:"Tahoma","Arial",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+a{text-decoration:none}
+.page-shell{min-height:calc(100vh - 145px)}
+.section-title{font-weight:800}
+.soft-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(15,23,42,.04);
+}
+.icon-box{
+  width:46px;height:46px;border-radius:14px;
+  background:var(--soft);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;
+}
+.badge-soft{background:var(--soft);color:var(--primary);font-weight:700}
+.btn{border-radius:12px;font-weight:700}
+.btn-primary{background:var(--primary);border-color:var(--primary)}
+.btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark)}
+.form-control,.form-select{
+  border-radius:12px;
+  padding:.72rem .9rem;
+  border-color:#d8e0ea;
+}
+.form-control:focus,.form-select:focus{
+  border-color:#9fc0f6;
+  box-shadow:0 0 0 .2rem rgba(30,111,232,.10);
+}
+.table>:not(caption)>*>*{padding:.95rem .75rem;vertical-align:middle}
+.filter-panel{
+  background:#fff;border:1px solid var(--border);
+  border-radius:18px;padding:1rem;
+}
+.empty-state{
+  text-align:center;padding:3rem 1rem;color:#64748b;
+}
+
+/* Navbar */
+.clinic-navbar{
+  min-height:72px;
+  box-shadow:0 2px 14px rgba(15,23,42,.04);
+  z-index:1040;
+}
+.clinic-navbar .container{
+  min-height:72px;display:flex;align-items:center;gap:1rem;flex-wrap:nowrap;
+}
+.clinic-brand{
+  display:flex;align-items:center;white-space:nowrap;
+  font-size:1.25rem;font-weight:800;color:#172033!important;
+}
+.clinic-brand i,.clinic-brand .brand-accent{color:var(--primary)}
+.clinic-desktop-nav{flex:1;justify-content:center;min-width:0}
+.clinic-desktop-nav .navbar-nav{gap:.2rem;flex-wrap:nowrap}
+.clinic-desktop-nav .nav-link{
+  color:#475569!important;border-radius:10px;
+  padding:.55rem .7rem!important;white-space:nowrap;font-size:.94rem;
+}
+.clinic-desktop-nav .nav-link:hover{
+  color:var(--primary)!important;background:#f4f7fb;
+}
+.clinic-desktop-nav .nav-link.active{
+  color:var(--primary)!important;background:#eef5ff;
+}
+.nav-actions{display:flex;align-items:center;gap:.55rem;flex:0 0 auto}
+.top-action{
+  min-width:44px;height:44px;border:1px solid #e2e8f0;border-radius:13px;
+  background:#fff;color:#334155;display:inline-flex;align-items:center;
+  justify-content:center;gap:.35rem;position:relative;padding:0 .7rem;font-weight:700;
+}
+.top-action:hover{color:var(--primary);border-color:#bfd5fb;background:#f8fbff}
+.notification-dot{
+  position:absolute;top:-5px;left:-5px;min-width:19px;height:19px;
+  padding:0 4px;border-radius:20px;background:#ef4444;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:.68rem;
+  font-weight:800;border:2px solid #fff;
+}
+.clinic-profile-trigger{
+  height:48px;display:flex;align-items:center;gap:.6rem;
+  border:1px solid #e2e8f0;border-radius:15px;background:#fff;
+  padding:.25rem .5rem .25rem .7rem;color:#172033;
+}
+.clinic-profile-trigger:hover{border-color:#bfd5fb;background:#f8fbff}
+.clinic-avatar{
+  width:38px;height:38px;flex:0 0 38px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  color:#fff;background:linear-gradient(135deg,#1e6fe8,#65a1f5);
+  font-weight:800;box-shadow:0 4px 12px rgba(30,111,232,.22);
+}
+.profile-copy{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15}
+.profile-copy strong{font-size:.8rem;white-space:nowrap}
+.profile-copy small{color:#94a3b8;font-size:.69rem}
+.clean-dropdown{
+  margin-top:.6rem!important;border:1px solid #e2e8f0;border-radius:16px;
+  box-shadow:0 18px 45px rgba(15,23,42,.14);padding:.45rem;
+}
+.clean-dropdown .dropdown-item{
+  border-radius:10px;padding:.68rem .75rem;display:flex;align-items:center;gap:.7rem;
+}
+.clean-dropdown .dropdown-item:hover{background:#f8fafc;color:var(--primary)}
+.notification-menu{width:350px}
+.notification-menu .notification-entry{
+  padding:.8rem;border-radius:12px;display:block;color:var(--text);
+}
+.notification-menu .notification-entry:hover{background:#f8fafc}
+.mobile-action{
+  width:42px;height:42px;border:1px solid #e2e8f0;border-radius:13px;
+  background:#fff;color:#334155;display:inline-flex;align-items:center;
+  justify-content:center;position:relative;
+}
+.mobile-drawer{
+  width:min(88vw,390px)!important;border:0!important;
+  box-shadow:18px 0 55px rgba(15,23,42,.18);
+}
+.drawer-header{
+  min-height:112px;padding:1.25rem;
+  background:linear-gradient(135deg,#0f5fd7,#4b93f6);
+  color:#fff;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.drawer-clinic{display:flex;align-items:center;gap:.85rem}
+.drawer-avatar{
+  width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.8);
+  font-weight:800;font-size:1.1rem;
+}
+.drawer-close{
+  width:39px;height:39px;border:1px solid rgba(255,255,255,.24);
+  border-radius:12px;background:rgba(255,255,255,.1);color:#fff;
+}
+.drawer-content{padding:1rem}
+.drawer-title{
+  color:#94a3b8;font-size:.74rem;font-weight:800;
+  padding:.25rem .55rem .55rem;
+}
+.drawer-link{
+  min-height:52px;display:flex;align-items:center;gap:.75rem;
+  border-radius:14px;padding:.55rem .65rem;color:#334155;font-weight:700;
+  margin-bottom:.25rem;
+}
+.drawer-link:hover,.drawer-link.active{background:#eef5ff;color:var(--primary)}
+.drawer-icon{
+  width:38px;height:38px;flex:0 0 38px;border-radius:11px;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#f1f5f9;color:#64748b;
+}
+.drawer-link:hover .drawer-icon,.drawer-link.active .drawer-icon{
+  background:#dbeafe;color:var(--primary)
+}
+
+/* Dashboard */
+.dashboard-hero{
+  background:linear-gradient(135deg,#0f5fd7,#4b93f6);
+  color:#fff;border-radius:24px;padding:2rem;
+}
+.dashboard-hero-card{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:18px;padding:1.1rem;
+}
+.stat-card{
+  border:1px solid var(--border);border-radius:18px;background:#fff;
+  padding:1.15rem;height:100%;box-shadow:0 7px 22px rgba(15,23,42,.035);
+}
+.stat-value{font-size:1.7rem;font-weight:800}
+.action-row{
+  border:1px solid var(--border);border-radius:15px;background:#fff;
+  padding:1rem;display:flex;align-items:center;gap:.9rem;
+}
+.action-row + .action-row{margin-top:.75rem}
+.timeline-time{
+  width:80px;flex:0 0 80px;color:#64748b;font-weight:800;
+}
+.status-strip{
+  position:relative;overflow:hidden;border:1px solid var(--border);
+  border-radius:17px;background:#fff;
+}
+.status-strip::before{
+  content:"";position:absolute;inset-block:0;inset-inline-start:0;width:5px;background:var(--primary);
+}
+.status-strip.warning::before{background:#f59e0b}
+.status-strip.success::before{background:#22c55e}
+.status-strip.info::before{background:#06b6d4}
+.status-strip.danger::before{background:#ef4444}
+
+/* Appointment pages */
+.appointment-filter-buttons{display:flex;flex-wrap:wrap;gap:.5rem}
+.appointment-filter-buttons .btn{font-size:.86rem;padding:.55rem .75rem}
+.patient-mini{
+  width:44px;height:44px;border-radius:14px;background:#edf4ff;color:var(--primary);
+  display:flex;align-items:center;justify-content:center;font-weight:800;
+}
+.audit-item{
+  padding:.9rem 0;border-bottom:1px solid var(--border);
+}
+.audit-item:last-child{border-bottom:0}
+.privacy-box{
+  border:1px solid #dbeafe;background:#f8fbff;border-radius:16px;padding:1rem;
+}
+
+/* Doctors */
+.doctor-card{
+  border:1px solid var(--border);border-radius:18px;background:#fff;
+  overflow:hidden;height:100%;box-shadow:0 8px 24px rgba(15,23,42,.035);
+}
+.doctor-card-img{width:100%;height:165px;object-fit:cover}
+.doctor-meta{display:flex;gap:1rem;flex-wrap:wrap;color:#64748b;font-size:.85rem}
+.schedule-day{
+  display:grid;grid-template-columns:120px 1fr 1fr 100px;gap:.75rem;
+  align-items:center;padding:.85rem 0;border-bottom:1px solid var(--border);
+}
+.schedule-day:last-child{border-bottom:0}
+
+/* Services */
+.service-card{
+  border:1px solid var(--border);border-radius:18px;background:#fff;padding:1.1rem;height:100%;
+}
+.service-price{font-size:1.35rem;font-weight:800;color:var(--primary)}
+.doctor-chip{
+  display:inline-flex;align-items:center;gap:.35rem;
+  border:1px solid #dbeafe;background:#f8fbff;border-radius:999px;
+  padding:.35rem .65rem;font-size:.8rem;color:#315987;
+}
+
+/* Invoices */
+.invoice-accordion .accordion-item{
+  border:1px solid #dbe5f2;border-radius:18px!important;
+  overflow:hidden;background:#fff;margin-bottom:1rem;
+}
+.invoice-accordion .accordion-button{
+  background:#fff;font-weight:800;color:#123d73;padding:1.15rem 1.25rem;
+}
+.invoice-accordion .accordion-button:not(.collapsed){
+  background:#f8fbff;color:#123d73;box-shadow:none;
+}
+.invoice-accordion .accordion-button:focus{box-shadow:none}
+.invoice-summary{
+  background:#f8fbff;border:1px solid #dbe5f2;border-radius:16px;padding:1rem;
+}
+
+/* Profile */
+.profile-section{
+  border:1px solid var(--border);border-radius:18px;background:#fff;padding:1.2rem;
+}
+.hours-row{
+  display:grid;grid-template-columns:130px 1fr 1fr 100px;
+  gap:.75rem;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--border);
+}
+.hours-row:last-child{border-bottom:0}
+
+/* Footer */
+.site-footer{background:#0b1730;color:#cbd5e1}
+.footer-brand{
+  display:inline-flex;align-items:center;font-size:1.4rem;font-weight:800;color:#fff;
+}
+.footer-brand i,.footer-brand span{color:#5d9cff}
+.footer-description{color:#aebbd0;line-height:1.9}
+.footer-title{color:#fff;font-weight:800;margin-bottom:1rem}
+.footer-links{list-style:none;margin:0;padding:0}
+.footer-links li{margin-bottom:.7rem}
+.footer-links a{color:#aebbd0}
+.footer-links a:hover{color:#fff}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.09);
+  color:#94a3b8;font-size:.9rem;
+}
+
+@media(max-width:991.98px){
+  .clinic-navbar .container{min-height:64px}
+  .schedule-day,.hours-row{grid-template-columns:1fr 1fr}
+  .schedule-day > :first-child,.hours-row > :first-child{grid-column:1/-1}
+}
+@media(max-width:575.98px){
+  .clinic-brand{font-size:1.05rem}
+  .dashboard-hero{padding:1.25rem;border-radius:18px}
+  .schedule-day,.hours-row{grid-template-columns:1fr}
+  .schedule-day > :first-child,.hours-row > :first-child{grid-column:auto}
+}
+
+
+/* ===== Clinic Role v2 ===== */
+.multi-doctor-box{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:1rem;
+  background:#f8fafc;
+}
+.multi-doctor-box .form-check{
+  padding:.7rem .8rem .7rem 2rem;
+  border-bottom:1px solid #e5e7eb;
+}
+.multi-doctor-box .form-check:last-child{border-bottom:0}
+.patient-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#fff;
+  padding:1.15rem;
+  box-shadow:0 7px 22px rgba(15,23,42,.035);
+}
+.patient-avatar-box{
+  width:52px;height:52px;border-radius:15px;
+  background:#eef5ff;color:var(--primary);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:1.05rem;
+}
+.report-preview{
+  border:1px solid #dbe5f2;
+  background:#fff;
+  border-radius:18px;
+  padding:1.25rem;
+}
+.report-header{
+  border-bottom:2px solid #e5e7eb;
+  padding-bottom:1rem;
+  margin-bottom:1rem;
+}
+.catalog-item{
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:#fff;
+  padding:1rem;
+  height:100%;
+}
+.job-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#fff;
+  padding:1.15rem;
+  height:100%;
+  box-shadow:0 7px 22px rgba(15,23,42,.035);
+}
+.job-meta{
+  display:flex;gap:.65rem;flex-wrap:wrap;
+  color:#64748b;font-size:.84rem;
+}
+.readonly-medical{
+  background:#f8fafc;
+  border:1px dashed #cbd5e1;
+  border-radius:12px;
+  padding:.8rem;
+}
+.invoice-items-table th{white-space:nowrap}
+.nav-more .dropdown-menu{min-width:200px}
+@media print{
+  .clinic-navbar,.site-footer,.no-print,.toast-container{display:none!important}
+  body{background:#fff}
+  .page-shell{min-height:auto}
+  .report-preview{border:0;box-shadow:none;padding:0}
+}
+
+
+/* ===== v3 navbar cleanup ===== */
+.clinic-desktop-nav .navbar-nav{
+  align-items:center;
+}
+.clinic-desktop-nav .nav-item{
+  display:flex;
+  align-items:center;
+}
+.clinic-desktop-nav .nav-link{
+  line-height:1.2;
+}
+@media (max-width:1199.98px){
+  .clinic-desktop-nav{display:none!important}
+  .nav-actions{display:none!important}
+}
+
+/* ===== Clinic v4 operational modules ===== */
+.queue-status{
+  display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;
+  padding:.35rem .65rem;font-size:.8rem;font-weight:700;
+}
+@media(max-width:1399.98px){
+  .clinic-desktop-nav,.nav-actions{display:none!important}
+}
+
+
+/* ===== Visit Checkout ===== */
+.checkout-step{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  padding:.85rem 0;
+  border-bottom:1px solid var(--border);
+}
+.checkout-step:last-child{border-bottom:0}
+.checkout-step-icon{
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f1f5f9;
+  color:#64748b;
+}
+.checkout-step.complete .checkout-step-icon{
+  background:#dcfce7;
+  color:#16a34a;
+}
+.checkout-step.pending .checkout-step-icon{
+  background:#fff7ed;
+  color:#d97706;
+}
+
+
+/* ===== Clinic Role v6 refinements ===== */
+.doctor-schedule-table .form-control,
+.doctor-schedule-table .form-select{
+  min-width:110px;
+}
+.doctor-schedule-table th{
+  white-space:nowrap;
+}
+@media(max-width:991.98px){
+  .doctor-schedule-table{
+    min-width:1050px;
+  }
+}
+
+
+/* ===== Clinic v7 navigation restructure ===== */
+.clinic-navbar .container-fluid{
+  min-height:74px;
+}
+.clinic-desktop-nav{
+  min-width:0;
+}
+.clinic-desktop-nav .navbar-nav{
+  gap:.15rem;
+}
+.clinic-desktop-nav .nav-link{
+  padding:.55rem .7rem;
+  white-space:nowrap;
+  border-radius:10px;
+}
+.sections-trigger{
+  white-space:nowrap;
+  border-radius:12px;
+}
+.compact-profile-trigger{
+  padding:.2rem .35rem;
+  min-width:auto;
+}
+.sections-drawer{
+  width:min(390px,92vw)!important;
+}
+.sections-drawer .drawer-content{
+  padding-bottom:2rem;
+}
+.lab-status-select{
+  min-width:160px;
+}
+
+@media (max-width:1199.98px){
+  .clinic-desktop-nav{display:none!important;}
+}
+
+
+/* ===== Clinic v8: mobile navbar utilities remain visible ===== */
+.navbar-actions-responsive{
+  flex-shrink:0;
+}
+.mobile-compact-action{
+  width:42px;
+  height:42px;
+  padding:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+.mobile-sections-trigger{
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.mobile-notification-menu{
+  width:min(340px, calc(100vw - 24px));
+}
+.notification-dot{
+  position:absolute;
+  top:5px;
+  inset-inline-start:5px;
+}
+@media (max-width:767.98px){
+  .clinic-navbar .container-fluid{
+    flex-wrap:nowrap;
+    gap:.4rem;
+  }
+  .clinic-brand{
+    min-width:0;
+    flex-shrink:1;
+  }
+  .clinic-brand .brand-name{
+    white-space:nowrap;
+  }
+  .navbar-actions-responsive{
+    gap:.25rem!important;
+  }
+  .mobile-compact-action,
+  .mobile-sections-trigger{
+    width:38px;
+    height:38px;
+    min-height:38px;
+    border-radius:10px;
+  }
+  .mobile-sections-trigger{
+    padding:.35rem;
+  }
+}
+@media (max-width:420px){
+  .clinic-brand .brand-name{
+    font-size:.92rem;
+  }
+  .clinic-navbar .container-fluid{
+    padding-inline:.65rem!important;
+  }
+  .mobile-compact-action,
+  .mobile-sections-trigger{
+    width:36px;
+    height:36px;
+    min-height:36px;
+  }
+}
+
+
+/* ===== Clinic v9: final refinements ===== */
+.clinic-nav-layout{direction:ltr;display:flex!important;align-items:center;justify-content:space-between;gap:1rem;min-height:74px;flex-wrap:nowrap!important}
+.clinic-brand-left{direction:rtl;display:flex;align-items:center;gap:.65rem;text-decoration:none;flex:0 1 auto;min-width:0}
+.clinic-brand-mark{width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:#eaf2ff;color:#1e6fe8;flex:0 0 40px}
+.clinic-brand-copy{display:flex;flex-direction:column;line-height:1.2;min-width:0}.clinic-brand-copy strong{color:#15233b;white-space:nowrap}.clinic-brand-copy small{color:#7b8494;font-size:.72rem}
+.clinic-nav-right{direction:rtl;display:flex;align-items:center;justify-content:flex-start;gap:.65rem;min-width:0}.clinic-desktop-nav .navbar-nav{gap:.05rem}.clinic-desktop-nav .nav-link{padding:.5rem .58rem;white-space:nowrap;font-size:.94rem}
+.sections-drawer{width:285px!important;max-width:78vw!important}.sections-drawer .drawer-content{padding:1rem .7rem 1.5rem}.sections-drawer .drawer-link{padding:.65rem .7rem}.sections-drawer .drawer-title{font-size:.74rem}
+.followup-report-box{background:#f8fbff;border:1px solid #dbeafe;border-radius:16px;padding:1.1rem}.lab-status-select-v9{width:155px}.settings-toggle-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid #edf0f4}.settings-toggle-row:last-of-type{border-bottom:0}
+.analytics-kpi{background:#fff;border:1px solid #e8edf3;border-radius:18px;padding:1.15rem;height:100%}.analytics-icon{width:42px;height:42px;border-radius:12px;background:#eef5ff;color:#1e6fe8;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:.8rem}.analytics-kpi small{color:#7b8494}.analytics-value{font-size:1.55rem;font-weight:800;margin:.3rem 0}.analytics-bars{display:grid;gap:1rem}.analytics-bar-row{display:grid;grid-template-columns:55px 1fr 60px;align-items:center;gap:.8rem}.analytics-track{height:12px;border-radius:999px;background:#edf2f7;overflow:hidden}.analytics-fill{height:100%;border-radius:999px;background:#1e6fe8}.analytics-donut-placeholder{width:160px;height:160px;border-radius:50%;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;background:conic-gradient(#1e6fe8 0 82.9%,#e9eef5 82.9% 100%);position:relative}.analytics-donut-placeholder::after{content:"";position:absolute;width:112px;height:112px;background:#fff;border-radius:50%}.donut-number,.analytics-donut-placeholder small{position:relative;z-index:1}.donut-number{font-size:1.5rem;font-weight:800}.mini-analytics{border:1px solid #edf0f4;border-radius:14px;padding:1rem;display:flex;flex-direction:column;gap:.25rem}.mini-analytics strong{font-size:1.35rem}.service-rank{display:grid;grid-template-columns:125px 1fr 45px;align-items:center;gap:.75rem;padding:.65rem 0}.service-rank>div:first-child{display:flex;flex-direction:column}.service-rank small{color:#7b8494}.application-status-control{min-width:300px}
+@media(max-width:1199.98px){.clinic-desktop-nav{display:none!important}}
+@media(max-width:767.98px){.clinic-nav-layout{gap:.45rem;padding-inline:.65rem!important}.clinic-brand-mark{width:34px;height:34px;flex-basis:34px;border-radius:10px}.clinic-brand-copy strong{font-size:.82rem;max-width:132px;overflow:hidden;text-overflow:ellipsis}.clinic-brand-copy small{display:none}.clinic-nav-right{gap:.2rem}.mobile-compact-action,.mobile-sections-trigger{width:36px!important;height:36px!important;min-height:36px!important;padding:0!important;border-radius:9px!important}.notification-dropdown .mobile-notification-menu{position:fixed!important;top:62px!important;left:10px!important;right:10px!important;bottom:auto!important;width:auto!important;max-width:none!important;min-width:0!important;transform:none!important;margin:0!important;inset-inline:auto!important}.language-menu{min-width:145px}.sections-drawer{width:270px!important;max-width:76vw!important}.application-status-control{min-width:0;width:100%}.analytics-bar-row{grid-template-columns:48px 1fr 52px}.service-rank{grid-template-columns:105px 1fr 40px}}
+@media(max-width:390px){.clinic-brand-copy strong{max-width:105px;font-size:.76rem}.sections-drawer{width:255px!important;max-width:74vw!important}}
+
+
+/* ===== v10 final navbar layout ===== */
+.clinic-nav-layout{
+  direction:ltr!important;
+  display:grid!important;
+  grid-template-columns:minmax(205px,auto) minmax(0,1fr) auto!important;
+  align-items:center!important;
+  column-gap:1rem!important;
+  width:100%;min-height:74px;flex-wrap:nowrap!important;
+}
+.clinic-brand-left{grid-column:1!important;justify-self:start!important;direction:rtl!important;margin:0!important}
+.clinic-desktop-nav{grid-column:2!important;justify-self:center!important;direction:rtl!important;min-width:0}
+.clinic-nav-actions{grid-column:3!important;justify-self:end!important;direction:ltr!important;display:flex!important;align-items:center!important;gap:.45rem!important;white-space:nowrap!important}
+.clinic-nav-actions .dropdown-menu{direction:rtl!important;text-align:right!important}
+.profile-action-dropdown{display:block!important}
+.profile-dropdown-menu{width:270px!important}
+.clinic-nav-actions .sections-trigger{margin:0!important}
+@media (min-width:1200px){.clinic-desktop-nav{display:flex!important}}
+@media (max-width:1199.98px){
+  .clinic-nav-layout{grid-template-columns:minmax(145px,1fr) auto!important}
+  .clinic-brand-left{grid-column:1!important}.clinic-nav-actions{grid-column:2!important}.clinic-desktop-nav{display:none!important}
+}
+@media (max-width:767.98px){
+  .clinic-nav-layout{grid-template-columns:minmax(92px,1fr) auto!important;column-gap:.3rem!important;padding-inline:.55rem!important}
+  .clinic-brand-copy strong{max-width:118px!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+  .clinic-brand-copy small{display:none!important}.clinic-brand-mark{width:32px!important;height:32px!important;flex-basis:32px!important}
+  .clinic-nav-actions{gap:.15rem!important}
+  .clinic-nav-actions .mobile-compact-action,.clinic-nav-actions .mobile-sections-trigger,.clinic-nav-actions .compact-profile-trigger{width:35px!important;min-width:35px!important;height:35px!important;min-height:35px!important;padding:0!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;border-radius:9px!important}
+  .clinic-nav-actions .clinic-avatar{width:30px!important;height:30px!important;min-width:30px!important;font-size:.78rem!important}
+  .notification-dropdown .mobile-notification-menu,.profile-action-dropdown .profile-dropdown-menu{position:fixed!important;top:62px!important;left:10px!important;right:10px!important;width:auto!important;min-width:0!important;max-width:none!important;transform:none!important;margin:0!important}
+}
+@media (max-width:420px){
+  .clinic-brand-copy strong{max-width:88px!important;font-size:.72rem!important}.clinic-brand-left{gap:.3rem!important}.clinic-nav-actions{gap:.08rem!important}
+  .clinic-nav-actions .mobile-compact-action,.clinic-nav-actions .mobile-sections-trigger,.clinic-nav-actions .compact-profile-trigger{width:32px!important;min-width:32px!important;height:32px!important;min-height:32px!important}
+}
+
+/* =========================================================
+   v11 — Keep notification dropdown inside large screens
+   Bootstrap/Popper positioning is overridden so the menu
+   always opens inward from the notification button.
+   ========================================================= */
+@media (min-width: 768px){
+  .clinic-nav-actions .notification-dropdown{
+    position:relative!important;
+  }
+
+  .clinic-nav-actions .notification-dropdown .mobile-notification-menu{
+    position:absolute!important;
+    top:calc(100% + 10px)!important;
+    right:0!important;
+    left:auto!important;
+    inset-inline-start:auto!important;
+    inset-inline-end:0!important;
+    transform:none!important;
+    margin:0!important;
+    width:340px!important;
+    max-width:calc(100vw - 24px)!important;
+  }
+}
+
+
+/* =========================================================
+   v12 — definitive notification dropdown containment fix
+   Do not use RTL logical inset properties or Bootstrap's
+   dropdown-menu-end for this menu. Position physically.
+   ========================================================= */
+.notification-dropdown{
+  position:relative!important;
+}
+
+@media (min-width:768px){
+  .clinic-nav-actions .notification-dropdown > .notification-menu-safe{
+    position:absolute!important;
+    inset:auto 0 auto auto!important; /* right:0, left:auto — direction independent */
+    top:calc(100% + 10px)!important;
+    right:0!important;
+    left:auto!important;
+    bottom:auto!important;
+    transform:none!important;
+    margin:0!important;
+    width:340px!important;
+    min-width:340px!important;
+    max-width:min(340px, calc(100vw - 32px))!important;
+  }
+}
+
+@media (max-width:767.98px){
+  .clinic-nav-actions .notification-dropdown > .notification-menu-safe{
+    position:fixed!important;
+    inset:62px 10px auto 10px!important;
+    top:62px!important;
+    right:10px!important;
+    left:10px!important;
+    bottom:auto!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    transform:none!important;
+    margin:0!important;
+  }
+}
+
+
+/* =========================================================
+   Unified System Medical Report — shared by Clinic & Doctor
+   ========================================================= */
+.unified-system-report{
+  max-width:1040px;
+  margin-inline:auto;
+  background:#fff;
+  border:1px solid #e5eaf1;
+  border-radius:20px;
+  padding:1.6rem;
+  box-shadow:0 8px 28px rgba(15,23,42,.055);
+}
+.report-page-toolbar{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-bottom:1.25rem;
+}
+.unified-report-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+  padding-bottom:1.15rem;
+  margin-bottom:1.15rem;
+  border-bottom:2px solid #e8eef7;
+}
+.unified-system-report .report-brand{
+  display:flex;
+  align-items:center;
+  gap:.85rem;
+}
+.unified-system-report .report-logo{
+  width:50px;
+  height:50px;
+  border-radius:15px;
+  background:#eef5ff;
+  color:#1e6fe8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.3rem;
+}
+.unified-system-report .report-meta{
+  display:flex;
+  flex-direction:column;
+  gap:.18rem;
+}
+.unified-system-report .report-meta span{
+  font-size:.82rem;
+  color:#7b8494;
+}
+.unified-system-report .report-status-line{
+  color:#15803d!important;
+  font-weight:800;
+}
+.unified-system-report .report-identity-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.75rem;
+  padding:1rem;
+  background:#f8fafc;
+  border:1px solid #edf1f6;
+  border-radius:15px;
+}
+.unified-system-report .report-identity-grid>div{
+  display:flex;
+  flex-direction:column;
+  gap:.15rem;
+}
+.unified-system-report .report-identity-grid small,
+.unified-system-report .followup-summary small{
+  color:#7b8494;
+}
+.unified-system-report .report-section{
+  padding:1.15rem 0;
+  border-bottom:1px solid #edf1f5;
+}
+.unified-system-report .report-section h5{
+  display:flex;
+  align-items:center;
+  margin-bottom:.7rem;
+  font-weight:800;
+  font-size:1rem;
+  color:#172033;
+}
+.unified-system-report .report-section h5 i{
+  color:#1e6fe8;
+}
+.unified-system-report .report-attachment{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  border:1px solid #e5eaf1;
+  border-radius:14px;
+  padding:.85rem;
+  background:#fbfdff;
+}
+.unified-system-report .attachment-icon{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:#eef5ff;
+  color:#1e6fe8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 42px;
+}
+.unified-system-report .followup-summary{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.75rem;
+  padding:.9rem;
+  border-radius:14px;
+  background:#f8fbff;
+  border:1px solid #dbeafe;
+}
+.unified-system-report .followup-summary>div{
+  display:flex;
+  flex-direction:column;
+  gap:.18rem;
+}
+.unified-system-report .report-signature{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding-top:1.15rem;
+  margin-top:.25rem;
+}
+.unified-system-report .report-signature>div:first-child{
+  display:flex;
+  flex-direction:column;
+  gap:.18rem;
+}
+.unified-system-report .report-signature small,
+.unified-system-report .report-signature span{
+  color:#7b8494;
+  font-size:.82rem;
+}
+.unified-system-report .report-seal{
+  color:#16a34a;
+  font-size:2.2rem;
+}
+.role-permission-note{
+  max-width:1040px;
+  margin:1rem auto 0;
+  display:flex;
+  gap:.75rem;
+  align-items:flex-start;
+  background:#f8fafc;
+  border:1px solid #e5eaf1;
+  border-radius:14px;
+  padding:.9rem 1rem;
+  color:#475569;
+}
+.role-permission-note>i{
+  color:#1e6fe8;
+  font-size:1.1rem;
+}
+@media(max-width:767.98px){
+  .unified-system-report{
+    padding:1rem;
+    border-radius:16px;
+  }
+  .unified-system-report .report-identity-grid,
+  .unified-system-report .followup-summary{
+    grid-template-columns:1fr;
+  }
+  .unified-report-header{
+    flex-direction:column;
+  }
+  .unified-system-report .report-meta{
+    text-align:right!important;
+  }
+}
+@media print{
+  .no-print,
+  .clinic-navbar,
+  .doctor-navbar,
+  .site-footer,
+  .role-permission-note{
+    display:none!important;
+  }
+  body{
+    background:#fff!important;
+  }
+  .page-shell{
+    min-height:auto!important;
+  }
+  .unified-system-report{
+    max-width:none!important;
+    border:0!important;
+    box-shadow:none!important;
+    padding:0!important;
+  }
+  .unified-system-report .report-attachment{
+    break-inside:avoid;
+  }
+}
+
+
+/* ===== Clinic staff management ===== */
+.staff-table th{white-space:nowrap;background:#f8fafc;color:#64748b;font-size:.78rem}.staff-table td{vertical-align:middle}
+.staff-permissions-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.staff-permissions-grid label{border:1px solid var(--border);border-radius:12px;padding:.75rem;background:#f8fafc;display:flex;align-items:center;gap:.55rem}
+.job-info-box{border:1px solid #edf1f5;background:#f8fafc;border-radius:14px;padding:.9rem;display:flex;flex-direction:column}.job-info-box small{color:#64748b;margin-bottom:.15rem}
+@media(max-width:767.98px){.staff-permissions-grid{grid-template-columns:1fr}.staff-table{min-width:900px}}
+
+/* ===== Profile dropdown containment fix ===== */
+.profile-action-dropdown{position:relative!important}
+@media(min-width:768px){
+  .clinic-nav-actions .profile-action-dropdown > .profile-dropdown-menu{
+    position:absolute!important;
+    top:calc(100% + 10px)!important;
+    right:0!important;
+    left:auto!important;
+    bottom:auto!important;
+    inset:auto 0 auto auto!important;
+    transform:none!important;
+    margin:0!important;
+    width:270px!important;
+    max-width:calc(100vw - 32px)!important;
+  }
+}
+
+
+/* =========================================================
+   Mobile table cards — system-wide
+   Turns desktop tables into readable stacked cards on phones.
+   ========================================================= */
+@media (max-width: 767.98px) {
+  .table-responsive.mobile-stack-wrapper {
+    overflow: visible !important;
+    border: 0 !important;
+  }
+
+  table.responsive-stack-table {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    background: transparent !important;
+  }
+
+  table.responsive-stack-table thead {
+    display: none !important;
+  }
+
+  table.responsive-stack-table tbody {
+    display: grid !important;
+    gap: 12px;
+    width: 100%;
+  }
+
+  table.responsive-stack-table tbody > tr {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff;
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  table.responsive-stack-table tbody > tr > td {
+    display: grid !important;
+    grid-template-columns: minmax(92px, 34%) minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    padding: .78rem .9rem !important;
+    border: 0 !important;
+    border-bottom: 1px solid #eef2f7 !important;
+    white-space: normal !important;
+    word-break: break-word;
+    text-align: start !important;
+  }
+
+  table.responsive-stack-table tbody > tr > td:last-child {
+    border-bottom: 0 !important;
+  }
+
+  table.responsive-stack-table tbody > tr > td::before {
+    content: attr(data-label);
+    display: block;
+    color: #64748b;
+    font-size: .75rem;
+    font-weight: 800;
+    line-height: 1.5;
+  }
+
+  table.responsive-stack-table tbody > tr > td[data-label=""],
+  table.responsive-stack-table tbody > tr > td[colspan] {
+    display: block !important;
+  }
+
+  table.responsive-stack-table tbody > tr > td[data-label=""]::before,
+  table.responsive-stack-table tbody > tr > td[colspan]::before {
+    display: none !important;
+  }
+
+  table.responsive-stack-table .btn,
+  table.responsive-stack-table .btn-group,
+  table.responsive-stack-table .d-flex {
+    max-width: 100%;
+  }
+
+  table.responsive-stack-table td .d-flex {
+    flex-wrap: wrap !important;
+  }
+
+  table.responsive-stack-table td .btn {
+    margin-block: 2px;
+  }
+}
+
+
+/* =========================================================
+   V5 Data Tables — cleaner desktop layout + mobile cards
+   ========================================================= */
+.table-responsive.table-ui-shell{
+  border:1px solid #e8edf4 !important;
+  border-radius:18px !important;
+  background:#fff;
+  box-shadow:0 8px 28px rgba(15,23,42,.045);
+  overflow:auto;
+}
+
+table.system-data-table{
+  margin:0 !important;
+  --bs-table-bg:transparent;
+  --bs-table-striped-bg:#fbfdff;
+  --bs-table-hover-bg:#f7faff;
+}
+
+table.system-data-table thead th{
+  background:#f7f9fc !important;
+  color:#596579 !important;
+  font-size:.77rem !important;
+  font-weight:800 !important;
+  letter-spacing:.01em;
+  padding:.9rem 1rem !important;
+  border-bottom:1px solid #e8edf4 !important;
+  white-space:nowrap;
+}
+
+table.system-data-table tbody td{
+  padding:1rem !important;
+  vertical-align:middle !important;
+  border-color:#edf1f6 !important;
+  color:#334155;
+  font-size:.88rem;
+}
+
+table.system-data-table tbody tr{
+  transition:background-color .16s ease, transform .16s ease;
+}
+
+table.system-data-table tbody tr:hover{
+  background:#f9fbff !important;
+}
+
+table.system-data-table tbody tr:last-child td{
+  border-bottom:0 !important;
+}
+
+table.system-data-table td.table-primary-cell{
+  min-width:180px;
+}
+
+table.system-data-table td.table-primary-cell > strong,
+table.system-data-table td.table-primary-cell .fw-bold,
+table.system-data-table td.table-primary-cell .person strong{
+  color:#172033;
+  font-weight:800;
+}
+
+table.system-data-table td.table-primary-cell small,
+table.system-data-table td small{
+  color:#7b8799 !important;
+  line-height:1.55;
+}
+
+table.system-data-table td.table-status-cell{
+  min-width:105px;
+}
+
+table.system-data-table td.table-actions-cell{
+  min-width:150px;
+}
+
+table.system-data-table td.table-actions-cell > .d-flex{
+  justify-content:flex-start;
+  gap:.35rem !important;
+}
+
+table.system-data-table td.table-actions-cell .btn{
+  border-radius:9px;
+  white-space:nowrap;
+}
+
+table.system-data-table .badge{
+  font-weight:700;
+  padding:.42rem .65rem;
+  border-radius:999px;
+}
+
+.table-ui-shell .empty-state{
+  border-top:1px solid #edf1f6;
+  border-radius:0 0 18px 18px;
+}
+
+.table-ui-toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:.85rem 1rem;
+  border-bottom:1px solid #edf1f6;
+  background:#fff;
+}
+
+.table-ui-toolbar .table-ui-count{
+  font-size:.78rem;
+  color:#7b8799;
+  font-weight:700;
+}
+
+.entity-form-section{
+  padding:1rem;
+  border:1px solid #e8edf4;
+  background:#fbfdff;
+  border-radius:16px;
+}
+
+.entity-form-section-title{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  margin-bottom:.85rem;
+  font-weight:800;
+  color:#172033;
+}
+
+.entity-form-section-title i{color:var(--primary,#1e6fe8)}
+.entity-form-help{font-size:.76rem;color:#7b8799;margin-top:.35rem}
+.entity-form-required::after{content:" *";color:#dc3545}
+.entity-form-summary{
+  background:#f5f9ff;
+  border:1px solid #dbeafe;
+  border-radius:14px;
+  padding:.85rem 1rem;
+  font-size:.82rem;
+  color:#475569;
+}
+
+@media (max-width:767.98px){
+  .table-responsive.table-ui-shell{
+    overflow:visible !important;
+    border:0 !important;
+    box-shadow:none;
+    background:transparent;
+  }
+
+  table.system-data-table.responsive-stack-table{
+    display:block !important;
+    min-width:0 !important;
+    width:100% !important;
+    background:transparent !important;
+  }
+
+  table.system-data-table.responsive-stack-table thead{
+    display:none !important;
+  }
+
+  table.system-data-table.responsive-stack-table tbody{
+    display:grid !important;
+    gap:14px;
+  }
+
+  table.system-data-table.responsive-stack-table tbody > tr{
+    display:block !important;
+    width:100% !important;
+    overflow:hidden;
+    border:1px solid #e7edf5;
+    border-radius:18px;
+    background:#fff !important;
+    box-shadow:0 6px 20px rgba(15,23,42,.045);
+  }
+
+  table.system-data-table.responsive-stack-table tbody > tr > td{
+    display:grid !important;
+    grid-template-columns:minmax(92px,32%) minmax(0,1fr);
+    gap:12px;
+    align-items:start;
+    padding:.75rem .9rem !important;
+    border:0 !important;
+    border-bottom:1px solid #eef2f7 !important;
+    min-width:0 !important;
+    width:100% !important;
+    white-space:normal !important;
+  }
+
+  table.system-data-table.responsive-stack-table tbody > tr > td:last-child{
+    border-bottom:0 !important;
+  }
+
+  table.system-data-table.responsive-stack-table tbody > tr > td::before{
+    content:attr(data-label);
+    font-size:.72rem;
+    font-weight:800;
+    color:#8490a3;
+    line-height:1.5;
+  }
+
+  table.system-data-table.responsive-stack-table tbody > tr > td.table-primary-cell{
+    display:block !important;
+    background:#f8fbff;
+    padding:1rem !important;
+    min-width:0;
+  }
+
+  table.system-data-table.responsive-stack-table tbody > tr > td.table-primary-cell::before{
+    display:none !important;
+  }
+
+  table.system-data-table.responsive-stack-table tbody > tr > td.table-actions-cell{
+    display:block !important;
+    background:#fbfcfe;
+  }
+
+  table.system-data-table.responsive-stack-table tbody > tr > td.table-actions-cell::before{
+    display:block;
+    margin-bottom:.5rem;
+  }
+
+  table.system-data-table.responsive-stack-table td .d-flex{
+    flex-wrap:wrap !important;
+  }
+
+  table.system-data-table.responsive-stack-table td.table-actions-cell .btn{
+    flex:0 0 auto;
+  }
+
+  table.system-data-table.responsive-stack-table td[colspan]{
+    display:block !important;
+  }
+
+  table.system-data-table.responsive-stack-table td[colspan]::before{
+    display:none !important;
+  }
+}
+
+
+/* =========================================================
+   V6 Global content/action alignment
+   ========================================================= */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.25rem;
+}
+.status-strip{
+  box-shadow:0 6px 20px rgba(15,23,42,.035);
+}
+.status-strip > .p-4{
+  padding:1.15rem 1.25rem !important;
+}
+.appointment-item .row{
+  row-gap:1rem !important;
+}
+.appointment-item h5{
+  color:#172033;
+}
+.card-action-group{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.45rem !important;
+  align-items:stretch !important;
+  text-align:initial !important;
+}
+.card-action-group .btn,
+.card-action-group a.btn{
+  width:100%;
+  min-height:34px;
+  margin:0 !important;
+  white-space:normal;
+  line-height:1.25;
+}
+.table-actions-cell{
+  min-width:210px !important;
+}
+.table-actions-cell > .d-flex,
+.table-actions-cell .table-action-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.4rem !important;
+  width:100%;
+}
+.table-actions-cell .btn,
+.table-actions-cell a.btn{
+  width:100%;
+  min-height:34px;
+  margin:0 !important;
+  white-space:normal !important;
+}
+.entity-meta-block{
+  padding:.55rem .7rem;
+  border-radius:12px;
+  background:#f8fafc;
+  min-height:62px;
+}
+.entity-meta-block > small{
+  display:block;
+  margin-bottom:.2rem;
+  color:#7b8799 !important;
+}
+.entity-meta-block > .fw-bold,
+.entity-meta-block > strong{
+  color:#172033;
+}
+.action-row{
+  align-items:center;
+}
+.action-row > .btn,
+.action-row > a.btn{
+  flex:0 0 auto;
+}
+@media (min-width:992px){
+  .appointment-item .card-action-group{
+    border-inline-start:1px solid #edf1f6;
+    padding-inline-start:1rem;
+  }
+}
+@media (max-width:991.98px){
+  .appointment-item .row > [class*="col-lg-"]{
+    width:100%;
+  }
+  .appointment-item .row > [class*="col-lg-"]:not(:first-child):not(.card-action-group){
+    display:grid;
+    grid-template-columns:120px minmax(0,1fr);
+    gap:.6rem;
+    align-items:center;
+    padding-top:.15rem;
+  }
+  .appointment-item .card-action-group{
+    margin-top:.25rem;
+    padding-top:.9rem;
+    border-top:1px solid #edf1f6;
+  }
+}
+@media (max-width:575.98px){
+  .card-action-group,
+  .table-actions-cell > .d-flex,
+  .table-actions-cell .table-action-grid{
+    grid-template-columns:1fr 1fr !important;
+  }
+  .card-action-group .btn,
+  .table-actions-cell .btn{
+    font-size:.78rem;
+    padding:.48rem .5rem;
+  }
+}
+
+
+/* V7 Clinic doctors responsive grid */
+.doctors-responsive-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem;align-items:stretch}
+.doctors-responsive-grid .doctor-item{min-width:0;width:100%}
+.doctors-responsive-grid .doctor-card{height:100%;display:flex;flex-direction:column;overflow:hidden}
+.doctors-responsive-grid .doctor-card>.p-3{display:flex;flex-direction:column;flex:1;min-width:0}
+.doctors-responsive-grid .doctor-card .btn{margin-top:auto!important}
+.doctors-responsive-grid .doctor-card-img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.doctors-responsive-grid .doctor-meta{display:flex;flex-wrap:wrap;gap:.45rem .8rem}
+@media(min-width:1400px){.doctors-responsive-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:992px) and (max-width:1399.98px){.doctors-responsive-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:576px) and (max-width:991.98px){.doctors-responsive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:575.98px){.doctors-responsive-grid{grid-template-columns:1fr}}
+
+
+/* =========================================================
+   V11 Responsive tables + doctor schedule + treatment plans
+   ========================================================= */
+
+/* ---------- doctor schedule page ---------- */
+.doctor-availability-side{
+  display:grid;
+  gap:1rem;
+  align-content:start;
+}
+.schedule-card-head > .badge{
+  height:auto !important;
+  min-height:0 !important;
+  align-self:flex-start !important;
+  padding:.48rem .7rem;
+}
+.doctor-absence-card{
+  height:auto !important;
+}
+.doctor-absence-item{
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr) auto;
+  gap:.75rem;
+  align-items:start;
+  padding:.85rem 0;
+  border-bottom:1px solid #edf1f6;
+}
+.doctor-absence-item:last-child{border-bottom:0;padding-bottom:0}
+.doctor-absence-item .icon-box{margin:0}
+.doctor-absence-item .btn{
+  min-width:74px;
+}
+.doctor-availability-summary .summary-row:last-child{border-bottom:0}
+.doctor-weekly-schedule-table th,
+.doctor-weekly-schedule-table td{
+  text-align:center;
+}
+.doctor-weekly-schedule-table th:first-child,
+.doctor-weekly-schedule-table td:first-child{
+  text-align:start;
+}
+.doctor-weekly-schedule-table td:last-child .d-flex{
+  justify-content:center;
+}
+
+/* ---------- treatment plans ---------- */
+.treatment-plan-grid{
+  align-items:stretch !important;
+}
+.treatment-plan-col{
+  display:flex;
+}
+.treatment-plan-card{
+  width:100%;
+  height:100%;
+  min-height:100%;
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+}
+.treatment-plan-head{
+  min-height:58px;
+}
+.treatment-plan-steps{
+  flex:1 1 auto;
+  align-content:start;
+}
+.treatment-plan-revision{
+  margin-top:auto !important;
+}
+.treatment-plan-actions{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.5rem !important;
+  margin-top:1rem !important;
+}
+.treatment-plan-actions .btn{
+  width:100%;
+  min-height:36px;
+  margin:0 !important;
+  white-space:normal;
+}
+@media(min-width:1200px){
+  .treatment-plan-actions{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+}
+@media(max-width:575.98px){
+  .treatment-plan-actions{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ---------- no-scroll responsive tables ---------- */
+table.system-data-table,
+table.responsive-stack-table{
+  max-width:100%;
+}
+
+/* Avoid fixed minimums that force horizontal scrolling. */
+table.system-data-table td.table-primary-cell,
+table.system-data-table td.table-status-cell,
+table.system-data-table td.table-actions-cell{
+  min-width:0 !important;
+}
+table.system-data-table th,
+table.system-data-table td{
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+table.system-data-table input,
+table.system-data-table select,
+table.system-data-table textarea{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+}
+table.system-data-table .btn{
+  max-width:100%;
+}
+.table-responsive.table-ui-shell{
+  max-width:100%;
+}
+
+/*
+  Wide tables (7+ columns) become a two-column card grid below 1400px.
+  Medium-wide tables (6 columns) do the same below 1200px.
+  This removes horizontal scroll on laptop / tablet layouts.
+*/
+@media (min-width:992px) and (max-width:1399.98px){
+  .table-responsive:has(table.wide-data-table){
+    overflow:visible !important;
+    border:0 !important;
+    box-shadow:none !important;
+    background:transparent !important;
+  }
+  table.wide-data-table{
+    display:block !important;
+    width:100% !important;
+    min-width:0 !important;
+    table-layout:auto !important;
+    background:transparent !important;
+  }
+  table.wide-data-table thead{display:none !important}
+  table.wide-data-table tbody{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:1rem;
+    width:100%;
+  }
+  table.wide-data-table tbody > tr{
+    display:block !important;
+    width:100% !important;
+    min-width:0 !important;
+    overflow:hidden;
+    border:1px solid #e6ecf3;
+    border-radius:16px;
+    background:#fff !important;
+    box-shadow:0 6px 18px rgba(15,23,42,.035);
+  }
+  table.wide-data-table tbody > tr > td{
+    display:grid !important;
+    grid-template-columns:minmax(110px,38%) minmax(0,1fr);
+    gap:.7rem;
+    align-items:center;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+    padding:.68rem .85rem !important;
+    border:0 !important;
+    border-bottom:1px solid #eef2f6 !important;
+    text-align:start !important;
+    white-space:normal !important;
+  }
+  table.wide-data-table tbody > tr > td:last-child{border-bottom:0 !important}
+  table.wide-data-table tbody > tr > td::before{
+    content:attr(data-label);
+    display:block;
+    font-size:.72rem;
+    font-weight:800;
+    color:#7b8799;
+  }
+  table.wide-data-table tbody > tr > td.table-primary-cell{
+    display:block !important;
+    background:#f8fbff;
+  }
+  table.wide-data-table tbody > tr > td.table-primary-cell::before{display:none !important}
+  table.wide-data-table tbody > tr > td.table-actions-cell{
+    display:block !important;
+    background:#fbfcfe;
+  }
+  table.wide-data-table tbody > tr > td.table-actions-cell::before{
+    display:block !important;
+    margin-bottom:.45rem;
+  }
+  table.wide-data-table td .d-flex{
+    flex-wrap:wrap !important;
+  }
+  table.wide-data-table .table-action-grid,
+  table.wide-data-table td.table-actions-cell > .d-flex{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:.4rem !important;
+  }
+  table.wide-data-table .table-actions-cell .btn{
+    width:100%;
+  }
+}
+
+/* 6-column tables get the same no-scroll treatment on smaller laptops/tablets. */
+@media (min-width:768px) and (max-width:1199.98px){
+  .table-responsive:has(table.medium-data-table){
+    overflow:visible !important;
+    border:0 !important;
+    box-shadow:none !important;
+    background:transparent !important;
+  }
+  table.medium-data-table{
+    display:block !important;
+    width:100% !important;
+    min-width:0 !important;
+    background:transparent !important;
+  }
+  table.medium-data-table thead{display:none !important}
+  table.medium-data-table tbody{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:1rem;
+  }
+  table.medium-data-table tbody > tr{
+    display:block !important;
+    overflow:hidden;
+    border:1px solid #e6ecf3;
+    border-radius:16px;
+    background:#fff !important;
+  }
+  table.medium-data-table tbody > tr > td{
+    display:grid !important;
+    grid-template-columns:minmax(105px,38%) minmax(0,1fr);
+    gap:.65rem;
+    align-items:center;
+    width:100% !important;
+    min-width:0 !important;
+    padding:.65rem .8rem !important;
+    border:0 !important;
+    border-bottom:1px solid #eef2f6 !important;
+    text-align:start !important;
+    white-space:normal !important;
+  }
+  table.medium-data-table tbody > tr > td:last-child{border-bottom:0 !important}
+  table.medium-data-table tbody > tr > td::before{
+    content:attr(data-label);
+    font-size:.72rem;
+    font-weight:800;
+    color:#7b8799;
+  }
+  table.medium-data-table tbody > tr > td.table-primary-cell{
+    display:block !important;
+    background:#f8fbff;
+  }
+  table.medium-data-table tbody > tr > td.table-primary-cell::before{display:none !important}
+  table.medium-data-table tbody > tr > td.table-actions-cell{
+    display:block !important;
+    background:#fbfcfe;
+  }
+  table.medium-data-table tbody > tr > td.table-actions-cell::before{
+    display:block !important;
+    margin-bottom:.4rem;
+  }
+  table.medium-data-table .table-action-grid,
+  table.medium-data-table td.table-actions-cell > .d-flex{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:.4rem !important;
+  }
+  table.medium-data-table .table-actions-cell .btn{width:100%}
+}
+
+/* Single card per row when the viewport becomes narrow. */
+@media (max-width:991.98px){
+  table.wide-data-table tbody,
+  table.medium-data-table tbody{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* Very small screens keep the existing mobile-card system but with cleaner controls. */
+@media (max-width:767.98px){
+  .doctor-absence-item{
+    grid-template-columns:38px minmax(0,1fr);
+  }
+  .doctor-absence-item > .btn{
+    grid-column:2;
+    width:100%;
+  }
+  .doctor-availability-side{
+    margin-top:.25rem;
+  }
+  .treatment-plan-head{min-height:0}
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>الموظفون والصلاحيات | Smart Dental Clinic</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css" rel="stylesheet"/><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet"/><link href="assets/styles.css" rel="stylesheet"/></head><body>
+<nav class="navbar clinic-navbar bg-white border-bottom sticky-top">
+<div class="container-fluid clinic-nav-layout px-3 px-lg-4">
+<a aria-label="الصفحة الرئيسية" class="clinic-brand clinic-brand-left" href="index.html">
+<span class="clinic-brand-mark"><i class="bi bi-heart-pulse-fill"></i></span>
+<span class="clinic-brand-copy"><strong>عيادة الابتسامة الحديثة</strong><small>Smart Dental Clinic</small></span>
+</a>
+<div class="clinic-desktop-nav d-none d-xl-flex justify-content-center">
+<ul class="navbar-nav flex-row align-items-center"><li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li><li class="nav-item"><a class="nav-link" href="appointments.html">المواعيد</a></li><li class="nav-item"><a class="nav-link" href="patients.html">المرضى</a></li><li class="nav-item"><a class="nav-link" href="doctors.html">الأطباء</a></li><li class="nav-item"><a class="nav-link" href="invoices.html">الفواتير</a></li><li class="nav-item"><a class="nav-link" href="job-applicants.html">المتقدمون</a></li></ul>
+</div>
+<div class="clinic-nav-actions">
+<div class="dropdown">
+<button aria-label="اختيار اللغة" class="top-action mobile-compact-action" data-bs-toggle="dropdown" title="اللغة" type="button">
+<i class="bi bi-globe2"></i><span class="d-none d-xxl-inline">AR</span>
+</button>
+<ul class="dropdown-menu dropdown-menu-end clean-dropdown language-menu">
+<li><button class="dropdown-item active" data-language="ar">العربية <small class="float-start text-secondary">AR</small></button></li>
+<li><button class="dropdown-item" data-language="en">English <small class="float-start text-secondary">EN</small></button></li>
+</ul>
+</div>
+<div class="dropdown notification-dropdown">
+<button aria-label="الإشعارات" class="top-action mobile-compact-action" data-bs-display="static" data-bs-toggle="dropdown" title="الإشعارات" type="button">
+<i class="bi bi-bell"></i><span class="notification-dot">5</span>
+</button>
+<div class="dropdown-menu clean-dropdown notification-menu mobile-notification-menu notification-menu-safe">
+<div class="px-3 py-2 d-flex justify-content-between align-items-center"><strong>الإشعارات</strong><span class="badge text-bg-primary rounded-pill">5</span></div>
+<div class="dropdown-divider"></div>
+<a class="notification-entry" href="appointments.html"><strong>طلب حجز جديد</strong><div class="small text-secondary">طلب يحتاج موافقة.</div></a>
+<a class="notification-entry" href="recalls.html"><strong>متابعة مستحقة</strong><div class="small text-secondary">متابعة بانتظار الحجز.</div></a>
+<a class="notification-entry" href="lab-cases.html"><strong>حالة مخبرية</strong><div class="small text-secondary">تم استلام حالة من المختبر.</div></a>
+<a class="notification-entry" href="job-applicants.html"><strong>متقدم جديد</strong><div class="small text-secondary">طلب توظيف جديد بانتظار المراجعة.</div></a>
+</div>
+</div>
+<div class="dropdown profile-action-dropdown">
+<button aria-label="حساب العيادة" class="clinic-profile-trigger compact-profile-trigger" data-bs-display="static" data-bs-toggle="dropdown" title="الملف الشخصي" type="button">
+<span class="clinic-avatar">ع</span><i class="bi bi-chevron-down small text-secondary d-none d-sm-inline"></i>
+</button>
+<div class="dropdown-menu dropdown-menu-end clean-dropdown profile-dropdown-menu">
+<a class="dropdown-item" href="profile.html"><i class="bi bi-hospital"></i>ملف العيادة</a>
+<a class="dropdown-item" href="staff.html"><i class="bi bi-person-gear"></i>الموظفون والصلاحيات</a><a class="dropdown-item" href="account-settings.html"><i class="bi bi-gear"></i>إعدادات الحساب</a>
+<a class="dropdown-item" href="job-applicants.html"><i class="bi bi-person-lines-fill"></i>المتقدمون للوظائف</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item text-primary fw-bold" href="../doctor/index.html"><i class="bi bi-arrow-left-right"></i>تبديل لمساحة الطبيب</a>
+<div class="px-3 py-2 bg-light rounded-3 mx-2 mb-2">
+<small class="text-secondary d-block">الحساب الحالي</small>
+<strong class="small">د. عمر ناصر • مالك ومدير العيادة</strong>
+</div>
+<button class="dropdown-item text-danger" data-logout=""><i class="bi bi-box-arrow-right"></i>تسجيل الخروج</button>
+</div>
+</div>
+<button aria-controls="sectionsDrawer" aria-label="كل الأقسام" class="btn btn-outline-primary sections-trigger mobile-sections-trigger" data-bs-target="#sectionsDrawer" data-bs-toggle="offcanvas" title="كل الأقسام" type="button">
+<i class="bi bi-grid-3x3-gap"></i><span class="d-none d-xxl-inline me-1">كل الأقسام</span>
+</button>
+</div>
+</div>
+</nav>
+<div class="offcanvas offcanvas-start mobile-drawer sections-drawer" id="sectionsDrawer" tabindex="-1">
+<div class="drawer-header">
+<div class="drawer-clinic"><div class="drawer-avatar">ع</div><div><h6 class="mb-1 fw-bold">عيادة الابتسامة الحديثة</h6><small class="opacity-75">كل الأقسام</small></div></div>
+<button aria-label="إغلاق" class="drawer-close" data-bs-dismiss="offcanvas"><i class="bi bi-x-lg"></i></button>
+</div>
+<div class="offcanvas-body p-0"><div class="drawer-content"><div class="drawer-title mt-3">الأساسية</div><a class="drawer-link" href="index.html">
+<span class="drawer-icon"><i class="bi bi-house"></i></span>
+<span class="flex-grow-1">الرئيسية</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="appointments.html">
+<span class="drawer-icon"><i class="bi bi-calendar2-check"></i></span>
+<span class="flex-grow-1">المواعيد</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="new-appointment.html">
+<span class="drawer-icon"><i class="bi bi-calendar2-plus"></i></span>
+<span class="flex-grow-1">إضافة موعد</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="patients.html">
+<span class="drawer-icon"><i class="bi bi-people"></i></span>
+<span class="flex-grow-1">المرضى</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="doctors.html">
+<span class="drawer-icon"><i class="bi bi-person-badge"></i></span>
+<span class="flex-grow-1">الأطباء</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="services.html">
+<span class="drawer-icon"><i class="bi bi-list-check"></i></span>
+<span class="flex-grow-1">الخدمات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="specialties.html">
+<span class="drawer-icon"><i class="bi bi-grid"></i></span>
+<span class="flex-grow-1">التخصصات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="invoices.html">
+<span class="drawer-icon"><i class="bi bi-receipt"></i></span>
+<span class="flex-grow-1">الفواتير</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-3">التشغيل</div><a class="drawer-link" href="operations.html">
+<span class="drawer-icon"><i class="bi bi-clipboard2-pulse"></i></span>
+<span class="flex-grow-1">التشغيل اليومي</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="recalls.html">
+<span class="drawer-icon"><i class="bi bi-arrow-repeat"></i></span>
+<span class="flex-grow-1">المتابعات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="treatment-plans.html">
+<span class="drawer-icon"><i class="bi bi-journal-medical"></i></span>
+<span class="flex-grow-1">خطط العلاج</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="lab-cases.html">
+<span class="drawer-icon"><i class="bi bi-box-seam"></i></span>
+<span class="flex-grow-1">الحالات المخبرية</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="inventory.html">
+<span class="drawer-icon"><i class="bi bi-boxes"></i></span>
+<span class="flex-grow-1">المخزون</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="reports.html">
+<span class="drawer-icon"><i class="bi bi-bar-chart"></i></span>
+<span class="flex-grow-1">التقارير والتحليلات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-3">التوظيف والإدارة</div><a class="drawer-link active" href="staff.html"><span class="drawer-icon"><i class="bi bi-person-gear"></i></span><span class="flex-grow-1">الموظفون والصلاحيات</span><i class="bi bi-chevron-left text-secondary small"></i></a><a class="drawer-link" href="jobs.html">
+<span class="drawer-icon"><i class="bi bi-briefcase"></i></span>
+<span class="flex-grow-1">الوظائف</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="job-applicants.html">
+<span class="drawer-icon"><i class="bi bi-person-lines-fill"></i></span>
+<span class="flex-grow-1">المتقدمون للوظائف</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="profile.html">
+<span class="drawer-icon"><i class="bi bi-hospital"></i></span>
+<span class="flex-grow-1">ملف العيادة</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="account-settings.html">
+<span class="drawer-icon"><i class="bi bi-gear"></i></span>
+<span class="flex-grow-1">إعدادات الحساب</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-4">الحساب</div><button class="drawer-link border-0 bg-transparent w-100 text-danger" data-logout=""><span class="drawer-icon"><i class="bi bi-box-arrow-right"></i></span><span class="flex-grow-1 text-end">تسجيل الخروج</span></button>
+<div class="drawer-title mt-4">تبديل المساحة</div>
+<a class="drawer-link" href="../doctor/index.html"><span class="drawer-icon"><i class="bi bi-arrow-left-right"></i></span><span class="flex-grow-1">الانتقال لمساحة الطبيب</span><i class="bi bi-chevron-left text-secondary small"></i></a>
+<a class="drawer-link" href="settlements.html"><span class="drawer-icon"><i class="bi bi-wallet2"></i></span><span class="flex-grow-1">تسويات المنصة</span></a></div></div>
+</div>
+<main class="page-shell">
+<section class="container py-4 py-lg-5">
+<div class="d-flex flex-column flex-lg-row justify-content-between gap-3 align-items-lg-start mb-4">
+<div><h1 class="fw-bold fs-2 mb-2">الموظفون والصلاحيات</h1><p class="text-secondary mb-0">إضافة موظفي العيادة وإدارة أدوارهم وصلاحياتهم التشغيلية. الطبيب يبقى له ملف طبي مستقل وليس Staff Role.</p></div>
+<button class="btn btn-primary" data-bs-target="#staffModal" data-bs-toggle="modal" data-staff-new=""><i class="bi bi-person-plus ms-1"></i>إضافة موظف</button>
+</div>
+<div class="row g-3 mb-4">
+<div class="col-6 col-xl-3"><div class="stat-card"><small class="text-secondary">إجمالي الموظفين</small><div class="stat-value" id="staffTotal">4</div><small>غير الأطباء</small></div></div>
+<div class="col-6 col-xl-3"><div class="stat-card"><small class="text-secondary">فعالون</small><div class="stat-value text-success" id="staffActive">3</div><small>يستطيعون الدخول</small></div></div>
+<div class="col-6 col-xl-3"><div class="stat-card"><small class="text-secondary">معلقون</small><div class="stat-value text-warning" id="staffSuspended">1</div><small>الحساب محفوظ</small></div></div>
+<div class="col-6 col-xl-3"><div class="stat-card"><small class="text-secondary">قوالب صلاحيات</small><div class="stat-value">3</div><small>استقبال • محاسب • منسق</small></div></div>
+</div>
+<div class="filter-panel mb-4"><div class="row g-3"><div class="col-lg-5"><input class="form-control" id="staffSearch" placeholder="ابحث بالاسم أو البريد أو الدور..."/></div><div class="col-lg-3"><select class="form-select" id="staffRoleFilter"><option value="all">كل الأدوار</option><option value="reception">منسق استقبال</option><option value="accountant">محاسب</option><option value="coordinator">منسق عيادة</option></select></div><div class="col-lg-3"><select class="form-select" id="staffStatusFilter"><option value="all">كل الحالات</option><option value="active">فعال</option><option value="suspended">معلق</option></select></div></div></div>
+<div class="soft-card table-responsive">
+<table class="table mb-0 staff-table medium-data-table"><thead><tr><th>الموظف</th><th>الدور</th><th>بيانات الدخول</th><th>أهم الصلاحيات</th><th>الحالة</th><th></th></tr></thead><tbody id="staffTableBody">
+<tr data-permissions="appointments_view,appointments_manage,patients_view,patients_add" data-role="reception" data-search="رامي حسن استقبال rami@smile.ps" data-staff-row="" data-status="active"><td data-label="الموظف"><div class="person"><span class="person-avatar">رح</span><div><strong data-staff-name="">رامي حسن</strong><small>STAFF-144</small></div></div></td><td data-label="الدور" data-staff-role-label="">منسق استقبال</td><td data-label="بيانات الدخول"><span data-staff-email="">rami@smile.ps</span><small class="d-block text-secondary">آخر دخول: اليوم 09:12</small></td><td data-label="أهم الصلاحيات"><span class="badge text-bg-light border">المواعيد</span> <span class="badge text-bg-light border">المرضى</span></td><td data-label="الحالة"><span class="badge text-bg-success" data-staff-badge="">فعال</span></td><td data-label=""><div class="d-flex gap-1 flex-wrap"><button class="btn btn-sm btn-light" data-staff-view="">عرض</button><button class="btn btn-sm btn-outline-primary" data-staff-edit="">تعديل</button><button class="btn btn-sm btn-outline-warning" data-staff-toggle="">تعليق</button><button class="btn btn-sm btn-outline-secondary" data-staff-archive="">أرشفة</button></div></td></tr>
+<tr data-permissions="invoices_view,payments_record,reports_view" data-role="accountant" data-search="سامي قاسم محاسب sami@smile.ps" data-staff-row="" data-status="suspended"><td data-label="الموظف"><div class="person"><span class="person-avatar">سق</span><div><strong data-staff-name="">سامي قاسم</strong><small>STAFF-155</small></div></div></td><td data-label="الدور" data-staff-role-label="">محاسب</td><td data-label="بيانات الدخول"><span data-staff-email="">sami@smile.ps</span><small class="d-block text-secondary">آخر دخول: أمس 17:40</small></td><td data-label="أهم الصلاحيات"><span class="badge text-bg-light border">الفواتير</span> <span class="badge text-bg-light border">الدفعات</span></td><td data-label="الحالة"><span class="badge text-bg-secondary" data-staff-badge="">معلق</span></td><td data-label=""><div class="d-flex gap-1 flex-wrap"><button class="btn btn-sm btn-light" data-staff-view="">عرض</button><button class="btn btn-sm btn-outline-primary" data-staff-edit="">تعديل</button><button class="btn btn-sm btn-outline-success" data-staff-toggle="">إعادة تفعيل</button><button class="btn btn-sm btn-outline-secondary" data-staff-archive="">أرشفة</button></div></td></tr>
+<tr data-permissions="appointments_view,appointments_manage,patients_view,reports_view,jobs_view" data-role="coordinator" data-search="نور علي منسق عيادة nour@smile.ps" data-staff-row="" data-status="active"><td data-label="الموظف"><div class="person"><span class="person-avatar">نع</span><div><strong data-staff-name="">نور علي</strong><small>STAFF-166</small></div></div></td><td data-label="الدور" data-staff-role-label="">منسق عيادة</td><td data-label="بيانات الدخول"><span data-staff-email="">nour@smile.ps</span><small class="d-block text-secondary">آخر دخول: اليوم 08:50</small></td><td data-label="أهم الصلاحيات"><span class="badge text-bg-light border">المواعيد</span> <span class="badge text-bg-light border">التقارير التشغيلية</span></td><td data-label="الحالة"><span class="badge text-bg-success" data-staff-badge="">فعال</span></td><td data-label=""><div class="d-flex gap-1 flex-wrap"><button class="btn btn-sm btn-light" data-staff-view="">عرض</button><button class="btn btn-sm btn-outline-primary" data-staff-edit="">تعديل</button><button class="btn btn-sm btn-outline-warning" data-staff-toggle="">تعليق</button><button class="btn btn-sm btn-outline-secondary" data-staff-archive="">أرشفة</button></div></td></tr>
+<tr data-permissions="invoices_view,payments_record,reports_view" data-role="accountant" data-search="ليث محمود محاسب leith@smile.ps" data-staff-row="" data-status="active"><td data-label="الموظف"><div class="person"><span class="person-avatar">لم</span><div><strong data-staff-name="">ليث محمود</strong><small>STAFF-170</small></div></div></td><td data-label="الدور" data-staff-role-label="">محاسب</td><td data-label="بيانات الدخول"><span data-staff-email="">leith@smile.ps</span><small class="d-block text-secondary">آخر دخول: 20/09/2026</small></td><td data-label="أهم الصلاحيات"><span class="badge text-bg-light border">الفواتير</span></td><td data-label="الحالة"><span class="badge text-bg-success" data-staff-badge="">فعال</span></td><td data-label=""><div class="d-flex gap-1 flex-wrap"><button class="btn btn-sm btn-light" data-staff-view="">عرض</button><button class="btn btn-sm btn-outline-primary" data-staff-edit="">تعديل</button><button class="btn btn-sm btn-outline-warning" data-staff-toggle="">تعليق</button><button class="btn btn-sm btn-outline-secondary" data-staff-archive="">أرشفة</button></div></td></tr>
+</tbody></table>
+<div class="empty-state d-none" id="staffEmpty">لا يوجد موظفون مطابقون للفلاتر.</div>
+</div>
+<div class="soft-card p-4 mt-4"><div class="d-flex justify-content-between gap-3 align-items-start flex-wrap"><div><h4 class="fw-bold mb-1">ملاحظة عن الصلاحيات</h4><p class="text-secondary mb-0">هذه صلاحيات تشغيلية داخل العيادة فقط. لا يستطيع موظف العيادة تعديل التشخيص أو التقرير الطبي أو الوصفة.</p></div><span class="badge text-bg-light border">Least Privilege</span></div></div>
+</section>
+<div class="modal fade" id="staffModal" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"><div class="modal-content border-0 rounded-4">
+<div class="modal-header"><div><h5 class="modal-title fw-bold" id="staffModalTitle">إضافة موظف</h5><small class="text-secondary">إنشاء حساب موظف وربطه بهذه العيادة.</small></div><button class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body"><div class="row g-4">
+<div class="col-lg-5"><div class="soft-card p-4 h-100"><h6 class="fw-bold mb-3">بيانات الموظف</h6><label class="form-label">الاسم الكامل *</label><input class="form-control mb-3" id="staffFormName"/><label class="form-label">البريد الإلكتروني *</label><input class="form-control mb-3" id="staffFormEmail" type="email"/><label class="form-label">رقم الهاتف</label><input class="form-control mb-3" id="staffFormPhone"/><label class="form-label">الدور *</label><select class="form-select mb-3" id="staffFormRole"><option data-template-permissions="appointments_view,appointments_manage,patients_view,patients_add" value="reception">منسق استقبال</option><option data-template-permissions="invoices_view,payments_record,reports_view" value="accountant">محاسب</option><option data-template-permissions="appointments_view,appointments_manage,patients_view,reports_view,jobs_view" value="coordinator">منسق عيادة</option></select><label class="form-label">حالة الحساب</label><select class="form-select" id="staffFormStatus"><option value="active">فعال</option><option value="suspended">معلق</option></select></div></div>
+<div class="col-lg-7"><div class="soft-card p-4"><div class="d-flex justify-content-between align-items-center mb-3"><div><h6 class="fw-bold mb-1">الصلاحيات</h6><small class="text-secondary">اختر فقط ما يحتاجه الموظف.</small></div><button class="btn btn-sm btn-light border" id="applyRoleTemplate">تطبيق قالب الدور</button></div><div class="staff-permissions-grid">
+<label><input class="form-check-input" type="checkbox" value="appointments_view"/> عرض المواعيد</label><label><input class="form-check-input" type="checkbox" value="appointments_manage"/> إنشاء وتعديل المواعيد</label><label><input class="form-check-input" type="checkbox" value="patients_view"/> عرض بيانات المرضى الإدارية</label><label><input class="form-check-input" type="checkbox" value="patients_add"/> إضافة مريض</label><label><input class="form-check-input" type="checkbox" value="invoices_view"/> عرض الفواتير</label><label><input class="form-check-input" type="checkbox" value="payments_record"/> تسجيل دفعات</label><label><input class="form-check-input" type="checkbox" value="inventory_view"/> عرض المخزون</label><label><input class="form-check-input" type="checkbox" value="inventory_manage"/> إدارة المخزون</label><label><input class="form-check-input" type="checkbox" value="reports_view"/> عرض التقارير التشغيلية</label>
+</div><div class="alert alert-warning mt-3 mb-0"><i class="bi bi-shield-lock ms-1"></i>التشخيص والتقرير الطبي والوصفات غير متاحة لموظفي العيادة.</div></div></div>
+</div></div>
+<div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal">إلغاء</button><button class="btn btn-primary" id="saveStaffBtn">حفظ الموظف</button></div>
+</div></div></div>
+<div class="modal fade" id="staffViewModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content border-0 rounded-4"><div class="modal-header"><div><h5 class="modal-title fw-bold" id="staffViewName"></h5><small class="text-secondary" id="staffViewRole"></small></div><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="row g-3"><div class="col-md-6"><div class="job-info-box"><small>البريد</small><strong id="staffViewEmail"></strong></div></div><div class="col-md-6"><div class="job-info-box"><small>الحالة</small><strong id="staffViewStatus"></strong></div></div></div><h6 class="fw-bold mt-4 mb-3">الصلاحيات</h6><div class="d-flex flex-wrap gap-2" id="staffViewPermissions"></div></div></div></div></div>
+</main>
+<footer class="site-footer mt-5"><div class="container py-5"><div class="row g-4"><div class="col-lg-5"><a class="footer-brand" href="index.html"><i class="bi bi-heart-pulse-fill ms-2"></i>Smart Dental Clinic</a><p class="footer-description mt-3 mb-0">واجهة إدارة العيادة للمواعيد، المرضى، الأطباء، المالية، التشغيل والتوظيف.</p></div><div class="col-6 col-lg-3"><h6 class="footer-title">التشغيل</h6><ul class="footer-links"><li><a href="operations.html">التشغيل اليومي</a></li><li><a href="recalls.html">المتابعات</a></li><li><a href="lab-cases.html">الحالات المخبرية</a></li><li><a href="inventory.html">المخزون</a></li></ul></div><div class="col-6 col-lg-4"><h6 class="footer-title">الإدارة</h6><ul class="footer-links"><li><a href="staff.html">الموظفون والصلاحيات</a></li><li><a href="invoices.html">الفواتير</a></li><li><a href="reports.html">التقارير التشغيلية</a></li><li><a href="job-applicants.html">المتقدمون للوظائف</a></li><li><a href="account-settings.html">إعدادات الحساب</a></li></ul></div></div><div class="footer-bottom mt-4 pt-4 d-flex flex-column flex-md-row justify-content-between gap-2"><div>© <span data-year=""></span> Smart Dental Clinic — Graduation Project</div><div>Clinic Management Front-end Demo</div></div></div></footer>
+<div class="toast-container position-fixed bottom-0 start-0 p-3"><div class="toast align-items-center text-bg-primary border-0" id="appToast"><div class="d-flex"><div class="toast-body">تمت العملية</div><button class="btn-close btn-close-white m-auto ms-2" data-bs-dismiss="toast"></button></div></div></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/app.js"></script></body></html>

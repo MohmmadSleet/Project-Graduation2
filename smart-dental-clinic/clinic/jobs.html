@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>الوظائف | Smart Dental Clinic</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css" rel="stylesheet"/><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet"/><link href="assets/styles.css" rel="stylesheet"/></head><body>
+<nav class="navbar clinic-navbar bg-white border-bottom sticky-top">
+<div class="container-fluid clinic-nav-layout px-3 px-lg-4">
+<a aria-label="الصفحة الرئيسية" class="clinic-brand clinic-brand-left" href="index.html">
+<span class="clinic-brand-mark"><i class="bi bi-heart-pulse-fill"></i></span>
+<span class="clinic-brand-copy"><strong>عيادة الابتسامة الحديثة</strong><small>Smart Dental Clinic</small></span>
+</a>
+<div class="clinic-desktop-nav d-none d-xl-flex justify-content-center">
+<ul class="navbar-nav flex-row align-items-center"><li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li><li class="nav-item"><a class="nav-link" href="appointments.html">المواعيد</a></li><li class="nav-item"><a class="nav-link" href="patients.html">المرضى</a></li><li class="nav-item"><a class="nav-link" href="doctors.html">الأطباء</a></li><li class="nav-item"><a class="nav-link" href="invoices.html">الفواتير</a></li><li class="nav-item"><a class="nav-link" href="job-applicants.html">المتقدمون</a></li></ul>
+</div>
+<div class="clinic-nav-actions">
+<div class="dropdown">
+<button aria-label="اختيار اللغة" class="top-action mobile-compact-action" data-bs-toggle="dropdown" title="اللغة" type="button">
+<i class="bi bi-globe2"></i><span class="d-none d-xxl-inline">AR</span>
+</button>
+<ul class="dropdown-menu dropdown-menu-end clean-dropdown language-menu">
+<li><button class="dropdown-item active" data-language="ar">العربية <small class="float-start text-secondary">AR</small></button></li>
+<li><button class="dropdown-item" data-language="en">English <small class="float-start text-secondary">EN</small></button></li>
+</ul>
+</div>
+<div class="dropdown notification-dropdown">
+<button aria-label="الإشعارات" class="top-action mobile-compact-action" data-bs-display="static" data-bs-toggle="dropdown" title="الإشعارات" type="button">
+<i class="bi bi-bell"></i><span class="notification-dot">5</span>
+</button>
+<div class="dropdown-menu clean-dropdown notification-menu mobile-notification-menu notification-menu-safe">
+<div class="px-3 py-2 d-flex justify-content-between align-items-center"><strong>الإشعارات</strong><span class="badge text-bg-primary rounded-pill">5</span></div>
+<div class="dropdown-divider"></div>
+<a class="notification-entry" href="appointments.html"><strong>طلب حجز جديد</strong><div class="small text-secondary">طلب يحتاج موافقة.</div></a>
+<a class="notification-entry" href="recalls.html"><strong>متابعة مستحقة</strong><div class="small text-secondary">متابعة بانتظار الحجز.</div></a>
+<a class="notification-entry" href="lab-cases.html"><strong>حالة مخبرية</strong><div class="small text-secondary">تم استلام حالة من المختبر.</div></a>
+<a class="notification-entry" href="job-applicants.html"><strong>متقدم جديد</strong><div class="small text-secondary">طلب توظيف جديد بانتظار المراجعة.</div></a>
+</div>
+</div>
+<div class="dropdown profile-action-dropdown">
+<button aria-label="حساب العيادة" class="clinic-profile-trigger compact-profile-trigger" data-bs-display="static" data-bs-toggle="dropdown" title="الملف الشخصي" type="button">
+<span class="clinic-avatar">ع</span><i class="bi bi-chevron-down small text-secondary d-none d-sm-inline"></i>
+</button>
+<div class="dropdown-menu dropdown-menu-end clean-dropdown profile-dropdown-menu">
+<a class="dropdown-item" href="profile.html"><i class="bi bi-hospital"></i>ملف العيادة</a>
+<a class="dropdown-item" href="staff.html"><i class="bi bi-person-gear"></i>الموظفون والصلاحيات</a><a class="dropdown-item" href="account-settings.html"><i class="bi bi-gear"></i>إعدادات الحساب</a>
+<a class="dropdown-item" href="job-applicants.html"><i class="bi bi-person-lines-fill"></i>المتقدمون للوظائف</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item text-primary fw-bold" href="../doctor/index.html"><i class="bi bi-arrow-left-right"></i>تبديل لمساحة الطبيب</a>
+<div class="px-3 py-2 bg-light rounded-3 mx-2 mb-2">
+<small class="text-secondary d-block">الحساب الحالي</small>
+<strong class="small">د. عمر ناصر • مالك ومدير العيادة</strong>
+</div>
+<button class="dropdown-item text-danger" data-logout=""><i class="bi bi-box-arrow-right"></i>تسجيل الخروج</button>
+</div>
+</div>
+<button aria-controls="sectionsDrawer" aria-label="كل الأقسام" class="btn btn-outline-primary sections-trigger mobile-sections-trigger" data-bs-target="#sectionsDrawer" data-bs-toggle="offcanvas" title="كل الأقسام" type="button">
+<i class="bi bi-grid-3x3-gap"></i><span class="d-none d-xxl-inline me-1">كل الأقسام</span>
+</button>
+</div>
+</div>
+</nav>
+<div class="offcanvas offcanvas-start mobile-drawer sections-drawer" id="sectionsDrawer" tabindex="-1">
+<div class="drawer-header">
+<div class="drawer-clinic"><div class="drawer-avatar">ع</div><div><h6 class="mb-1 fw-bold">عيادة الابتسامة الحديثة</h6><small class="opacity-75">كل الأقسام</small></div></div>
+<button aria-label="إغلاق" class="drawer-close" data-bs-dismiss="offcanvas"><i class="bi bi-x-lg"></i></button>
+</div>
+<div class="offcanvas-body p-0"><div class="drawer-content"><div class="drawer-title mt-3">الأساسية</div><a class="drawer-link" href="index.html">
+<span class="drawer-icon"><i class="bi bi-house"></i></span>
+<span class="flex-grow-1">الرئيسية</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="appointments.html">
+<span class="drawer-icon"><i class="bi bi-calendar2-check"></i></span>
+<span class="flex-grow-1">المواعيد</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="new-appointment.html">
+<span class="drawer-icon"><i class="bi bi-calendar2-plus"></i></span>
+<span class="flex-grow-1">إضافة موعد</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="patients.html">
+<span class="drawer-icon"><i class="bi bi-people"></i></span>
+<span class="flex-grow-1">المرضى</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="doctors.html">
+<span class="drawer-icon"><i class="bi bi-person-badge"></i></span>
+<span class="flex-grow-1">الأطباء</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="services.html">
+<span class="drawer-icon"><i class="bi bi-list-check"></i></span>
+<span class="flex-grow-1">الخدمات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="specialties.html">
+<span class="drawer-icon"><i class="bi bi-grid"></i></span>
+<span class="flex-grow-1">التخصصات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="invoices.html">
+<span class="drawer-icon"><i class="bi bi-receipt"></i></span>
+<span class="flex-grow-1">الفواتير</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-3">التشغيل</div><a class="drawer-link" href="operations.html">
+<span class="drawer-icon"><i class="bi bi-clipboard2-pulse"></i></span>
+<span class="flex-grow-1">التشغيل اليومي</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="recalls.html">
+<span class="drawer-icon"><i class="bi bi-arrow-repeat"></i></span>
+<span class="flex-grow-1">المتابعات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="treatment-plans.html">
+<span class="drawer-icon"><i class="bi bi-journal-medical"></i></span>
+<span class="flex-grow-1">خطط العلاج</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="lab-cases.html">
+<span class="drawer-icon"><i class="bi bi-box-seam"></i></span>
+<span class="flex-grow-1">الحالات المخبرية</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="inventory.html">
+<span class="drawer-icon"><i class="bi bi-boxes"></i></span>
+<span class="flex-grow-1">المخزون</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="reports.html">
+<span class="drawer-icon"><i class="bi bi-bar-chart"></i></span>
+<span class="flex-grow-1">التقارير والتحليلات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-3">التوظيف والإدارة</div><a class="drawer-link" href="staff.html"><span class="drawer-icon"><i class="bi bi-person-gear"></i></span><span class="flex-grow-1">الموظفون والصلاحيات</span><i class="bi bi-chevron-left text-secondary small"></i></a><a class="drawer-link" href="jobs.html">
+<span class="drawer-icon"><i class="bi bi-briefcase"></i></span>
+<span class="flex-grow-1">الوظائف</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="job-applicants.html">
+<span class="drawer-icon"><i class="bi bi-person-lines-fill"></i></span>
+<span class="flex-grow-1">المتقدمون للوظائف</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="profile.html">
+<span class="drawer-icon"><i class="bi bi-hospital"></i></span>
+<span class="flex-grow-1">ملف العيادة</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="account-settings.html">
+<span class="drawer-icon"><i class="bi bi-gear"></i></span>
+<span class="flex-grow-1">إعدادات الحساب</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-4">الحساب</div><button class="drawer-link border-0 bg-transparent w-100 text-danger" data-logout=""><span class="drawer-icon"><i class="bi bi-box-arrow-right"></i></span><span class="flex-grow-1 text-end">تسجيل الخروج</span></button>
+<div class="drawer-title mt-4">تبديل المساحة</div>
+<a class="drawer-link" href="../doctor/index.html"><span class="drawer-icon"><i class="bi bi-arrow-left-right"></i></span><span class="flex-grow-1">الانتقال لمساحة الطبيب</span><i class="bi bi-chevron-left text-secondary small"></i></a>
+<a class="drawer-link" href="settlements.html"><span class="drawer-icon"><i class="bi bi-wallet2"></i></span><span class="flex-grow-1">تسويات المنصة</span></a></div></div>
+</div>
+<main class="page-shell">
+<section class="container py-4 py-lg-5" data-new-job-prefix="J-DEMO-">
+<div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4">
+<div><span class="badge badge-soft mb-2">Jobs</span><h1 class="fw-bold">الوظائف</h1><p class="text-secondary mb-0">نشر الوظائف، تعديلها، حذفها، وعرض المتقدمين عليها.</p></div>
+<button class="btn btn-primary" data-bs-target="#jobModal" data-bs-toggle="modal" data-job-new=""><i class="bi bi-plus-lg ms-1"></i>نشر وظيفة</button>
+</div>
+<div class="filter-panel mb-4">
+<div class="row g-3">
+<div class="col-md-8"><div class="input-group"><span class="input-group-text bg-white"><i class="bi bi-search"></i></span><input class="form-control" id="jobSearch" placeholder="ابحث بعنوان الوظيفة أو التخصص"/></div></div>
+<div class="col-md-4"><select class="form-select" id="jobStatus"><option value="all">كل الحالات</option><option value="open">منشورة</option><option value="closed">مغلقة</option><option value="draft">مسودة</option></select></div>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-md-6 job-item" data-job-code="J-101" data-job-deadline="2026-10-18" data-job-experience="2" data-job-hours="9:00 ص – 5:00 م" data-job-salary="حسب الخبرة" data-job-specialty="طب أسنان عام" data-job-status="open" data-job-title="طبيب أسنان عام" data-job-type="دوام كامل" data-search="طبيب أسنان عام طب أسنان عام دوام كامل J-101" data-status="open"><div class="job-card h-100"><div class="d-flex justify-content-between gap-2"><div class="d-flex gap-2"><span class="badge text-bg-success">منشورة</span><span class="badge text-bg-light border">J-101</span></div><span class="small text-secondary">آخر موعد: 18 أكتوبر</span></div><h4 class="fw-bold mt-3">طبيب أسنان عام</h4><div class="job-meta mb-3"><span><i class="bi bi-clock ms-1"></i>دوام كامل</span><span><i class="bi bi-briefcase ms-1"></i>سنتان+</span><span><i class="bi bi-people ms-1"></i>8 متقدمين</span></div><p class="text-secondary">نبحث عن طبيب أسنان عام للانضمام إلى فريق العيادة والعمل ضمن بيئة متعددة التخصصات.</p><div class="d-flex flex-wrap gap-2 mt-auto"><a class="btn btn-outline-primary btn-sm" href="job-applicants.html?job=J-101">عرض المتقدمين</a><button class="btn btn-light btn-sm" data-bs-target="#jobModal" data-bs-toggle="modal" data-job-edit="J-101">تعديل</button><button class="btn btn-outline-danger btn-sm" data-job-delete="J-101">حذف نهائي</button></div></div><div class="d-none" data-job-html-record="J-101"><p data-job-description="">نبحث عن طبيب أسنان عام للانضمام إلى فريق العيادة والعمل ضمن بيئة متعددة التخصصات.</p><ul data-job-responsibilities=""><li>فحص وتشخيص الحالات العامة ووضع الخطة المناسبة.</li><li>إجراء الترميمات والعلاجات العامة ضمن نطاق الاختصاص.</li><li>توثيق الزيارات والتقارير الطبية على النظام.</li><li>التنسيق مع فريق العيادة لمتابعة الحالات.</li></ul><ul data-job-requirements=""><li>ترخيص مزاولة ساري ومتحقق في Smart Dental.</li><li>التخصص: طب أسنان عام.</li><li>خبرة عملية لا تقل عن سنتين.</li><li>مهارات تواصل ممتازة والالتزام بالمواعيد.</li></ul></div></div><div class="col-md-6 job-item" data-job-code="J-106" data-job-deadline="2026-10-20" data-job-experience="3" data-job-hours="يومان–3 أيام أسبوعيًا" data-job-salary="راتب + نسبة" data-job-specialty="تقويم الأسنان" data-job-status="open" data-job-title="طبيب/ة تقويم أسنان" data-job-type="دوام جزئي" data-search="طبيب/ة تقويم أسنان تقويم الأسنان دوام جزئي J-106" data-status="open"><div class="job-card h-100"><div class="d-flex justify-content-between gap-2"><div class="d-flex gap-2"><span class="badge text-bg-success">منشورة</span><span class="badge text-bg-light border">J-106</span></div><span class="small text-secondary">آخر موعد: 20 أكتوبر</span></div><h4 class="fw-bold mt-3">طبيب/ة تقويم أسنان</h4><div class="job-meta mb-3"><span><i class="bi bi-clock ms-1"></i>دوام جزئي</span><span><i class="bi bi-briefcase ms-1"></i>3 سنوات+</span><span><i class="bi bi-people ms-1"></i>2 متقدمين</span></div><p class="text-secondary">مطلوب طبيب/ة تقويم أسنان للعمل ضمن فريق عيادة الابتسامة الحديثة يومين إلى ثلاثة أيام أسبوعيًا.</p><div class="d-flex flex-wrap gap-2 mt-auto"><a class="btn btn-outline-primary btn-sm" href="job-applicants.html?job=J-106">عرض المتقدمين</a><button class="btn btn-light btn-sm" data-bs-target="#jobModal" data-bs-toggle="modal" data-job-edit="J-106">تعديل</button><button class="btn btn-outline-danger btn-sm" data-job-delete="J-106">حذف نهائي</button></div></div><div class="d-none" data-job-html-record="J-106"><p data-job-description="">مطلوب طبيب/ة تقويم أسنان للعمل ضمن فريق عيادة الابتسامة الحديثة يومين إلى ثلاثة أيام أسبوعيًا.</p><ul data-job-responsibilities=""><li>فحص حالات التقويم ووضع الخطة.</li><li>متابعة التقويم الثابت والشفاف.</li><li>توثيق تقدم الحالات.</li><li>التنسيق مع أطباء العيادة.</li></ul><ul data-job-requirements=""><li>اختصاص تقويم أسنان.</li><li>ترخيص مزاولة ساري ومتحقق.</li><li>خبرة 3 سنوات على الأقل.</li><li>خبرة بالتقويم الشفاف ميزة إضافية.</li></ul></div></div><div class="col-md-6 job-item" data-job-code="J-107" data-job-deadline="2026-10-25" data-job-experience="1" data-job-hours="4:00 م – 9:00 م" data-job-salary="حسب الاتفاق" data-job-specialty="طب أسنان عام" data-job-status="draft" data-job-title="طبيب أسنان عام — دوام مسائي" data-job-type="مسائي" data-search="طبيب أسنان عام دوام مسائي مسودة J-107" data-status="draft"><div class="job-card h-100"><div class="d-flex justify-content-between gap-2"><div class="d-flex gap-2"><span class="badge text-bg-secondary">مسودة</span><span class="badge text-bg-light border">J-107</span></div><span class="small text-secondary">غير منشورة</span></div><h4 class="fw-bold mt-3">طبيب أسنان عام — دوام مسائي</h4><div class="job-meta mb-3"><span>دوام جزئي</span><span>خبرة سنة+</span></div><p class="text-secondary">مسودة لم تنشر بعد، لذلك لا تظهر في صفحة الوظائف المتاحة للمتقدمين.</p><div class="d-flex flex-wrap gap-2 mt-auto"><button class="btn btn-primary btn-sm" data-toast="تم نشر الوظيفة تجريبياً">نشر الآن</button><button class="btn btn-light btn-sm" data-bs-target="#jobModal" data-bs-toggle="modal" data-job-edit="J-107">تعديل</button><button class="btn btn-outline-danger btn-sm" data-job-delete="J-107">حذف نهائي</button></div></div><div class="d-none" data-job-html-record="J-107"><p data-job-description="">مسودة وظيفة للفترة المسائية ولم تُنشر بعد.</p><ul data-job-responsibilities=""><li>استقبال المرضى في الفترة المسائية.</li><li>التعامل مع الحالات الطارئة العامة.</li><li>إجراء العلاجات الأساسية.</li><li>توثيق الزيارات.</li></ul><ul data-job-requirements=""><li>ترخيص مزاولة ساري.</li><li>تخصص طب أسنان عام.</li><li>خبرة سنة على الأقل.</li><li>القدرة على العمل مساءً.</li></ul></div></div></div>
+</section>
+<div class="modal fade" id="jobModal" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header"><h5 class="fw-bold mb-0" id="clinicJobModalTitle">إضافة / تعديل وظيفة</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body">
+<div class="alert alert-light border rounded-3 small mb-3">
+<i class="bi bi-info-circle ms-1"></i>
+  هذه هي نفس بيانات الإعلان التي تظهر للطبيب المتقدم في صفحة تفاصيل الوظيفة.
+</div>
+<div class="row g-3">
+<div class="col-md-6"><label class="form-label">عنوان الوظيفة *</label><input class="form-control" id="clinicJobTitle"/></div>
+<div class="col-md-6"><label class="form-label">التخصص المطلوب *</label><select class="form-select" id="clinicJobSpecialty"><option>طب أسنان عام</option><option>تقويم الأسنان</option><option>علاج الجذور</option><option>تجميل الأسنان</option></select></div>
+<div class="col-md-4"><label class="form-label">نوع الدوام *</label><select class="form-select" id="clinicJobType"><option>دوام كامل</option><option>دوام جزئي</option><option>مسائي</option></select></div>
+<div class="col-md-4"><label class="form-label">سنوات الخبرة *</label><input class="form-control" id="clinicJobExperience" min="0" type="number"/></div>
+<div class="col-md-4"><label class="form-label">آخر موعد للتقديم *</label><input class="form-control" id="clinicJobDeadline" type="date"/></div>
+<div class="col-md-6"><label class="form-label">ساعات / أيام العمل *</label><input class="form-control" id="clinicJobHours" placeholder="مثال: 9:00 ص – 5:00 م"/></div>
+<div class="col-md-6"><label class="form-label">الراتب / نظام الأجر *</label><input class="form-control" id="clinicJobSalary" placeholder="مثال: حسب الخبرة أو راتب + نسبة"/></div>
+<div class="col-12"><label class="form-label">نبذة عن الوظيفة *</label><textarea class="form-control" id="clinicJobDescription" rows="3"></textarea></div>
+<div class="col-md-6"><label class="form-label">المهام والمسؤوليات *</label><textarea class="form-control" id="clinicJobResponsibilities" placeholder="اكتب كل بند في سطر مستقل" rows="5"></textarea></div>
+<div class="col-md-6"><label class="form-label">المتطلبات *</label><textarea class="form-control" id="clinicJobRequirements" placeholder="اكتب كل شرط في سطر مستقل" rows="5"></textarea></div>
+</div>
+</div>
+<div class="modal-footer"><button class="btn btn-light" id="saveClinicJobDraft">حفظ كمسودة</button><button class="btn btn-primary" id="saveClinicJobPublish">حفظ ونشر</button></div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="deleteJobModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-body p-4">
+<h5 class="fw-bold">حذف الوظيفة؟</h5>
+<p class="text-secondary">سيتم حذف إعلان الوظيفة من واجهة العيادة. في النظام النهائي يفضل الاحتفاظ بسجل أرشيفي للوظائف القديمة.</p>
+<div class="d-flex justify-content-end gap-2">
+<button class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+<button class="btn btn-danger" data-bs-dismiss="modal" data-toast="تم حذف الوظيفة تجريبياً">حذف</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="site-footer mt-5"><div class="container py-5"><div class="row g-4"><div class="col-lg-5"><a class="footer-brand" href="index.html"><i class="bi bi-heart-pulse-fill ms-2"></i>Smart Dental Clinic</a><p class="footer-description mt-3 mb-0">واجهة إدارة العيادة للمواعيد، المرضى، الأطباء، المالية، التشغيل والتوظيف.</p></div><div class="col-6 col-lg-3"><h6 class="footer-title">التشغيل</h6><ul class="footer-links"><li><a href="operations.html">التشغيل اليومي</a></li><li><a href="recalls.html">المتابعات</a></li><li><a href="lab-cases.html">الحالات المخبرية</a></li><li><a href="inventory.html">المخزون</a></li></ul></div><div class="col-6 col-lg-4"><h6 class="footer-title">الإدارة</h6><ul class="footer-links"><li><a href="staff.html">الموظفون والصلاحيات</a></li><li><a href="invoices.html">الفواتير</a></li><li><a href="reports.html">التقارير التشغيلية</a></li><li><a href="job-applicants.html">المتقدمون للوظائف</a></li><li><a href="account-settings.html">إعدادات الحساب</a></li></ul></div></div><div class="footer-bottom mt-4 pt-4 d-flex flex-column flex-md-row justify-content-between gap-2"><div>© <span data-year=""></span> Smart Dental Clinic — Graduation Project</div><div>Clinic Management Front-end Demo</div></div></div></footer>
+<div class="toast-container position-fixed bottom-0 start-0 p-3"><div class="toast align-items-center text-bg-primary border-0" id="appToast"><div class="d-flex"><div class="toast-body">تمت العملية</div><button class="btn-close btn-close-white m-auto ms-2" data-bs-dismiss="toast"></button></div></div></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/app.js"></script><script>document.addEventListener('DOMContentLoaded',()=>{
+  document.addEventListener('click',e=>{
+    const edit=e.target.closest('[data-clinic-job-edit]');
+    if(edit){
+      const card=edit.closest('[data-job-code]');if(!card)return;
+      const val=(id,v)=>{const x=document.getElementById(id);if(x)x.value=v||'';};
+      val('clinicJobTitle',card.dataset.jobTitle);val('clinicJobSpecialty',card.dataset.jobSpecialty);val('clinicJobType',card.dataset.jobType);val('clinicJobExperience',card.dataset.jobExperience);val('clinicJobHours',card.dataset.jobHours);val('clinicJobSalary',card.dataset.jobSalary);val('clinicJobDeadline',card.dataset.jobDeadline);
+      val('clinicJobDescription',card.querySelector('[data-job-description]')?.textContent.trim());
+      val('clinicJobResponsibilities',[...card.querySelectorAll('[data-job-responsibilities] li')].map(x=>x.textContent.trim()).join('\n'));
+      val('clinicJobRequirements',[...card.querySelectorAll('[data-job-requirements] li')].map(x=>x.textContent.trim()).join('\n'));
+    }
+    const del=e.target.closest('[data-clinic-job-delete]');if(del){const card=del.closest('[data-job-code]');if(card)card.classList.add('opacity-50');}
+  });
+});</script></body></html>

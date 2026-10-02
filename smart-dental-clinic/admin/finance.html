@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>المالية | Smart Dental Clinic</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="assets/styles.css" rel="stylesheet"/></head><body>
+<nav class="navbar clinic-navbar bg-white border-bottom sticky-top">
+<div class="container-fluid clinic-nav-layout px-3 px-lg-4">
+<a class="clinic-brand clinic-brand-left" href="index.html">
+<span class="clinic-brand-mark"><i class="bi bi-shield-check"></i></span>
+<span class="clinic-brand-copy"><strong>إدارة Smart Dental</strong><small>Super Admin</small></span>
+</a>
+<div class="clinic-desktop-nav d-none d-xl-flex justify-content-center">
+<ul class="navbar-nav flex-row align-items-center"><li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li><li class="nav-item"><a class="nav-link" href="management-center.html">مركز الإدارة</a></li><li class="nav-item"><a class="nav-link" href="users.html">المستخدمون</a></li><li class="nav-item"><a class="nav-link" href="doctors.html">الأطباء والتراخيص</a></li><li class="nav-item"><a class="nav-link" href="approvals.html">طلبات الاعتماد</a></li><li class="nav-item"><a class="nav-link active fw-bold" href="finance.html">المالية</a></li></ul>
+</div>
+<div class="clinic-nav-actions">
+<div class="dropdown">
+<button class="top-action mobile-compact-action" data-bs-toggle="dropdown" title="اللغة" type="button">
+<i class="bi bi-globe2"></i><span class="d-none d-xxl-inline">AR</span>
+</button>
+<ul class="dropdown-menu dropdown-menu-end clean-dropdown language-menu">
+<li><button class="dropdown-item active" data-language="ar">العربية <small class="float-start text-secondary">AR</small></button></li>
+<li><button class="dropdown-item" data-language="en">English <small class="float-start text-secondary">EN</small></button></li>
+</ul>
+</div>
+<div class="dropdown notification-dropdown">
+<button class="top-action mobile-compact-action" data-bs-display="static" data-bs-toggle="dropdown" title="الإشعارات" type="button">
+<i class="bi bi-bell"></i><span class="notification-dot">5</span>
+</button>
+<div class="dropdown-menu clean-dropdown notification-menu mobile-notification-menu notification-menu-safe">
+<div class="px-3 py-2 d-flex justify-content-between align-items-center"><strong>تنبيهات الإدارة</strong><span class="badge text-bg-primary rounded-pill">5</span></div>
+<div class="dropdown-divider"></div>
+<a class="notification-entry" href="approvals.html"><strong>3 طلبات اعتماد عيادات</strong><div class="small text-secondary">تنتظر المراجعة.</div></a>
+<a class="notification-entry" href="doctors.html"><strong>ترخيص طبيب سينتهي قريبًا</strong><div class="small text-secondary">خلال 28 يومًا.</div></a>
+<a class="notification-entry" href="finance.html"><strong>مبالغ متبقية على عيادات</strong><div class="small text-secondary">تحتاج متابعة مالية.</div></a>
+<a class="notification-entry" href="support.html"><strong>بلاغ عالي الأولوية</strong><div class="small text-secondary">T-2401 • عيادة النخبة.</div></a>
+</div>
+</div>
+<div class="dropdown profile-action-dropdown">
+<button class="clinic-profile-trigger compact-profile-trigger" data-bs-display="static" data-bs-toggle="dropdown" title="حساب الأدمن" type="button">
+<span class="clinic-avatar">A</span><i class="bi bi-chevron-down small text-secondary d-none d-sm-inline"></i>
+</button>
+<div class="dropdown-menu dropdown-menu-end clean-dropdown profile-dropdown-menu">
+<div class="px-3 py-2"><strong class="d-block">مدير النظام</strong><small class="text-secondary">Super Admin</small></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="settings.html#account"><i class="bi bi-person-gear"></i>حسابي</a>
+<a class="dropdown-item" href="system-log.html"><i class="bi bi-shield-check"></i>سجل النظام</a>
+<div class="dropdown-divider"></div>
+<button class="dropdown-item text-danger" data-logout=""><i class="bi bi-box-arrow-right"></i>تسجيل الخروج</button>
+</div>
+</div>
+<button class="btn btn-outline-primary sections-trigger mobile-sections-trigger" data-bs-target="#sectionsDrawer" data-bs-toggle="offcanvas" title="كل الأقسام" type="button">
+<i class="bi bi-grid-3x3-gap"></i><span class="d-none d-xxl-inline me-1">كل الأقسام</span>
+</button>
+</div>
+</div>
+</nav>
+<div class="offcanvas offcanvas-start mobile-drawer sections-drawer" id="sectionsDrawer" tabindex="-1">
+<div class="drawer-header">
+<div class="drawer-clinic"><div class="drawer-avatar">A</div><div><h6 class="mb-1 fw-bold">مدير النظام</h6><small class="opacity-75">كل أقسام الإدارة</small></div></div>
+<button class="drawer-close" data-bs-dismiss="offcanvas"><i class="bi bi-x-lg"></i></button>
+</div>
+<div class="offcanvas-body p-0"><div class="drawer-content"><div class="drawer-title mt-3">الأساسية</div><a class="drawer-link" href="index.html">
+<span class="drawer-icon"><i class="bi bi-house-door"></i></span>
+<span class="flex-grow-1">الرئيسية</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="management-center.html"><span class="drawer-icon"><i class="bi bi-grid-1x2"></i></span><span class="flex-grow-1">مركز الإدارة والإضافات</span><i class="bi bi-chevron-left text-secondary small"></i></a><a class="drawer-link" href="users.html">
+<span class="drawer-icon"><i class="bi bi-people"></i></span>
+<span class="flex-grow-1">المستخدمون</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="doctors.html">
+<span class="drawer-icon"><i class="bi bi-person-badge"></i></span>
+<span class="flex-grow-1">الأطباء والتراخيص</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="approvals.html">
+<span class="drawer-icon"><i class="bi bi-patch-check"></i></span>
+<span class="flex-grow-1">طلبات اعتماد العيادات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-3">إدارة المنصة</div><a class="drawer-link" href="specialties.html">
+<span class="drawer-icon"><i class="bi bi-grid"></i></span>
+<span class="flex-grow-1">التخصصات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link active" href="finance.html">
+<span class="drawer-icon"><i class="bi bi-wallet2"></i></span>
+<span class="flex-grow-1">المالية</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="support.html">
+<span class="drawer-icon"><i class="bi bi-life-preserver"></i></span>
+<span class="flex-grow-1">البلاغات والمشكلات</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="reports.html">
+<span class="drawer-icon"><i class="bi bi-bar-chart"></i></span>
+<span class="flex-grow-1">التقارير</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><div class="drawer-title mt-3">النظام</div><a class="drawer-link" href="system-log.html">
+<span class="drawer-icon"><i class="bi bi-shield-check"></i></span>
+<span class="flex-grow-1">سجل النظام</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a><a class="drawer-link" href="settings.html">
+<span class="drawer-icon"><i class="bi bi-gear"></i></span>
+<span class="flex-grow-1">إعدادات المنصة</span>
+<i class="bi bi-chevron-left text-secondary small"></i>
+</a></div></div>
+</div>
+<main class="page-shell">
+<section class="container py-4 py-lg-5">
+<div class="d-flex flex-column flex-lg-row justify-content-between gap-3 align-items-lg-start mb-4">
+<div><h1 class="fw-bold fs-2 mb-2">المالية</h1><p class="text-secondary mb-0">متابعة مستحقات المنصة على العيادات وفواتير المرضى من مكان واحد.</p></div>
+<button class="btn btn-outline-primary" id="exportFinanceBtn"><i class="bi bi-download ms-1"></i>تصدير CSV</button>
+</div>
+<div class="row g-3 mb-4">
+<div class="col-6 col-xl-3"><div class="stat-card"><small class="text-secondary">المطلوب للمنصة</small><div class="stat-value" id="financeTotalDue">13,110 ₪</div><small>عن الفترات المعروضة</small></div></div>
+<div class="col-6 col-xl-3"><div class="stat-card"><small class="text-secondary">تم استلامه</small><div class="stat-value text-success" id="financeTotalReceived">8,250 ₪</div><small>دفعات العيادات</small></div></div>
+<div class="col-6 col-xl-3"><div class="stat-card"><small class="text-secondary">المتبقي</small><div class="stat-value text-danger" id="financeTotalRemaining">4,860 ₪</div><small>ما زال على العيادات</small></div></div>
+<div class="col-6 col-xl-3"><div class="stat-card"><small class="text-secondary">عيادات مسددة</small><div class="stat-value" id="financePaidClinics">1</div><small>من 4 سجلات</small></div></div>
+</div>
+<ul class="nav admin-tabs mb-4">
+<li class="nav-item"><button class="nav-link active" data-bs-target="#settlements" data-bs-toggle="pill">تسويات العيادات</button></li>
+<li class="nav-item"><button class="nav-link" data-bs-target="#invoices" data-bs-toggle="pill">فواتير المرضى</button></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane fade show active" id="settlements">
+<div class="filter-panel mb-4"><div class="row g-3">
+<div class="col-lg-4"><input class="form-control" id="financeSearch" placeholder="ابحث باسم العيادة..."/></div>
+<div class="col-md-4 col-lg-3"><select class="form-select" id="financeStatus"><option value="">كل الحالات</option><option value="remaining">عليها مبلغ متبقي</option><option value="paid">مسددة</option><option value="unpaid">لم تدفع بعد</option></select></div>
+<div class="col-md-4 col-lg-3"><select class="form-select" id="financePeriod"><option value="">كل الفترات</option><option value="2026-10">أكتوبر 2026</option><option value="2026-09">سبتمبر 2026</option><option value="custom">فترة مخصصة</option></select></div>
+<div class="col-12 d-none" id="financeCustomDates">
+<div class="row g-2 align-items-end">
+<div class="col-md-4"><label class="form-label small text-secondary mb-1">من تاريخ</label><input class="form-control" id="financeFromDate" type="date" value="2026-10-01"/></div>
+<div class="col-md-4"><label class="form-label small text-secondary mb-1">إلى تاريخ</label><input class="form-control" id="financeToDate" type="date" value="2026-10-31"/></div>
+<div class="col-md-4"><button class="btn btn-primary w-100" id="applyFinanceCustomDates" type="button">تطبيق الفترة</button></div>
+</div>
+</div></div></div>
+<div class="soft-card table-responsive">
+<table class="table mb-0 admin-finance-table wide-data-table"><thead><tr><th>العيادة</th><th>الفترة</th><th>الحجوزات المدفوعة</th><th>المطلوب للمنصة</th><th>تم استلامه</th><th>المتبقي</th><th>الحالة</th><th>الإجراءات</th></tr></thead>
+<tbody id="financeTableBody">
+<tr data-commission-snapshot="5" data-due="4200" data-finance-row="" data-period="2026-10" data-received="2500" data-search="عيادة الابتسامة الحديثة" data-settlement-code="SET-2026-10-C008">
+<td data-label="العيادة"><strong>عيادة الابتسامة الحديثة</strong><small class="d-block text-secondary">C-008 • نابلس • SET-2026-10-C008</small></td><td data-label="الفترة">أكتوبر 2026</td><td data-label="الحجوزات المدفوعة">84,000 ₪</td><td data-due-cell="" data-label="المطلوب للمنصة">4,200 ₪</td><td class="text-success fw-bold" data-label="تم استلامه" data-received-cell="">2,500 ₪</td><td class="text-danger fw-bold" data-label="المتبقي" data-remaining-cell="">1,700 ₪</td><td data-label="الحالة"><span class="badge text-bg-warning" data-finance-badge="">عليها مبلغ</span></td><td data-label="الإجراءات"><div class="d-flex gap-1 table-action-grid"><button class="btn btn-sm btn-light" data-finance-details="" data-payments="01/10/2026|1,000 ₪|تحويل بنكي|TRX-8801;15/10/2026|1,500 ₪|تحويل بنكي|TRX-8910">تفاصيل</button><button class="btn btn-sm btn-primary" data-record-payment="">تسجيل دفعة</button></div></td>
+</tr>
+<tr data-commission-snapshot="5" data-due="3150" data-finance-row="" data-period="2026-10" data-received="3150" data-search="عيادة النخبة" data-settlement-code="SET-2026-10-C041">
+<td data-label="العيادة"><strong>عيادة النخبة</strong><small class="d-block text-secondary">C-041 • جنين • SET-2026-10-C041</small></td><td data-label="الفترة">أكتوبر 2026</td><td data-label="الحجوزات المدفوعة">63,000 ₪</td><td data-due-cell="" data-label="المطلوب للمنصة">3,150 ₪</td><td class="text-success fw-bold" data-label="تم استلامه" data-received-cell="">3,150 ₪</td><td data-label="المتبقي" data-remaining-cell="">0 ₪</td><td data-label="الحالة"><span class="badge text-bg-success" data-finance-badge="">مسددة</span></td><td data-label="الإجراءات"><div class="d-flex gap-1 table-action-grid"><button class="btn btn-sm btn-light" data-finance-details="" data-payments="02/10/2026|3,150 ₪|تحويل بنكي|TRX-9012">تفاصيل</button><button class="btn btn-sm btn-outline-primary" data-record-payment="" disabled="">مكتملة</button></div></td>
+</tr>
+<tr data-commission-snapshot="5" data-due="2760" data-finance-row="" data-period="2026-10" data-received="0" data-search="مركز سما" data-settlement-code="SET-2026-10-C052">
+<td data-label="العيادة"><strong>مركز سما لطب الأسنان</strong><small class="d-block text-secondary">C-052 • طولكرم • SET-2026-10-C052</small></td><td data-label="الفترة">أكتوبر 2026</td><td data-label="الحجوزات المدفوعة">55,200 ₪</td><td data-due-cell="" data-label="المطلوب للمنصة">2,760 ₪</td><td class="text-success fw-bold" data-label="تم استلامه" data-received-cell="">0 ₪</td><td class="text-danger fw-bold" data-label="المتبقي" data-remaining-cell="">2,760 ₪</td><td data-label="الحالة"><span class="badge text-bg-danger" data-finance-badge="">لم تدفع بعد</span></td><td data-label="الإجراءات"><div class="d-flex gap-1 table-action-grid"><button class="btn btn-sm btn-light" data-finance-details="" data-payments="">تفاصيل</button><button class="btn btn-sm btn-primary" data-record-payment="">تسجيل دفعة</button></div></td>
+</tr>
+<tr data-commission-snapshot="5" data-due="3000" data-finance-row="" data-period="2026-09" data-received="2600" data-search="عيادة الشفاء" data-settlement-code="SET-2026-09-C033">
+<td data-label="العيادة"><strong>عيادة الشفاء</strong><small class="d-block text-secondary">C-033 • نابلس • SET-2026-09-C033</small></td><td data-label="الفترة">سبتمبر 2026</td><td data-label="الحجوزات المدفوعة">60,000 ₪</td><td data-due-cell="" data-label="المطلوب للمنصة">3,000 ₪</td><td class="text-success fw-bold" data-label="تم استلامه" data-received-cell="">2,600 ₪</td><td class="text-danger fw-bold" data-label="المتبقي" data-remaining-cell="">400 ₪</td><td data-label="الحالة"><span class="badge text-bg-warning" data-finance-badge="">عليها مبلغ</span></td><td data-label="الإجراءات"><div class="d-flex gap-1 table-action-grid"><button class="btn btn-sm btn-light" data-finance-details="" data-payments="15/09/2026|2,600 ₪|نقدي|CASH-211">تفاصيل</button><button class="btn btn-sm btn-primary" data-record-payment="">تسجيل دفعة</button></div></td>
+</tr>
+</tbody>
+</table>
+<div class="empty-state d-none" id="financeEmpty">لا توجد تسويات مطابقة للفلاتر.</div>
+</div>
+</div>
+<div class="tab-pane fade" id="invoices">
+<div class="d-flex justify-content-end mb-3"><button class="btn btn-primary btn-sm" data-bs-target="#invoiceFormModal" data-bs-toggle="modal" data-invoice-new=""><i class="bi bi-plus-lg ms-1"></i>إضافة فاتورة</button></div>
+<div class="filter-panel mb-4"><div class="row g-3"><div class="col-lg-5"><input class="form-control" id="invoiceSearch" placeholder="رقم الفاتورة أو المريض..."/></div><div class="col-lg-3"><select class="form-select" id="invoiceStatusFilter"><option value="">كل الحالات</option><option value="paid">مدفوعة</option><option value="installment">تقسيط</option><option value="unpaid">غير مدفوعة</option></select></div></div></div>
+<div class="soft-card table-responsive"><table class="table mb-0 admin-master-table wide-data-table"><thead><tr><th>الفاتورة</th><th>المريض</th><th>العيادة</th><th>الإجمالي</th><th>المدفوع</th><th>المتبقي</th><th>الحالة</th><th>الإجراءات</th></tr></thead>
+<tbody id="invoiceTableBody">
+<tr data-invoice-row="" data-search="IN-101 محمد سمير" data-status="installment"><td data-label="الفاتورة"><strong data-invoice-id="">IN-101</strong></td><td data-invoice-patient="" data-label="المريض">محمد سمير</td><td data-invoice-clinic="" data-label="العيادة">الابتسامة الحديثة</td><td data-invoice-total="" data-label="الإجمالي">1700</td><td data-invoice-paid="" data-label="المدفوع">1350</td><td data-invoice-remaining="" data-label="المتبقي">350</td><td data-label="الحالة"><span class="badge text-bg-warning" data-invoice-badge="">تقسيط</span></td><td data-label="الإجراءات"><div class="d-flex gap-1 table-action-grid"><a class="btn btn-sm btn-light" href="invoice-details-IN-101.html">عرض</a><button class="btn btn-sm btn-outline-primary" data-invoice-edit="">تعديل</button><button class="btn btn-sm btn-outline-secondary" data-sensitive-action="void" data-sensitive-entity="IN-101" data-sensitive-title="إلغاء / Void الفاتورة">Void</button></div></td></tr>
+<tr data-invoice-row="" data-search="IN-118 أحمد خالد" data-status="paid"><td data-label="الفاتورة"><strong data-invoice-id="">IN-118</strong></td><td data-invoice-patient="" data-label="المريض">أحمد خالد</td><td data-invoice-clinic="" data-label="العيادة">الابتسامة الحديثة</td><td data-invoice-total="" data-label="الإجمالي">450</td><td data-invoice-paid="" data-label="المدفوع">450</td><td data-invoice-remaining="" data-label="المتبقي">0</td><td data-label="الحالة"><span class="badge text-bg-success" data-invoice-badge="">مدفوعة</span></td><td data-label="الإجراءات"><div class="d-flex gap-1 table-action-grid"><button class="btn btn-sm btn-light" data-invoice-view="">عرض</button><button class="btn btn-sm btn-outline-primary" data-invoice-edit="">تعديل</button><button class="btn btn-sm btn-outline-secondary" data-sensitive-action="void" data-sensitive-entity="IN-118" data-sensitive-title="إلغاء / Void الفاتورة">Void</button></div></td></tr>
+</tbody>
+</table><div class="empty-state d-none" id="invoiceEmpty">لا توجد فواتير مطابقة.</div></div>
+</div>
+</div>
+</section>
+<div class="modal fade" id="financeDetailsModal" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4">
+<div class="modal-header"><div><h5 class="modal-title fw-bold" id="financeDetailClinic"></h5><small class="text-secondary" id="financeDetailPeriod"></small></div><button class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body"><div class="row g-3 mb-4"><div class="col-md-4"><div class="admin-money-box"><small>المطلوب</small><strong id="financeDetailDue"></strong></div></div><div class="col-md-4"><div class="admin-money-box success"><small>تم استلامه</small><strong id="financeDetailReceived"></strong></div></div><div class="col-md-4"><div class="admin-money-box danger"><small>المتبقي</small><strong id="financeDetailRemaining"></strong></div></div></div><h6 class="fw-bold">سجل الدفعات</h6><div class="table-responsive"><table class="table admin-master-table"><thead><tr><th>التاريخ</th><th>المبلغ</th><th>الطريقة</th><th>المرجع</th></tr></thead><tbody id="financePaymentsBody"></tbody></table></div>
+<div class="soft-card p-3 mt-3">
+<div class="summary-row"><span>settlement_code</span><strong id="financeDetailSettlementCode">—</strong></div>
+<div class="summary-row"><span>نسبة العمولة المحفوظة Snapshot</span><strong id="financeDetailCommission">5%</strong></div>
+<div class="summary-row"><span>قاعدة الحساب</span><strong>الحجوزات المدفوعة في الفترة</strong></div>
+</div><div class="mt-4" id="settlementItemsBreakdown">
+<div class="d-flex justify-content-between align-items-center mb-2">
+<div><h6 class="fw-bold mb-1">بنود التسوية</h6><small class="text-secondary">الحجوزات/الدفعات التي كوّنت عمولة هذه الفترة.</small></div>
+<span class="badge badge-soft">settlement_items</span>
+</div>
+<div class="table-responsive">
+<table class="table align-middle mb-0">
+<thead><tr><th>المرجع</th><th>القيمة المدفوعة</th><th>Snapshot العمولة</th><th>عمولة المنصة</th><th>التاريخ</th></tr></thead>
+<tbody>
+<tr><td data-label="المرجع"><strong>A-8870</strong><small class="d-block">متابعة علاج جذور</small></td><td data-label="القيمة المدفوعة">450 ₪</td><td data-label="Snapshot العمولة">5%</td><td data-label="عمولة المنصة">22.50 ₪</td><td data-label="التاريخ">12/09/2026</td></tr>
+<tr><td data-label="المرجع"><strong>A-8891</strong><small class="d-block">تنظيف أسنان</small></td><td data-label="القيمة المدفوعة">300 ₪</td><td data-label="Snapshot العمولة">5%</td><td data-label="عمولة المنصة">15.00 ₪</td><td data-label="التاريخ">18/09/2026</td></tr>
+<tr><td data-label="المرجع"><strong>A-8934</strong><small class="d-block">تركيبات</small></td><td data-label="القيمة المدفوعة">1,200 ₪</td><td data-label="Snapshot العمولة">5%</td><td data-label="عمولة المنصة">60.00 ₪</td><td data-label="التاريخ">24/09/2026</td></tr>
+</tbody>
+</table>
+</div>
+<div class="small text-secondary mt-2">في Laravel ستُجلب هذه البنود من settlement_items حسب settlement_id بدل البيانات التجريبية الحالية.</div>
+</div></div>
+<div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal">إغلاق</button></div>
+</div></div></div>
+<div class="modal fade" id="recordPaymentModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content border-0 rounded-4">
+<div class="modal-header"><div><h5 class="modal-title fw-bold">تسجيل دفعة من العيادة</h5><small class="text-secondary" id="paymentClinicName"></small></div><button class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body"><div class="alert alert-light border rounded-4">المتبقي الحالي: <strong id="paymentCurrentRemaining"></strong></div><label class="form-label">المبلغ المستلم *</label><input class="form-control mb-3" id="paymentAmount" min="1" type="number"/><label class="form-label">طريقة الدفع</label><select class="form-select mb-3" id="paymentMethod"><option>تحويل بنكي</option><option>نقدي</option><option>بطاقة / بوابة دفع</option></select><label class="form-label">مرجع العملية</label><input class="form-control" id="paymentRef" placeholder="TRX-..."/></div>
+<div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal">إلغاء</button><button class="btn btn-success" id="savePaymentBtn">تسجيل الدفعة</button></div>
+</div></div></div>
+<div class="modal fade" id="invoiceFormModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content border-0 rounded-4">
+<div class="modal-header"><h5 class="modal-title fw-bold" id="invoiceFormTitle">إضافة فاتورة</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body"><div class="row g-3"><div class="col-md-6"><label class="form-label">رقم الفاتورة</label><input class="form-control" id="invoiceFormId"/></div><div class="col-md-6"><label class="form-label">المريض</label><input class="form-control" id="invoiceFormPatient"/></div><div class="col-md-6"><label class="form-label">العيادة</label><input class="form-control" id="invoiceFormClinic"/></div><div class="col-md-3"><label class="form-label">الإجمالي</label><input class="form-control" id="invoiceFormTotal" type="number"/></div><div class="col-md-3"><label class="form-label">المدفوع</label><input class="form-control" id="invoiceFormPaid" type="number"/></div></div></div>
+<div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal">إلغاء</button><button class="btn btn-primary" id="saveInvoiceBtn">حفظ</button></div>
+</div></div></div></main>
+<div class="modal fade" id="viewModal" tabindex="-1">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+<div class="modal-content border-0 rounded-4">
+<div class="modal-header"><div><h5 class="modal-title fw-bold" id="viewTitle"></h5><small class="text-secondary" id="viewSubtitle"></small></div><button class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body" id="viewBody"></div>
+<div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal">إغلاق</button></div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="sensitiveActionModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content border-0 rounded-4">
+<div class="modal-header"><div><h5 class="modal-title fw-bold" id="sensitiveActionTitle">تأكيد إجراء إداري</h5><small class="text-secondary" id="sensitiveActionSubtitle"></small></div><button class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body"><div class="alert alert-warning rounded-4"><i class="bi bi-shield-exclamation ms-1"></i>هذا إجراء حساس، والسبب سيكون إلزاميًا في الـBackend وسيظهر في Audit Log.</div><label class="form-label">سبب الإجراء الإداري *</label><textarea class="form-control" id="sensitiveActionReason" placeholder="اكتب سببًا واضحًا..." rows="4"></textarea></div>
+<div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal">إلغاء</button><button class="btn btn-primary" id="confirmSensitiveAction">تأكيد</button></div>
+</div>
+</div>
+</div><div class="toast-container position-fixed bottom-0 start-0 p-3"><div class="toast align-items-center text-bg-primary border-0" id="appToast"><div class="d-flex"><div class="toast-body">تمت العملية</div><button class="btn-close btn-close-white m-auto ms-2" data-bs-dismiss="toast"></button></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/app.js"></script>
+</body></html>

@@ -25,23 +25,31 @@
       <div class="user-type-selector">
         <button type="button" class="type-btn active" onclick="switchRole('patient', this)">مريض</button>
         <button type="button" class="type-btn" onclick="switchRole('doctor', this)">طبيب</button>
-        <button type="button" class="type-btn" onclick="switchRole('applicant', this)">متقدم لوظيفة</button>
       </div>
 
       <!-- نموذج التسجيل -->
       <form class="pro-form" id="registerForm" onsubmit="handleRegister(event)">
         
-        <!-- حقول مشتركة: الاسم الكامل -->
-        <div class="pro-input-group">
-          <label for="fullname">الاسم الكامل</label>
-          <div class="pro-input-box">
-            <span class="field-icon">👤</span>
-            <input type="text" id="fullname" placeholder="الاسم ثلاثي" required>
-          </div>
-        </div>
-
-        <!-- 1. حقول خاصة بالمريض -->
+        <!-- 1. حقول خاصة بالمريض (الاسم الأول والأخير + تفاصيل المريض + البريد وكلمة المرور) -->
         <div id="patient-fields" class="role-fields">
+          
+          <div class="form-row">
+            <div class="pro-input-group flex-1">
+              <label for="patient-firstname">الاسم الأول</label>
+              <div class="pro-input-box">
+                <span class="field-icon">👤</span>
+                <input type="text" id="patient-firstname" placeholder="الاسم الأول" required>
+              </div>
+            </div>
+            <div class="pro-input-group flex-1">
+              <label for="patient-lastname">الاسم الاخير</label>
+              <div class="pro-input-box">
+                <span class="field-icon">👤</span>
+                <input type="text" id="patient-lastname" placeholder="الاسم الاخير" required>
+              </div>
+            </div>
+          </div>
+
           <div class="form-row">
             <div class="pro-input-group flex-1">
               <label for="dob">تاريخ الميلاد</label>
@@ -67,10 +75,56 @@
               <input type="tel" id="phone" placeholder="059XXXXXXX">
             </div>
           </div>
+
+          <div class="pro-input-group">
+            <label for="patient-email">البريد الإلكتروني</label>
+            <div class="pro-input-box">
+              <span class="field-icon">✉️</span>
+              <input type="email" id="patient-email" placeholder="sara@email.com" required>
+            </div>
+          </div>
+
+          <div class="pro-input-group">
+            <label for="patient-password">كلمة المرور</label>
+            <div class="pro-input-box">
+              <span class="field-icon">🔒</span>
+              <input type="password" id="patient-password" placeholder="••••••••" required>
+            </div>
+            <small class="form-hint" style="color: #666; font-size: 12px; margin-top: 4px; display: block;">
+              يجب أن تحتوي على 8 خانات على الأقل، حرف كبير، حرف صغير، رقم، ورمز خاص (مثل @$!%*?&).
+            </small>
+          </div>
+
+          <div class="pro-input-group">
+            <label for="patient-confirm-password">تأكيد كلمة المرور</label>
+            <div class="pro-input-box">
+              <span class="field-icon">🔒</span>
+              <input type="password" id="patient-confirm-password" placeholder="••••••••" required>
+            </div>
+          </div>
+
         </div>
 
-        <!-- 2. حقول خاصة بالطبيب -->
+        <!-- 2. حقول خاصة بالطبيب (الاسم الأول والأخير + تفاصيل الطبيب + البريد وكلمة المرور) -->
         <div id="doctor-fields" class="role-fields hidden">
+          
+          <div class="form-row">
+            <div class="pro-input-group flex-1">
+              <label for="doctor-firstname">الاسم الأول</label>
+              <div class="pro-input-box">
+                <span class="field-icon">👤</span>
+                <input type="text" id="doctor-firstname" placeholder="الاسم الأول">
+              </div>
+            </div>
+            <div class="pro-input-group flex-1">
+              <label for="doctor-lastname">الاسم الاخير</label>
+              <div class="pro-input-box">
+                <span class="field-icon">👤</span>
+                <input type="text" id="doctor-lastname" placeholder="الاسم الاخير">
+              </div>
+            </div>
+          </div>
+
           <div class="pro-input-group">
             <label for="specialty">التخصص</label>
             <div class="pro-input-box">
@@ -85,7 +139,7 @@
           </div>
 
           <div class="pro-input-group">
-            <label for="license">رقم الترخيص الطبي</label>
+            <label for="license">رقم الترخيص الطبي </label>
             <div class="pro-input-box">
               <span class="field-icon">🔢</span>
               <input type="text" id="license" placeholder="PS-DEN-XXXXX">
@@ -93,7 +147,7 @@
           </div>
 
           <div class="pro-input-group">
-            <label for="clinic-loc">موقع العيادة</label>
+            <label for="clinic-loc">موقع العيادة <span class="optional-text">(اختياري)</span></label>
             <div class="pro-input-box">
               <span class="field-icon">📍</span>
               <input type="text" id="clinic-loc" placeholder="نابلس - عيادة الحكيم">
@@ -105,56 +159,37 @@
             <div class="file-upload-box">
               <input type="file" id="license-doc" accept=".pdf,image/*">
               <span class="upload-icon">📄</span>
-              <span class="upload-text">أسقط الملف هنا أو اضغط للختيار</span>
+              <span class="upload-text">أسقط الملف هنا أو اضغط للاختيار</span>
             </div>
           </div>
-        </div>
 
-        <!-- 3. حقول خاصة بالمتقدم لوظيفة (خريج / طالب) -->
-        <div id="applicant-fields" class="role-fields hidden">
           <div class="pro-input-group">
-            <label for="experience">سنوات الخبرة</label>
+            <label for="doctor-email">البريد الإلكتروني</label>
             <div class="pro-input-box">
-              <select id="experience">
-                <option value="fresh">بدون خبرة (حديث التخرج)</option>
-                <option value="1-2">1 - 2 سنة</option>
-                <option value="3+">3 سنوات أو أكثر</option>
-              </select>
+              <span class="field-icon">✉️</span>
+              <input type="email" id="doctor-email" placeholder="doctor@email.com">
             </div>
           </div>
 
           <div class="pro-input-group">
-            <label for="cv-file">السيرة الذاتية (CV)</label>
-            <div class="file-upload-box">
-              <input type="file" id="cv-file" accept=".pdf,.doc,.docx">
-              <span class="upload-icon">📎</span>
-              <span class="upload-text">ارفق ملف الـ CV (PDF)</span>
-            </div>
-          </div>
-
-          <div class="pro-input-group">
-            <label for="bio">وصف التقديم (اختياري)</label>
+            <label for="doctor-password">كلمة المرور</label>
             <div class="pro-input-box">
-              <textarea id="bio" rows="3" placeholder="أكتب نبذة قصيرة عن نفسك..."></textarea>
+              <span class="field-icon">🔒</span>
+              <input type="password" id="doctor-password" placeholder="••••••••">
+            </div>
+            <small class="form-hint" style="color: #666; font-size: 12px; margin-top: 4px; display: block;">
+              يجب أن تحتوي على 8 خانات على الأقل، حرف كبير، حرف صغير، رقم، ورمز خاص (مثل @$!%*?&).
+            </small>
+          </div>
+
+          <div class="pro-input-group">
+            <label for="doctor-confirm-password">تأكيد كلمة المرور</label>
+            <div class="pro-input-box">
+              <span class="field-icon">🔒</span>
+              <input type="password" id="doctor-confirm-password" placeholder="••••••••">
             </div>
           </div>
-        </div>
 
-        <!-- حقول مشتركة: البريد وكلمة المرور -->
-        <div class="pro-input-group">
-          <label for="email">البريد الإلكتروني</label>
-          <div class="pro-input-box">
-            <span class="field-icon">✉️</span>
-            <input type="email" id="email" placeholder="sara@email.com" required>
-          </div>
-        </div>
-
-        <div class="pro-input-group">
-          <label for="password">كلمة المرور</label>
-          <div class="pro-input-box">
-            <span class="field-icon">🔒</span>
-            <input type="password" id="password" placeholder="••••••••" required>
-          </div>
         </div>
 
         <!-- زر الإرسال -->
@@ -165,11 +200,11 @@
 
       </form>
 
-      <!-- شاشة مراجعة حساب الطبيب (تظهر عند التسجيل كطبيب) -->
+      <!-- شاشة مراجعة حساب الطبيب -->
       <div id="review-status" class="review-box hidden">
         <div class="hourglass-icon">⏳</div>
         <h3>حسابك قيد المراجعة</h3>
-        <p>تم استلام طلبك بنجاح. سيقوم فريق الإدارة بمراجعة بيانات الترخيص والتأكد منها، وستصلك رسالة عبر البريد الإلكتروني فور تفعيل الحساب (خلال 24-48 ساعة).</p>
+        <p>تم استلام طلبك بنجاح. سيقوم فريق الإدارة بمراجعة البيانات، وستصلك رسالة عبر البريد الإلكتروني فور تفعيل الحساب (خلال 24-48 ساعة).</p>
         <a href="login.html" class="btn btn--ghost style-review-btn">العودة لتسجيل الدخول</a>
       </div>
 
@@ -185,6 +220,7 @@
 
   </div>
 
+  <script src="js/site-data.js"></script>
   <script>
     let currentRole = 'patient';
 
@@ -193,37 +229,105 @@
       document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      document.querySelectorAll('.role-fields').forEach(f => f.classList.add('hidden'));
+      document.querySelectorAll('.role-fields').forEach(f => {
+        f.classList.add('hidden');
+        // تعطيل حقول القسم المخفي حتى لا يتطلب متصفح الويب التحقق من حقول مخفية (required)
+        f.querySelectorAll('input, select, textarea').forEach(input => input.removeAttribute('required'));
+      });
 
       const title = document.getElementById('form-title');
       const submitBtn = document.getElementById('submit-btn').querySelector('span');
 
       if (role === 'patient') {
-        document.getElementById('patient-fields').classList.remove('hidden');
+        const patientFields = document.getElementById('patient-fields');
+        patientFields.classList.remove('hidden');
+        // إعادة تفعيل الحقول الإجبارية للمريض
+        document.getElementById('patient-firstname').setAttribute('required', 'true');
+        document.getElementById('patient-lastname').setAttribute('required', 'true');
+        document.getElementById('patient-email').setAttribute('required', 'true');
+        document.getElementById('patient-password').setAttribute('required', 'true');
+        document.getElementById('patient-confirm-password').setAttribute('required', 'true');
+
         title.innerText = 'حساب مريض';
         submitBtn.innerText = 'إنشاء الحساب';
       } else if (role === 'doctor') {
-        document.getElementById('doctor-fields').classList.remove('hidden');
+        const doctorFields = document.getElementById('doctor-fields');
+        doctorFields.classList.remove('hidden');
+        // تفعيل الحقول الإجبارية للطبيب
+        document.getElementById('doctor-firstname').setAttribute('required', 'true');
+        document.getElementById('doctor-lastname').setAttribute('required', 'true');
+        document.getElementById('doctor-email').setAttribute('required', 'true');
+        document.getElementById('doctor-password').setAttribute('required', 'true');
+        document.getElementById('doctor-confirm-password').setAttribute('required', 'true');
+
         title.innerText = 'حساب طبيب';
         submitBtn.innerText = 'إرسال للمراجعة';
-      } else if (role === 'applicant') {
-        document.getElementById('applicant-fields').classList.remove('hidden');
-        title.innerText = 'حساب متقدم لوظيفة';
-        submitBtn.innerText = 'إنشاء الحساب';
       }
     }
 
     function handleRegister(e) {
       e.preventDefault();
-      if (currentRole === 'doctor') {
-        // إخفاء النموذج وإظهار شاشة الانتظار والمراجعة للطبيب
-        document.getElementById('registerForm').classList.add('hidden');
-        document.querySelector('.user-type-selector').classList.add('hidden');
-        document.getElementById('card-footer').classList.add('hidden');
-        document.getElementById('review-status').classList.remove('hidden');
+
+      let password, confirmPassword;
+
+      if (currentRole === 'patient') {
+        password = document.getElementById('patient-password').value;
+        confirmPassword = document.getElementById('patient-confirm-password').value;
       } else {
-        alert('تم إنشاء الحساب بنجاح!');
-        window.location.href = 'login.html';
+        password = document.getElementById('doctor-password').value;
+        confirmPassword = document.getElementById('doctor-confirm-password').value;
+      }
+
+      // فحص قيود كلمة المرور (8 خانات، حرف كبير، حرف صغير، رقم، ورمز خاص)
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      
+      if (!passwordRegex.test(password)) {
+        alert('كلمة المرور ضعيفة! يجب ألا تقل عن 8 خانات وأن تحتوي على حرف كبير، حرف صغير، رقم، ورمز خاص.');
+        return;
+      }
+
+      // فحص تطابق كلمة المرور وتأكيدها
+      if (password !== confirmPassword) {
+        alert('كلمتا المرور غير متطابقتين. يرجى التحقق مرة أخرى.');
+        return;
+      }
+
+      try {
+        if (currentRole === 'doctor') {
+          DentalStore.createUser({
+            role: 'doctor',
+            firstName: document.getElementById('doctor-firstname').value.trim(),
+            lastName: document.getElementById('doctor-lastname').value.trim(),
+            name: 'د. ' + document.getElementById('doctor-firstname').value.trim() + ' ' + document.getElementById('doctor-lastname').value.trim(),
+            specialty: document.getElementById('specialty').selectedOptions[0].textContent,
+            license: document.getElementById('license').value.trim(),
+            clinic: document.getElementById('clinic-loc').value.trim(),
+            email: document.getElementById('doctor-email').value.trim(),
+            password: password,
+            status: 'pending'
+          });
+          document.getElementById('registerForm').classList.add('hidden');
+          document.querySelector('.user-type-selector').classList.add('hidden');
+          document.getElementById('card-footer').classList.add('hidden');
+          document.getElementById('review-status').classList.remove('hidden');
+        } else {
+          DentalStore.createUser({
+            role: 'patient',
+            firstName: document.getElementById('patient-firstname').value.trim(),
+            lastName: document.getElementById('patient-lastname').value.trim(),
+            name: document.getElementById('patient-firstname').value.trim() + ' ' + document.getElementById('patient-lastname').value.trim(),
+            dob: document.getElementById('dob').value,
+            gender: document.getElementById('gender').value,
+            phone: document.getElementById('phone').value.trim(),
+            email: document.getElementById('patient-email').value.trim(),
+            password: password,
+            status: 'active'
+          });
+          alert('تم إنشاء الحساب بنجاح!');
+          window.location.href = 'login.html';
+        }
+      } catch (error) {
+        alert(error.message || 'تعذر إنشاء الحساب.');
       }
     }
   </script>

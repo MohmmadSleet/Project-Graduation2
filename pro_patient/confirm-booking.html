@@ -41,11 +41,11 @@
     <div class="d-flex flex-column gap-2">
       <div class="d-flex align-items-center justify-content-between">
         <span class="text-muted-2"><i class="bi bi-calendar3 ms-1" style="color:#1e6fe8"></i> التاريخ</span>
-        <span class="fw-bold">الثلاثاء ١٦ يونيو ٢٠٢٦</span>
+        <span class="fw-bold" id="confirmBookingDate">الثلاثاء ١٦ يونيو ٢٠٢٦</span>
       </div>
       <div class="d-flex align-items-center justify-content-between">
         <span class="text-muted-2"><i class="bi bi-clock ms-1" style="color:#1e6fe8"></i> الوقت</span>
-        <span class="fw-bold">١٠:٣٠ صباحاً</span>
+        <span class="fw-bold" id="confirmBookingTime">١٠:٣٠ صباحاً</span>
       </div>
       <div class="d-flex align-items-center justify-content-between">
         <span class="text-muted-2"><i class="bi bi-geo-alt-fill ms-1" style="color:#1e6fe8"></i> الموقع</span>
@@ -60,9 +60,9 @@
 
   <!-- notes -->
   <label class="form-label fw-bold">ملاحظات للطبيب (اختياري)</label>
-  <textarea class="form-control mb-4" rows="3" placeholder="تشخيص أولي يشير لالتهاب لب بالخد منذ يومين"></textarea>
+  <textarea id="bookingNotes" class="form-control mb-4" rows="3" placeholder="تشخيص أولي يشير لالتهاب لب بالخد منذ يومين"></textarea>
 
-  <a href="booking-success.html" class="btn btn-primary w-100 py-3">تأكيد الحجز</a>
+  <button type="button" id="confirmBookingBtn" class="btn btn-primary w-100 py-3">تأكيد الحجز</button>
 </main>
 
 <!-- ================================================= -->
@@ -71,6 +71,7 @@
  
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/site-data.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
