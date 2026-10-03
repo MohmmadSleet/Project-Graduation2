@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اختر العيادة | العيادة الذكية</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-contact">
+        <a href="mailto:info@smartdentalclinic.ps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+          info@smartdentalclinic.ps
+        </a>
+      </div>
+      <div class="top-bar-left">
+        <span>طولكرم، فلسطين</span>
+        <div class="language-selector">
+          <span class="lang-icon">🌐</span>
+          <select id="language">
+              <option value="ar">العربية</option>
+              <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5c-1.5-1.5-3.6-2-5.3-1.2C4.8 4.7 3.8 6.7 4 8.8c.3 3 1.7 5.6 2.3 8.6.2 1.1.6 2.6 1.9 2.6 1.5 0 1.6-1.8 1.8-2.9.2-1.3.5-3.1 1.9-3.1s1.7 1.8 1.9 3.1c.2 1.1.4 2.9 1.9 2.9 1.3 0 1.7-1.5 1.9-2.6.6-3 2-5.6 2.3-8.6.2-2.1-.8-4.1-2.7-5C15.6 3 13.5 3.5 12 5z"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <strong>Smart dental clinic </strong>
+          <small>لطب الأسنان</small>
+        </span>
+      </a>
+
+      <a href="notifications.html" class="notification">
+        <i class="bi bi-bell"></i>
+        <span class="notification-badge">3</span>
+      </a>
+
+      <nav class="nav-links" id="mainNav">
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="/diagnosis">التشخيص الذكي</a></li>
+          <li><a href="doctors.html">الأطباء</a></li>
+          <li><a href="select-clinic.html" class="active">حجز موعد</a></li>
+          <li><a href="medical-record.html">سجلي الطبي</a></li>
+          <li><a href="index.html#about">من نحن</a></li>
+          <li><a href="profile.html">حسابي</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-btns">
+        <button class="menu-toggle" id="menuBtn" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page-container py-4">
+
+  <!-- عنوان الصفحة ودليل الخطوة -->
+  <div class="d-flex align-items-center gap-3 mb-4">
+    <button class="btn btn-light rounded-circle p-2 shadow-sm" onclick="window.history.back()" aria-label="رجوع">
+      <i class="bi bi-arrow-right fs-5"></i>
+    </button>
+    <div>
+      <h1 class="h4 fw-bold mb-1">اختر العيادة</h1>
+      <p class="text-muted small mb-0">حدد التخصص المطلوب لمتابعة حجز الموعد</p>
+    </div>
+  </div>
+
+  <!-- قائمة العيادات -->
+  <div class="row g-3 mb-5">
+
+    <!-- عيادة طب الأسنان العام -->
+    <div class="col-12 col-md-6">
+      <a href="doctors-select.html?clinic=general" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none">
+        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:52px; height:52px; background:#e7f1ff; color:#1e6fe8">
+          <i class="bi bi-hospital fs-4"></i>
+        </div>
+        <div class="flex-grow-1">
+          <div class="fw-bold text-dark">عيادة الأسنان العامة</div>
+          <div class="text-muted-2 small">فحص دوري، تنظيف، وحشوات أسنان</div>
+        </div>
+        <i class="bi bi-chevron-left text-muted fs-5"></i>
+      </a>
+    </div>
+
+    <!-- عيادة علاج العصب والجذور -->
+    <div class="col-12 col-md-6">
+      <a href="doctors-select.html?clinic=endo" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none">
+        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:52px; height:52px; background:#e7f1ff; color:#1e6fe8">
+          <i class="bi bi-activity fs-4"></i>
+        </div>
+        <div class="flex-grow-1">
+          <div class="fw-bold text-dark">عيادة علاج العصب والجذور</div>
+          <div class="text-muted-2 small">علاج آلام العصب والتهابات جذور الأسنان</div>
+        </div>
+        <i class="bi bi-chevron-left text-muted fs-5"></i>
+      </a>
+    </div>
+
+    <!-- عيادة تقويم الأسنان -->
+    <div class="col-12 col-md-6">
+      <a href="doctors-select.html?clinic=ortho" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none">
+        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:52px; height:52px; background:#e7f1ff; color:#1e6fe8">
+          <i class="bi bi-grid-3x3-gap-fill fs-4"></i>
+        </div>
+        <div class="flex-grow-1">
+          <div class="fw-bold text-dark">عيادة تقويم الأسنان</div>
+          <div class="text-muted-2 small">تقويم شفاف ومعدني ومتابعة المواعيد الدوريّة</div>
+        </div>
+        <i class="bi bi-chevron-left text-muted fs-5"></i>
+      </a>
+    </div>
+
+    <!-- عيادة التجميل والزراعة -->
+    <div class="col-12 col-md-6">
+      <a href="doctors-select.html?clinic=cosmetic" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none">
+        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:52px; height:52px; background:#e7f1ff; color:#1e6fe8">
+          <i class="bi bi-gem fs-4"></i>
+        </div>
+        <div class="flex-grow-1">
+          <div class="fw-bold text-dark">عيادة التجميل والزراعة</div>
+          <div class="text-muted-2 small">ابتسامة هوليود، تبييض وزراعة الأسنان</div>
+        </div>
+        <i class="bi bi-chevron-left text-muted fs-5"></i>
+      </a>
+    </div>
+
+    <!-- عيادة أسنان الأطفال -->
+    <div class="col-12 col-md-6">
+      <a href="doctors-select.html?clinic=pediatric" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none">
+        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:52px; height:52px; background:#e7f1ff; color:#1e6fe8">
+          <i class="bi bi-emoji-smile fs-4"></i>
+        </div>
+        <div class="flex-grow-1">
+          <div class="fw-bold text-dark">عيادة أسنان الأطفال</div>
+          <div class="text-muted-2 small">عناية سنية مخصصة للأطفال في بيئة مريحة</div>
+        </div>
+        <i class="bi bi-chevron-left text-muted fs-5"></i>
+      </a>
+    </div>
+
+    <!-- عيادة جراحة اللثة -->
+    <div class="col-12 col-md-6">
+      <a href="doctors-select.html?clinic=perio" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none">
+        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:52px; height:52px; background:#e7f1ff; color:#1e6fe8">
+          <i class="bi bi-shield-plus fs-4"></i>
+        </div>
+        <div class="flex-grow-1">
+          <div class="fw-bold text-dark">عيادة أمراض وجراحة اللثة</div>
+          <div class="text-muted-2 small">علاج نزيف والتهابات اللثة وتنظيف الرواسب</div>
+        </div>
+        <i class="bi bi-chevron-left text-muted fs-5"></i>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5c-1.5-1.5-3.6-2-5.3-1.2C4.8 4.7 3.8 6.7 4 8.8c.3 3 1.7 5.6 2.3 8.6.2 1.1.6 2.6 1.9 2.6 1.5 0 1.6-1.8 1.8-2.9.2-1.3.5-3.1 1.9-3.1s1.7 1.8 1.9 3.1c.2 1.1.4 2.9 1.9 2.9 1.3 0 1.7-1.5 1.9-2.6.6-3 2-5.6 2.3-8.6.2-2.1-.8-4.1-2.7-5C15.6 3 13.5 3.5 12 5z"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <strong>العيادة الذكية</strong>
+          <small>لطب الأسنان</small>
+        </span>
+      </a>
+      <p>منصة رقمية شاملة تجمع التشخيص الأولي بالذكاء الاصطناعي، الحجز الفوري للمواعيد، والسجل الطبي الموحد في مكان واحد — لخدمة المرضى والأطباء في فلسطين.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="/diagnosis">التشخيص الذكي</a></li>
+        <li><a href="select-clinic.html">حجز موعد</a></li>
+        <li><a href="doctors.html">الأطباء</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>الحساب</h4>
+      <ul>
+        <li><a href="/login">تسجيل الدخول</a></li>
+        <li><a href="/register">إنشاء حساب</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contact">
+      <h4>تواصل معنا</h4>
+      <ul>
+        <li><span>طولكرم، فلسطين</span></li>
+        <li><span dir="ltr">+970 59 510 7619</span></li>
+        <li><span dir="ltr">info@smartdentalclinic.ps</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© 2026 العيادة الذكية لطب الأسنان. جميع الحقوق محفوظة.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,97 +1,1448 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>البحث عن طبيب | عيادتي</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+  rel="stylesheet">
+
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
+  rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css">
+
 </head>
+
+
 <body>
+
 
 <!-- ================================================= -->
 <!-- ★★★  ضعي الهيدر الجاهز الخاص بك هنا  ★★★        -->
 <!-- ================================================= -->
 
+
 <main class="page-container">
-<div class="page-head">
-  <button class="back-btn" data-back aria-label="رجوع"><i class="bi bi-arrow-right"></i></button>
-  <h1 class="page-title">البحث عن طبيب</h1>
-</div>
 
-  <!-- search input -->
-  <div class="position-relative mb-4">
-    <input type="text" class="form-control ps-5" placeholder="اكتب اسم الطبيب أو التخصص" value="محمد" data-search-input>
-    <i class="bi bi-search position-absolute top-50 translate-middle-y" style="left:1.1rem;color:#1e6fe8"></i>
+
+  <!-- ================================================= -->
+  <!-- Page Header -->
+  <!-- ================================================= -->
+
+  <div class="page-head d-flex align-items-center gap-3 mb-4">
+
+    <button
+      class="back-btn"
+      id="backBtn"
+      aria-label="رجوع">
+
+      <i class="bi bi-arrow-right"></i>
+
+    </button>
+
+    <h1
+      class="page-title mb-0"
+      id="pageTitle">
+
+      البحث عن عيادة
+
+    </h1>
+
   </div>
 
-  <!-- filter chips -->
-  <div class="h-scroll mb-3" data-select-group>
-    <span class="chip active" data-select>الكل</span>
-    <span class="chip" data-select>الأقرب</span>
-    <span class="chip" data-select>الأعلى تقييماً</span>
-    <span class="chip" data-select>متاح اليوم</span>
+
+
+  <!-- ================================================= -->
+  <!-- Search -->
+  <!-- ================================================= -->
+
+  <div
+    class="position-relative mb-4"
+    id="searchContainer">
+
+    <input
+      type="text"
+      id="searchInput"
+      class="form-control ps-5 py-2"
+      placeholder="ابحث باسم العيادة أو المدينة..."
+      autocomplete="off">
+
+    <i
+      class="bi bi-search position-absolute top-50 translate-middle-y"
+      style="left:1.1rem;color:#1e6fe8">
+    </i>
+
   </div>
 
-  <!-- results count -->
-  <div class="text-muted-2 small mb-3" data-results-count></div>
 
-  <!-- results list -->
-  <div class="d-flex flex-column gap-3 mb-4">
 
-    <a href="doctor-profile.html" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none" data-doctor-item data-name="محمد عبد الكريم">
-      <span class="avatar-circle">د.م</span>
-      <div class="flex-grow-1">
-        <div class="fw-bold text-dark">د. محمد عبد الكريم</div>
-        <div class="text-muted-2 small">علاج لب الأسنان · نابلس</div>
-      </div>
-      <i class="bi bi-chevron-left" style="color:#b7c6d9"></i>
-    </a>
-    <a href="doctor-profile.html" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none" data-doctor-item data-name="محمد قاسم">
-      <span class="avatar-circle">د.م</span>
-      <div class="flex-grow-1">
-        <div class="fw-bold text-dark">د. محمد قاسم</div>
-        <div class="text-muted-2 small">تقويم الأسنان · طولكرم</div>
-      </div>
-      <i class="bi bi-chevron-left" style="color:#b7c6d9"></i>
-    </a>
-    <a href="doctor-profile.html" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none" data-doctor-item data-name="رنا الشريف">
-      <span class="avatar-circle">د.ر</span>
-      <div class="flex-grow-1">
-        <div class="fw-bold text-dark">د. رنا الشريف</div>
-        <div class="text-muted-2 small">المركز التخصصي · رام الله</div>
-      </div>
-      <i class="bi bi-chevron-left" style="color:#b7c6d9"></i>
-    </a>
-    <a href="doctor-profile.html" class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none" data-doctor-item data-name="خالد ياسين">
-      <span class="avatar-circle">د.خ</span>
-      <div class="flex-grow-1">
-        <div class="fw-bold text-dark">د. خالد ياسين</div>
-        <div class="text-muted-2 small">عيادة الأمل · الخليل</div>
-      </div>
-      <i class="bi bi-chevron-left" style="color:#b7c6d9"></i>
-    </a>
-  </div>
+  <!-- ================================================= -->
+  <!-- STEP 1 : CLINICS -->
+  <!-- ================================================= -->
 
-  <!-- empty state -->
-  <div class="text-center py-5 d-none" data-empty-state>
-    <span class="icon-blob mb-4" style="background:#e7f1ff;color:#1e6fe8">
-      <i class="bi bi-search-heart"></i>
+  <section id="clinicsSection">
+
+
+    <!-- Filters -->
+
+    <div
+      class="h-scroll d-flex gap-2 mb-3 pb-2 overflow-auto"
+      id="clinicFilters">
+
+      <span
+        class="chip active"
+        data-clinic-filter="all">
+
+        الكل
+
+      </span>
+
+      <span
+        class="chip"
+        data-clinic-filter="nearest">
+
+        الأقرب
+
+      </span>
+
+      <span
+        class="chip"
+        data-clinic-filter="top-rated">
+
+        الأعلى تقييماً
+
+      </span>
+
+    </div>
+
+
+
+    <!-- Results Count -->
+
+    <div
+      class="text-muted-2 small mb-3"
+      id="clinicsCount">
+
+      عرض 4 عيادات متاحة
+
+    </div>
+
+
+
+    <!-- Clinics -->
+
+    <div
+      class="d-flex flex-column gap-3 mb-4"
+      id="clinicsList">
+
+
+
+      <!-- Clinic 1 -->
+
+      <div
+        class="soft-card p-3 border rounded-3 cursor-pointer action-card clinic-item"
+
+        data-clinic-id="1"
+
+        data-clinic-name="مركز نابلس التخصصي لطب الأسنان"
+
+        data-city="نابلس"
+
+        data-rating="4.9">
+
+        <div class="d-flex align-items-center gap-3">
+
+
+          <div
+            class="icon-blob rounded-circle d-flex align-items-center justify-content-center"
+            style="width:52px;height:52px;background:#e7f1ff;color:#1e6fe8">
+
+            <i class="bi bi-hospital fs-4"></i>
+
+          </div>
+
+
+          <div class="flex-grow-1">
+
+            <div class="fw-bold text-dark fs-6">
+
+              مركز نابلس التخصصي لطب الأسنان
+
+            </div>
+
+            <div class="text-muted-2 small">
+
+              <i class="bi bi-geo-alt me-1"></i>
+
+              نابلس - شارع سفيان
+
+            </div>
+
+            <div class="small text-warning mt-1">
+
+              <i class="bi bi-star-fill"></i>
+
+              4.9
+
+              <span class="text-muted">
+                (120 تقييم)
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <i class="bi bi-chevron-left text-muted"></i>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Clinic 2 -->
+
+      <div
+        class="soft-card p-3 border rounded-3 cursor-pointer action-card clinic-item"
+
+        data-clinic-id="2"
+
+        data-clinic-name="عيادة الأمل اللطيفة لطب الأسنان"
+
+        data-city="طولكرم"
+
+        data-rating="4.8">
+
+        <div class="d-flex align-items-center gap-3">
+
+
+          <div
+            class="icon-blob rounded-circle d-flex align-items-center justify-content-center"
+            style="width:52px;height:52px;background:#e7f1ff;color:#1e6fe8">
+
+            <i class="bi bi-hospital fs-4"></i>
+
+          </div>
+
+
+          <div class="flex-grow-1">
+
+            <div class="fw-bold text-dark fs-6">
+
+              عيادة الأمل اللطيفة لطب الأسنان
+
+            </div>
+
+            <div class="text-muted-2 small">
+
+              <i class="bi bi-geo-alt me-1"></i>
+
+              طولكرم - الحي الشمالي
+
+            </div>
+
+            <div class="small text-warning mt-1">
+
+              <i class="bi bi-star-fill"></i>
+
+              4.8
+
+              <span class="text-muted">
+                (85 تقييم)
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <i class="bi bi-chevron-left text-muted"></i>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Clinic 3 -->
+
+      <div
+        class="soft-card p-3 border rounded-3 cursor-pointer action-card clinic-item"
+
+        data-clinic-id="3"
+
+        data-clinic-name="المركز الطبي الحديث للأسنان"
+
+        data-city="رام الله"
+
+        data-rating="4.7">
+
+        <div class="d-flex align-items-center gap-3">
+
+
+          <div
+            class="icon-blob rounded-circle d-flex align-items-center justify-content-center"
+            style="width:52px;height:52px;background:#e7f1ff;color:#1e6fe8">
+
+            <i class="bi bi-hospital fs-4"></i>
+
+          </div>
+
+
+          <div class="flex-grow-1">
+
+            <div class="fw-bold text-dark fs-6">
+
+              المركز الطبي الحديث للأسنان
+
+            </div>
+
+            <div class="text-muted-2 small">
+
+              <i class="bi bi-geo-alt me-1"></i>
+
+              رام الله - الإرسال
+
+            </div>
+
+            <div class="small text-warning mt-1">
+
+              <i class="bi bi-star-fill"></i>
+
+              4.7
+
+              <span class="text-muted">
+                (94 تقييم)
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <i class="bi bi-chevron-left text-muted"></i>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Clinic 4 -->
+
+      <div
+        class="soft-card p-3 border rounded-3 cursor-pointer action-card clinic-item"
+
+        data-clinic-id="4"
+
+        data-clinic-name="عيادة النور لتقويم وجراحة الأسنان"
+
+        data-city="الخليل"
+
+        data-rating="4.9">
+
+        <div class="d-flex align-items-center gap-3">
+
+
+          <div
+            class="icon-blob rounded-circle d-flex align-items-center justify-content-center"
+            style="width:52px;height:52px;background:#e7f1ff;color:#1e6fe8">
+
+            <i class="bi bi-hospital fs-4"></i>
+
+          </div>
+
+
+          <div class="flex-grow-1">
+
+            <div class="fw-bold text-dark fs-6">
+
+              عيادة النور لتقويم وجراحة الأسنان
+
+            </div>
+
+            <div class="text-muted-2 small">
+
+              <i class="bi bi-geo-alt me-1"></i>
+
+              الخليل - عين سارة
+
+            </div>
+
+            <div class="small text-warning mt-1">
+
+              <i class="bi bi-star-fill"></i>
+
+              4.9
+
+              <span class="text-muted">
+                (150 تقييم)
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <i class="bi bi-chevron-left text-muted"></i>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================================================= -->
+  <!-- STEP 2 : DOCTORS -->
+  <!-- ================================================= -->
+
+  <section
+    id="doctorsSection"
+    class="d-none">
+
+
+    <!-- Selected Clinic -->
+
+    <div
+      class="card border-0 bg-light p-3 rounded-3 mb-4 d-flex flex-row align-items-center justify-content-between">
+
+      <div class="d-flex align-items-center gap-3">
+
+        <i class="bi bi-building fs-3 text-primary"></i>
+
+        <div>
+
+          <span class="small text-muted d-block">
+
+            العيادة المختارة:
+
+          </span>
+
+          <strong
+            id="selectedClinicName"
+            class="text-dark fs-6">
+
+            اسم العيادة
+
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="btn btn-sm btn-outline-primary rounded-pill px-3"
+        id="changeClinicBtn">
+
+        تغيير العيادة
+
+      </button>
+
+    </div>
+
+
+
+    <!-- Doctor Search -->
+
+    <div
+      class="position-relative mb-4">
+
+      <input
+        type="text"
+        id="doctorSearchInput"
+        class="form-control ps-5 py-2"
+        placeholder="ابحث باسم الطبيب أو التخصص..."
+        autocomplete="off">
+
+      <i
+        class="bi bi-search position-absolute top-50 translate-middle-y"
+        style="left:1.1rem;color:#1e6fe8">
+      </i>
+
+    </div>
+
+
+
+    <!-- Doctor Filters -->
+
+    <div
+      class="h-scroll d-flex gap-2 mb-3 pb-2 overflow-auto"
+      id="doctorFilters">
+
+      <span
+        class="chip active"
+        data-doctor-filter="all">
+
+        الكل
+
+      </span>
+
+      <span
+        class="chip"
+        data-doctor-filter="top-rated">
+
+        الأعلى تقييماً
+
+      </span>
+
+      <span
+        class="chip"
+        data-doctor-filter="available">
+
+        متاح اليوم
+
+      </span>
+
+    </div>
+
+
+
+    <div
+      class="text-muted-2 small mb-3"
+      id="doctorsCount">
+
+      اختر الطبيب المناسب:
+
+    </div>
+
+
+
+    <!-- Doctors -->
+
+    <div
+      class="d-flex flex-column gap-3 mb-4"
+      id="doctorsList">
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ================================================= -->
+  <!-- EMPTY STATE -->
+  <!-- ================================================= -->
+
+  <div
+    class="text-center py-5 d-none"
+    id="emptyState">
+
+    <span
+      class="icon-blob mb-4 d-inline-flex align-items-center justify-content-center rounded-circle"
+      style="width:64px;height:64px;background:#e7f1ff;color:#1e6fe8">
+
+      <i class="bi bi-search-heart fs-3"></i>
+
     </span>
-    <h2 class="fw-bold mb-2">لا يوجد طبيب بهذا الاسم</h2>
-    <p class="text-muted-2 mb-4">تحقق من الإملاء أو جرّب البحث بالتخصص المطلوب بدلاً من الاسم</p>
-    <button class="btn btn-primary px-5 py-3">تصفح حسب التخصص</button>
+
+
+    <h2
+      class="fw-bold mb-2"
+      id="emptyTitle">
+
+      لا توجد نتائج
+
+    </h2>
+
+
+    <p
+      class="text-muted-2 mb-4"
+      id="emptyMessage">
+
+      تحقق من الإملاء وحاول مرة أخرى.
+
+    </p>
+
+
+    <button
+      class="btn btn-primary px-5 py-3"
+      id="clearSearchBtn">
+
+      مسح البحث
+
+    </button>
+
   </div>
+
+
 </main>
+
+
 
 <!-- ================================================= -->
 <!-- ★★★  ضعي الفوتر الجاهز الخاص بك هنا  ★★★        -->
 <!-- ================================================= -->
 
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="../js/site-data.js"></script>
+
 <script src="js/main.js"></script>
+
+
+<script>
+
+
+/* =====================================================
+   بيانات الأطباء
+===================================================== */
+
+const doctorsData = {
+
+  "1": [
+
+    {
+      name: "محمد عبد الكريم",
+      spec: "علاج لب الأسنان",
+      avatar: "د.م",
+      rating: 4.9,
+      available: true
+    },
+
+    {
+      name: "سارة أحمد",
+      spec: "طب أسنان الأطفال",
+      avatar: "د.س",
+      rating: 4.7,
+      available: true
+    }
+
+  ],
+
+
+  "2": [
+
+    {
+      name: "محمد قاسم",
+      spec: "تقويم الأسنان والفكين",
+      avatar: "د.م",
+      rating: 4.8,
+      available: true
+    },
+
+    {
+      name: "ياسمين خليل",
+      spec: "تركيبات الأسنان",
+      avatar: "د.ي",
+      rating: 4.6,
+      available: false
+    }
+
+  ],
+
+
+  "3": [
+
+    {
+      name: "رنا الشريف",
+      spec: "جراحة وتجميل الأسنان",
+      avatar: "د.ر",
+      rating: 4.7,
+      available: false
+    },
+
+    {
+      name: "عمر الفاروق",
+      spec: "أمراض وجراحة اللثة",
+      avatar: "د.ع",
+      rating: 4.8,
+      available: true
+    }
+
+  ],
+
+
+  "4": [
+
+    {
+      name: "خالد ياسين",
+      spec: "زراعة الأسنان",
+      avatar: "د.خ",
+      rating: 4.9,
+      available: true
+    }
+
+  ]
+
+};
+
+
+
+/* =====================================================
+   العناصر
+===================================================== */
+
+const clinicsSection =
+  document.getElementById("clinicsSection");
+
+const doctorsSection =
+  document.getElementById("doctorsSection");
+
+const clinicsList =
+  document.getElementById("clinicsList");
+
+const doctorsList =
+  document.getElementById("doctorsList");
+
+const searchInput =
+  document.getElementById("searchInput");
+
+const doctorSearchInput =
+  document.getElementById("doctorSearchInput");
+
+const pageTitle =
+  document.getElementById("pageTitle");
+
+const backBtn =
+  document.getElementById("backBtn");
+
+const changeClinicBtn =
+  document.getElementById("changeClinicBtn");
+
+const selectedClinicName =
+  document.getElementById("selectedClinicName");
+
+const emptyState =
+  document.getElementById("emptyState");
+
+const emptyTitle =
+  document.getElementById("emptyTitle");
+
+const emptyMessage =
+  document.getElementById("emptyMessage");
+
+const clearSearchBtn =
+  document.getElementById("clearSearchBtn");
+
+const clinicsCount =
+  document.getElementById("clinicsCount");
+
+const doctorsCount =
+  document.getElementById("doctorsCount");
+
+
+
+/* =====================================================
+   الحالة الحالية
+===================================================== */
+
+let currentStep = 1;
+
+let selectedClinicId = null;
+
+let currentClinicFilter = "all";
+
+let currentDoctorFilter = "all";
+
+
+
+/* =====================================================
+   اختيار العيادة
+===================================================== */
+
+document
+  .querySelectorAll(".clinic-item")
+  .forEach(clinic => {
+
+    clinic.addEventListener("click", () => {
+
+      const clinicId =
+        clinic.dataset.clinicId;
+
+      const clinicName =
+        clinic.dataset.clinicName;
+
+      showDoctors(
+        clinicId,
+        clinicName
+      );
+
+    });
+
+  });
+
+
+
+/* =====================================================
+   عرض الأطباء
+===================================================== */
+
+function showDoctors(
+  clinicId,
+  clinicName
+) {
+
+  currentStep = 2;
+
+  selectedClinicId = clinicId;
+
+  pageTitle.textContent =
+    "اختر الطبيب";
+
+  clinicsSection.classList.add("d-none");
+
+  doctorsSection.classList.remove("d-none");
+
+  document
+    .getElementById("searchContainer")
+    ?.classList.add("d-none");
+
+  selectedClinicName.textContent =
+    clinicName;
+
+  doctorSearchInput.value = "";
+
+  currentDoctorFilter = "all";
+
+
+  /* إعادة الفلتر إلى الكل */
+
+  document
+    .querySelectorAll("[data-doctor-filter]")
+    .forEach(button => {
+
+      button.classList.remove("active");
+
+    });
+
+  document
+    .querySelector('[data-doctor-filter="all"]')
+    .classList.add("active");
+
+
+  renderDoctors();
+
+}
+
+
+
+/* =====================================================
+   إنشاء بطاقات الأطباء
+===================================================== */
+
+function renderDoctors() {
+
+  doctorsList.innerHTML = "";
+
+  const doctors =
+    doctorsData[selectedClinicId] || [];
+
+
+  let visibleDoctors = 0;
+
+  const searchValue =
+    doctorSearchInput.value
+      .trim()
+      .toLowerCase();
+
+
+  doctors.forEach(doc => {
+
+
+    const matchesSearch =
+
+      doc.name
+        .toLowerCase()
+        .includes(searchValue)
+
+      ||
+
+      doc.spec
+        .toLowerCase()
+        .includes(searchValue);
+
+
+    let matchesFilter = true;
+
+
+    if (
+      currentDoctorFilter ===
+      "top-rated"
+    ) {
+
+      matchesFilter =
+        doc.rating >= 4.8;
+
+    }
+
+
+    if (
+      currentDoctorFilter ===
+      "available"
+    ) {
+
+      matchesFilter =
+        doc.available === true;
+
+    }
+
+
+    if (
+      !matchesSearch ||
+      !matchesFilter
+    ) {
+
+      return;
+
+    }
+
+
+    visibleDoctors++;
+
+
+    const doctorCard = `
+
+      <a
+        href="doctor-profile.html"
+        class="soft-card d-flex align-items-center gap-3 p-3 text-decoration-none border rounded-3 action-card">
+
+        <span class="avatar-circle">
+
+          ${doc.avatar}
+
+        </span>
+
+
+        <div class="flex-grow-1">
+
+          <div class="fw-bold text-dark">
+
+            د. ${doc.name}
+
+          </div>
+
+
+          <div class="text-muted-2 small">
+
+            ${doc.spec}
+
+          </div>
+
+
+          <div class="small text-warning mt-1">
+
+            <i class="bi bi-star-fill"></i>
+
+            ${doc.rating}
+
+          </div>
+
+
+          ${
+            doc.available
+              ? `
+                <div class="small text-success mt-1">
+
+                  <i class="bi bi-check-circle"></i>
+
+                  متاح اليوم
+
+                </div>
+              `
+              : `
+                <div class="small text-muted mt-1">
+
+                  غير متاح اليوم
+
+                </div>
+              `
+          }
+
+        </div>
+
+
+        <i
+          class="bi bi-chevron-left text-muted">
+        </i>
+
+      </a>
+
+    `;
+
+
+    doctorsList.innerHTML +=
+      doctorCard;
+
+  });
+
+
+  doctorsCount.textContent =
+    `عرض ${visibleDoctors} أطباء`;
+
+
+  if (visibleDoctors === 0) {
+
+    doctorsList.classList.add("d-none");
+
+    emptyState.classList.remove("d-none");
+
+    emptyTitle.textContent =
+      "لا يوجد طبيب بهذه المواصفات";
+
+    emptyMessage.textContent =
+      "جرّب تغيير البحث أو الفلتر.";
+
+  } else {
+
+    doctorsList.classList.remove("d-none");
+
+    emptyState.classList.add("d-none");
+
+  }
+
+}
+
+
+
+/* =====================================================
+   البحث داخل العيادات
+===================================================== */
+
+searchInput.addEventListener(
+  "input",
+  () => {
+
+    const value =
+      searchInput.value
+        .trim()
+        .toLowerCase();
+
+
+    let visibleCount = 0;
+
+
+    document
+      .querySelectorAll(".clinic-item")
+      .forEach(clinic => {
+
+
+        const name =
+          clinic.dataset.clinicName
+            .toLowerCase();
+
+        const city =
+          clinic.dataset.city
+            .toLowerCase();
+
+        const rating =
+          parseFloat(
+            clinic.dataset.rating
+          );
+
+
+        const matchesSearch =
+          name.includes(value) ||
+          city.includes(value);
+
+
+        let matchesFilter = true;
+
+
+        if (
+          currentClinicFilter ===
+          "top-rated"
+        ) {
+
+          matchesFilter =
+            rating >= 4.8;
+
+        }
+
+
+        if (
+          currentClinicFilter ===
+          "nearest"
+        ) {
+
+          /*
+            يمكن لاحقاً استبدال هذا
+            بحساب المسافة الحقيقية.
+          */
+
+          matchesFilter =
+            city === "نابلس" ||
+            city === "طولكرم";
+
+        }
+
+
+        if (
+          matchesSearch &&
+          matchesFilter
+        ) {
+
+          clinic.classList.remove(
+            "d-none"
+          );
+
+          visibleCount++;
+
+        } else {
+
+          clinic.classList.add(
+            "d-none"
+          );
+
+        }
+
+      });
+
+
+    clinicsCount.textContent =
+      `عرض ${visibleCount} عيادات متاحة`;
+
+
+    if (visibleCount === 0) {
+
+      clinicsList.classList.add(
+        "d-none"
+      );
+
+      emptyState.classList.remove(
+        "d-none"
+      );
+
+      emptyTitle.textContent =
+        "لا توجد عيادة بهذا الاسم";
+
+      emptyMessage.textContent =
+        "تحقق من الإملاء أو جرّب البحث باسم المدينة.";
+
+    } else {
+
+      clinicsList.classList.remove(
+        "d-none"
+      );
+
+      emptyState.classList.add(
+        "d-none"
+      );
+
+    }
+
+  }
+
+);
+
+
+
+/* =====================================================
+   فلاتر العيادات
+===================================================== */
+
+document
+  .querySelectorAll("[data-clinic-filter]")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+
+        document
+          .querySelectorAll(
+            "[data-clinic-filter]"
+          )
+          .forEach(btn => {
+
+            btn.classList.remove(
+              "active"
+            );
+
+          });
+
+
+        button.classList.add(
+          "active"
+        );
+
+
+        currentClinicFilter =
+          button.dataset.clinicFilter;
+
+
+        searchInput.dispatchEvent(
+          new Event("input")
+        );
+
+      }
+    );
+
+  });
+
+
+
+/* =====================================================
+   فلاتر الأطباء
+===================================================== */
+
+document
+  .querySelectorAll("[data-doctor-filter]")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+
+        document
+          .querySelectorAll(
+            "[data-doctor-filter]"
+          )
+          .forEach(btn => {
+
+            btn.classList.remove(
+              "active"
+            );
+
+          });
+
+
+        button.classList.add(
+          "active"
+        );
+
+
+        currentDoctorFilter =
+          button.dataset.doctorFilter;
+
+
+        renderDoctors();
+
+      }
+    );
+
+  });
+
+
+
+/* =====================================================
+   البحث عن الطبيب
+===================================================== */
+
+doctorSearchInput.addEventListener(
+  "input",
+  renderDoctors
+);
+
+
+
+/* =====================================================
+   تغيير العيادة
+===================================================== */
+
+changeClinicBtn.addEventListener(
+  "click",
+  () => {
+
+    resetToClinics();
+
+  }
+);
+
+
+
+/* =====================================================
+   الرجوع
+===================================================== */
+
+backBtn.addEventListener(
+  "click",
+  () => {
+
+    if (currentStep === 2) {
+
+      resetToClinics();
+
+    } else {
+
+      window.history.back();
+
+    }
+
+  }
+);
+
+
+
+/* =====================================================
+   العودة إلى العيادات
+===================================================== */
+
+function resetToClinics() {
+
+  currentStep = 1;
+
+  selectedClinicId = null;
+
+  pageTitle.textContent =
+    "البحث عن عيادة";
+
+
+  doctorsSection.classList.add(
+    "d-none"
+  );
+
+  clinicsSection.classList.remove(
+    "d-none"
+  );
+
+
+  document
+    .getElementById("searchContainer")
+    ?.classList.remove("d-none");
+
+
+  searchInput.value = "";
+
+  currentClinicFilter = "all";
+
+
+  document
+    .querySelectorAll(
+      "[data-clinic-filter]"
+    )
+    .forEach(button => {
+
+      button.classList.remove(
+        "active"
+      );
+
+    });
+
+
+  document
+    .querySelector(
+      '[data-clinic-filter="all"]'
+    )
+    .classList.add("active");
+
+
+  document
+    .querySelectorAll(".clinic-item")
+    .forEach(clinic => {
+
+      clinic.classList.remove(
+        "d-none"
+      );
+
+    });
+
+
+  clinicsCount.textContent =
+    "عرض 4 عيادات متاحة";
+
+
+  emptyState.classList.add(
+    "d-none"
+  );
+
+}
+
+
+
+/* =====================================================
+   مسح البحث
+===================================================== */
+
+clearSearchBtn.addEventListener(
+  "click",
+  () => {
+
+
+    if (currentStep === 1) {
+
+      searchInput.value = "";
+
+      currentClinicFilter = "all";
+
+
+      document
+        .querySelectorAll(
+          "[data-clinic-filter]"
+        )
+        .forEach(button => {
+
+          button.classList.remove(
+            "active"
+          );
+
+        });
+
+
+      document
+        .querySelector(
+          '[data-clinic-filter="all"]'
+        )
+        .classList.add("active");
+
+
+      searchInput.dispatchEvent(
+        new Event("input")
+      );
+
+    }
+
+
+    else {
+
+      doctorSearchInput.value = "";
+
+      currentDoctorFilter = "all";
+
+
+      document
+        .querySelectorAll(
+          "[data-doctor-filter]"
+        )
+        .forEach(button => {
+
+          button.classList.remove(
+            "active"
+          );
+
+        });
+
+
+      document
+        .querySelector(
+          '[data-doctor-filter="all"]'
+        )
+        .classList.add("active");
+
+
+      renderDoctors();
+
+    }
+
+  }
+);
+
+
+</script>
+
+
 </body>
 </html>
+```
