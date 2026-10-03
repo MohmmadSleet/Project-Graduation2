@@ -422,7 +422,7 @@
                   <td data-label="إجراء">
                     <button
                       class="btn btn-sm btn-outline-danger"
-                      data-toast="تم حذف الفترة تجريبياً"
+                      data-schedule-delete
                       type="button"
                     >
                       حذف
@@ -452,7 +452,7 @@
                   <td data-label="إجراء">
                     <button
                       class="btn btn-sm btn-outline-danger"
-                      data-toast="تم حذف الفترة تجريبياً"
+                      data-schedule-delete
                       type="button"
                     >
                       حذف
@@ -482,7 +482,7 @@
                   <td data-label="إجراء">
                     <button
                       class="btn btn-sm btn-outline-danger"
-                      data-toast="تم حذف الفترة تجريبياً"
+                      data-schedule-delete
                       type="button"
                     >
                       حذف
@@ -512,7 +512,7 @@
                   <td data-label="إجراء">
                     <button
                       class="btn btn-sm btn-outline-danger"
-                      data-toast="تم حذف الفترة تجريبياً"
+                      data-schedule-delete
                       type="button"
                     >
                       حذف
@@ -532,7 +532,9 @@
             </div>
             <button
               class="btn btn-outline-primary btn-sm"
-              data-toast="تمت إضافة فترة دوام تجريبية"
+              id="addSchedulePeriodBtn"
+              data-bs-toggle="modal"
+              data-bs-target="#schedulePeriodModal"
               type="button"
             >
               <i class="bi bi-plus-lg ms-1"></i>إضافة فترة دوام
@@ -608,6 +610,94 @@
           </div>
         </div>
       </div>
+      <div
+        class="modal fade"
+        id="schedulePeriodModal"
+        tabindex="-1"
+        aria-labelledby="schedulePeriodModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="fw-bold mb-0" id="schedulePeriodModalLabel">
+                إضافة فترة دوام
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="إغلاق"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div
+                class="alert alert-danger d-none"
+                id="schedulePeriodError"
+                role="alert"
+              ></div>
+              <div class="mb-3">
+                <label class="form-label" for="scheduleDay">اليوم</label
+                ><select class="form-select" id="scheduleDay">
+                  <option value="الأحد">الأحد</option>
+                  <option value="الاثنين">الاثنين</option>
+                  <option value="الثلاثاء">الثلاثاء</option>
+                  <option value="الأربعاء">الأربعاء</option>
+                  <option value="الخميس">الخميس</option>
+                  <option value="الجمعة">الجمعة</option>
+                  <option value="السبت">السبت</option>
+                </select>
+              </div>
+              <div class="row g-3">
+                <div class="col-6">
+                  <label class="form-label" for="scheduleStart">من</label
+                  ><input
+                    class="form-control"
+                    id="scheduleStart"
+                    type="time"
+                    value="09:00"
+                  />
+                </div>
+                <div class="col-6">
+                  <label class="form-label" for="scheduleEnd">إلى</label
+                  ><input
+                    class="form-control"
+                    id="scheduleEnd"
+                    type="time"
+                    value="17:00"
+                  />
+                </div>
+              </div>
+              <div class="mt-3">
+                <label class="form-label" for="scheduleStatus">الحالة</label
+                ><select class="form-select" id="scheduleStatus">
+                  <option value="active" selected>نشطة</option>
+                  <option value="inactive">معطلة</option>
+                </select>
+              </div>
+              <div class="form-text mt-3">
+                لا يمكن إضافة فترة تتداخل مع فترة دوام أخرى للطبيب في اليوم
+                نفسه.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-light"
+                type="button"
+                data-bs-dismiss="modal"
+              >
+                إلغاء</button
+              ><button
+                class="btn btn-primary"
+                type="button"
+                id="confirmAddSchedulePeriod"
+              >
+                إضافة الفترة
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="site-footer mt-5">
       <div class="container py-5">
@@ -667,5 +757,152 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/app.js"></script>
+    <script>
+      (function () {
+        "use strict";
+
+        const tableBody = document.querySelector(
+          ".doctor-schedule-table tbody",
+        );
+        const modalElement = document.getElementById("schedulePeriodModal");
+        const daySelect = document.getElementById("scheduleDay");
+        const startInput = document.getElementById("scheduleStart");
+        const endInput = document.getElementById("scheduleEnd");
+        const statusSelect = document.getElementById("scheduleStatus");
+        const errorBox = document.getElementById("schedulePeriodError");
+        const confirmButton = document.getElementById(
+          "confirmAddSchedulePeriod",
+        );
+
+        if (!tableBody || !modalElement || !confirmButton) return;
+
+        const scheduleModal = bootstrap.Modal.getOrCreateInstance(modalElement);
+
+        function showToast(message) {
+          const toastElement = document.getElementById("appToast");
+          if (!toastElement) return;
+          const body = toastElement.querySelector(".toast-body");
+          if (body) body.textContent = message;
+          bootstrap.Toast.getOrCreateInstance(toastElement).show();
+        }
+
+        function showError(message) {
+          errorBox.textContent = message;
+          errorBox.classList.remove("d-none");
+        }
+
+        function clearError() {
+          errorBox.textContent = "";
+          errorBox.classList.add("d-none");
+        }
+
+        function getRowsForDay(day) {
+          return Array.from(
+            tableBody.querySelectorAll("tr[data-doctor-day]"),
+          ).filter(function (row) {
+            const dayCell = row.querySelector('td[data-label="اليوم"] strong');
+            return dayCell && dayCell.textContent.trim() === day;
+          });
+        }
+
+        function periodsOverlap(startA, endA, startB, endB) {
+          return startA < endB && endA > startB;
+        }
+
+        function hasOverlap(day, start, end) {
+          return getRowsForDay(day).some(function (row) {
+            const inputs = row.querySelectorAll('input[type="time"]');
+            if (inputs.length < 2) return false;
+            return periodsOverlap(start, end, inputs[0].value, inputs[1].value);
+          });
+        }
+
+        function renumberDay(day) {
+          getRowsForDay(day).forEach(function (row, index) {
+            const periodCell = row.querySelector('td[data-label="الفترة"]');
+            if (periodCell) periodCell.textContent = String(index + 1);
+          });
+        }
+
+        function createScheduleRow(day, start, end, status) {
+          const row = document.createElement("tr");
+          row.setAttribute("data-doctor-day", "");
+
+          const statusText = status === "active" ? "نشطة" : "معطلة";
+          const statusClass =
+            status === "active" ? "text-bg-success" : "text-bg-secondary";
+          const periodNumber = getRowsForDay(day).length + 1;
+
+          row.innerHTML =
+            '<td data-label="اليوم"><strong>' +
+            day +
+            "</strong></td>" +
+            '<td data-label="الفترة">' +
+            periodNumber +
+            "</td>" +
+            '<td data-label="من"><input class="form-control form-control-sm doctor-day-input" type="time" value="' +
+            start +
+            '"></td>' +
+            '<td data-label="إلى"><input class="form-control form-control-sm doctor-day-input" type="time" value="' +
+            end +
+            '"></td>' +
+            '<td data-label="الحالة"><span class="badge ' +
+            statusClass +
+            '">' +
+            statusText +
+            "</span></td>" +
+            '<td data-label="إجراء"><button class="btn btn-sm btn-outline-danger" data-schedule-delete type="button">حذف</button></td>';
+
+          return row;
+        }
+
+        confirmButton.addEventListener("click", function () {
+          clearError();
+
+          const day = daySelect.value;
+          const start = startInput.value;
+          const end = endInput.value;
+          const status = statusSelect.value;
+
+          if (!day || !start || !end) {
+            showError("يرجى تحديد اليوم ووقت البداية ووقت النهاية.");
+            return;
+          }
+
+          if (start >= end) {
+            showError("وقت النهاية يجب أن يكون بعد وقت البداية.");
+            return;
+          }
+
+          if (hasOverlap(day, start, end)) {
+            showError("هذه الفترة تتداخل مع فترة دوام موجودة في اليوم نفسه.");
+            return;
+          }
+
+          tableBody.appendChild(createScheduleRow(day, start, end, status));
+          renumberDay(day);
+          scheduleModal.hide();
+          showToast("تمت إضافة فترة الدوام بنجاح في النموذج التجريبي.");
+        });
+
+        tableBody.addEventListener("click", function (event) {
+          const deleteButton = event.target.closest("[data-schedule-delete]");
+          if (!deleteButton) return;
+
+          const row = deleteButton.closest("tr[data-doctor-day]");
+          if (!row) return;
+
+          const dayCell = row.querySelector('td[data-label="اليوم"] strong');
+          const day = dayCell ? dayCell.textContent.trim() : "";
+          row.remove();
+          if (day) renumberDay(day);
+          showToast("تم حذف فترة الدوام من النموذج التجريبي.");
+        });
+
+        modalElement.addEventListener("show.bs.modal", function () {
+          clearError();
+        });
+      })();
+    </script>
   </body>
 </html>
