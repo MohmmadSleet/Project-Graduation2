@@ -1,0 +1,550 @@
+<!doctype html>
+
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>سجل النظام | Smart Dental Clinic</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar clinic-navbar bg-white border-bottom sticky-top">
+      <div class="container-fluid clinic-nav-layout px-3 px-lg-4">
+        <a class="clinic-brand clinic-brand-left" href="index.html">
+          <span class="clinic-brand-mark"
+            ><i class="bi bi-shield-check"></i
+          ></span>
+          <span class="clinic-brand-copy"
+            ><strong>إدارة Smart Dental</strong><small>Super Admin</small></span
+          >
+        </a>
+        <div class="clinic-desktop-nav d-none d-xl-flex justify-content-center">
+          <ul class="navbar-nav flex-row align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="management-center.html">مركز الإدارة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="users.html">المستخدمون</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doctors.html">الأطباء والتراخيص</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="approvals.html">طلبات الاعتماد</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="finance.html">المالية</a>
+            </li>
+          </ul>
+        </div>
+        <div class="clinic-nav-actions">
+          <div class="dropdown">
+            <button
+              class="top-action mobile-compact-action"
+              data-bs-toggle="dropdown"
+              title="اللغة"
+              type="button"
+            >
+              <i class="bi bi-globe2"></i
+              ><span class="d-none d-xxl-inline">AR</span>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-menu-end clean-dropdown language-menu"
+            >
+              <li>
+                <button class="dropdown-item active" data-language="ar">
+                  العربية <small class="float-start text-secondary">AR</small>
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" data-language="en">
+                  English <small class="float-start text-secondary">EN</small>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown notification-dropdown">
+            <button
+              class="top-action mobile-compact-action"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+              title="الإشعارات"
+              type="button"
+            >
+              <i class="bi bi-bell"></i><span class="notification-dot">5</span>
+            </button>
+            <div
+              class="dropdown-menu clean-dropdown notification-menu mobile-notification-menu notification-menu-safe"
+            >
+              <div
+                class="px-3 py-2 d-flex justify-content-between align-items-center"
+              >
+                <strong>تنبيهات الإدارة</strong
+                ><span class="badge text-bg-primary rounded-pill">5</span>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="notification-entry" href="approvals.html"
+                ><strong>3 طلبات اعتماد عيادات</strong>
+                <div class="small text-secondary">تنتظر المراجعة.</div></a
+              >
+              <a class="notification-entry" href="doctors.html"
+                ><strong>ترخيص طبيب سينتهي قريبًا</strong>
+                <div class="small text-secondary">خلال 28 يومًا.</div></a
+              >
+              <a class="notification-entry" href="finance.html"
+                ><strong>مبالغ متبقية على عيادات</strong>
+                <div class="small text-secondary">تحتاج متابعة مالية.</div></a
+              >
+            </div>
+          </div>
+          <div class="dropdown profile-action-dropdown">
+            <button
+              class="clinic-profile-trigger compact-profile-trigger"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+              title="حساب الأدمن"
+              type="button"
+            >
+              <span class="clinic-avatar">A</span
+              ><i
+                class="bi bi-chevron-down small text-secondary d-none d-sm-inline"
+              ></i>
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-end clean-dropdown profile-dropdown-menu"
+            >
+              <div class="px-3 py-2">
+                <strong class="d-block">مدير النظام</strong
+                ><small class="text-secondary">Super Admin</small>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="settings.html#account"
+                ><i class="bi bi-person-gear"></i>حسابي</a
+              >
+              <a class="dropdown-item" href="system-log.html"
+                ><i class="bi bi-shield-check"></i>سجل النظام</a
+              >
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item text-danger" data-logout="">
+                <i class="bi bi-box-arrow-right"></i>تسجيل الخروج
+              </button>
+            </div>
+          </div>
+          <button
+            class="btn btn-outline-primary sections-trigger mobile-sections-trigger"
+            data-bs-target="#sectionsDrawer"
+            data-bs-toggle="offcanvas"
+            title="كل الأقسام"
+            type="button"
+          >
+            <i class="bi bi-grid-3x3-gap"></i
+            ><span class="d-none d-xxl-inline me-1">كل الأقسام</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="offcanvas offcanvas-start mobile-drawer sections-drawer"
+      id="sectionsDrawer"
+      tabindex="-1"
+    >
+      <div class="drawer-header">
+        <div class="drawer-clinic">
+          <div class="drawer-avatar">A</div>
+          <div>
+            <h6 class="mb-1 fw-bold">مدير النظام</h6>
+            <small class="opacity-75">كل أقسام الإدارة</small>
+          </div>
+        </div>
+        <button class="drawer-close" data-bs-dismiss="offcanvas">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <div class="drawer-content">
+          <div class="drawer-title mt-3">الأساسية</div>
+          <a class="drawer-link" href="index.html">
+            <span class="drawer-icon"><i class="bi bi-house-door"></i></span>
+            <span class="flex-grow-1">الرئيسية</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="management-center.html"
+            ><span class="drawer-icon"><i class="bi bi-grid-1x2"></i></span
+            ><span class="flex-grow-1">مركز الإدارة والإضافات</span
+            ><i class="bi bi-chevron-left text-secondary small"></i></a
+          ><a class="drawer-link" href="users.html">
+            <span class="drawer-icon"><i class="bi bi-people"></i></span>
+            <span class="flex-grow-1">المستخدمون</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="doctors.html">
+            <span class="drawer-icon"><i class="bi bi-person-badge"></i></span>
+            <span class="flex-grow-1">الأطباء والتراخيص</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="approvals.html">
+            <span class="drawer-icon"><i class="bi bi-patch-check"></i></span>
+            <span class="flex-grow-1">طلبات اعتماد العيادات</span>
+            <i class="bi bi-chevron-left text-secondary small"></i>
+          </a>
+          <div class="drawer-title mt-3">إدارة المنصة</div>
+          <a class="drawer-link" href="specialties.html">
+            <span class="drawer-icon"><i class="bi bi-grid"></i></span>
+            <span class="flex-grow-1">التخصصات</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="finance.html">
+            <span class="drawer-icon"><i class="bi bi-wallet2"></i></span>
+            <span class="flex-grow-1">المالية</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="reports.html">
+            <span class="drawer-icon"><i class="bi bi-bar-chart"></i></span>
+            <span class="flex-grow-1">التقارير</span>
+            <i class="bi bi-chevron-left text-secondary small"></i>
+          </a>
+          <div class="drawer-title mt-3">النظام</div>
+          <a class="drawer-link active" href="system-log.html">
+            <span class="drawer-icon"><i class="bi bi-shield-check"></i></span>
+            <span class="flex-grow-1">سجل النظام</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="settings.html">
+            <span class="drawer-icon"><i class="bi bi-gear"></i></span>
+            <span class="flex-grow-1">إعدادات المنصة</span>
+            <i class="bi bi-chevron-left text-secondary small"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <main class="page-shell">
+      <section class="container py-4 py-lg-5">
+        <div
+          class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4"
+        >
+          <div>
+            <span class="badge badge-soft mb-2">Audit &amp; Activity</span>
+            <h1 class="fw-bold fs-2 mb-2">سجل النظام</h1>
+            <p class="text-secondary mb-0">
+              مسار زمني واضح لكل الأحداث: من قام بالفعل، على أي كيان، متى، وما
+              نوع العملية.
+            </p>
+          </div>
+          <button class="btn btn-outline-primary" id="exportLogBtn">
+            <i class="bi bi-download"></i>تصدير CSV
+          </button>
+        </div>
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-lg-3">
+            <div class="stat-card">
+              <small class="text-secondary">أحداث اليوم</small>
+              <div class="stat-value">128</div>
+              <small>كل الأدوار</small>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-card">
+              <small class="text-secondary">إجراءات حساسة</small>
+              <div class="stat-value text-warning">9</div>
+              <small>تعديل / تعليق / حذف</small>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-card">
+              <small class="text-secondary">أحداث سريرية</small>
+              <div class="stat-value">34</div>
+              <small>طبيب وتقارير</small>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-card">
+              <small class="text-secondary">أحداث أمنية</small>
+              <div class="stat-value">6</div>
+              <small class="text-success">لا يوجد تنبيه حرج</small>
+            </div>
+          </div>
+        </div>
+        <div class="filter-panel mb-4">
+          <div class="row g-3 align-items-end">
+            <div class="col-lg-4">
+              <label class="form-label small text-secondary">بحث</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white"
+                  ><i class="bi bi-search"></i></span
+                ><input
+                  class="form-control"
+                  id="logSearch"
+                  placeholder="العملية، المستخدم، الكود..."
+                />
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <label class="form-label small text-secondary">نوع الحدث</label
+              ><select class="form-select" id="logType">
+                <option value="">كل الأنواع</option>
+                <option value="create">إضافة</option>
+                <option value="edit">تعديل</option>
+                <option value="delete">حذف</option>
+                <option value="suspend">تعليق / إعادة تفعيل</option>
+                <option value="approval">اعتماد</option>
+                <option value="finance">مالية</option>
+                <option value="login">أمان وتسجيل دخول</option>
+                <option value="domain">أحداث النظام</option>
+              </select>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <label class="form-label small text-secondary">التاريخ</label
+              ><input
+                class="form-control"
+                id="logDate"
+                type="date"
+                value="2026-10-02"
+              />
+            </div>
+            <div class="col-md-4 col-lg-2">
+              <button class="btn btn-light w-100" id="resetLogFilters">
+                إعادة الضبط
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h3 class="section-title mb-0">الخميس، 2 أكتوبر 2026</h3>
+          <span class="small text-secondary">آخر تحديث 17:30</span>
+        </div>
+        <div class="audit-log-list">
+          <div
+            class="audit-log-card"
+            data-date="2026-10-02"
+            data-log-row=""
+            data-search="اعتماد عيادة Super Admin C-041"
+            data-type="approval"
+          >
+            <span class="audit-time">10:14</span
+            ><span class="audit-actor">Super Admin</span
+            ><span class="audit-icon success"
+              ><i class="bi bi-patch-check"></i
+            ></span>
+            <div class="audit-main">
+              <strong>اعتماد عيادة</strong
+              ><small>Clinic • C-041 • عيادة النخبة</small>
+              <p>تمت مراجعة طلب الإنشاء والوثائق ثم تفعيل العيادة.</p>
+            </div>
+            <span class="badge text-bg-success">اعتماد</span
+            ><button
+              class="btn btn-sm btn-light"
+              data-log-view="اعتماد عيادة|C-041|actor: Super Admin\nreason: الوثائق مكتملة\nresult: clinic activated"
+            >
+              تفاصيل
+            </button>
+          </div>
+          <div
+            class="audit-log-card"
+            data-date="2026-10-02"
+            data-log-row=""
+            data-search="تعديل فاتورة IN-101 Super Admin"
+            data-type="edit"
+          >
+            <span class="audit-time">09:55</span
+            ><span class="audit-actor">Super Admin</span
+            ><span class="audit-icon info"
+              ><i class="bi bi-pencil-square"></i
+            ></span>
+            <div class="audit-main">
+              <strong>تعديل إداري على فاتورة</strong
+              ><small>Invoice • IN-101 • محمد سمير</small>
+              <p>تغيير المتبقي بعد مراجعة دفعة مسجلة.</p>
+            </div>
+            <span class="badge text-bg-info">تعديل</span
+            ><button
+              class="btn btn-sm btn-outline-primary"
+              data-log-view="تعديل فاتورة|IN-101|before: remaining 500 ₪\nafter: remaining 350 ₪\nreason: تصحيح دفعة"
+            >
+              قبل / بعد
+            </button>
+          </div>
+          <div
+            class="audit-log-card"
+            data-date="2026-10-02"
+            data-log-row=""
+            data-search="دفعة تسوية SET-2026-10-C008"
+            data-type="finance"
+          >
+            <span class="audit-time">09:20</span
+            ><span class="audit-actor">Super Admin</span
+            ><span class="audit-icon warning"
+              ><i class="bi bi-wallet2"></i
+            ></span>
+            <div class="audit-main">
+              <strong>تسجيل دفعة تسوية عيادة</strong
+              ><small>Settlement • SET-2026-10-C008</small>
+              <p>استلام 1,000 ₪ عبر تحويل بنكي.</p>
+            </div>
+            <span class="badge text-bg-warning">مالية</span
+            ><button
+              class="btn btn-sm btn-light"
+              data-log-view="دفعة تسوية|SET-2026-10-C008|amount: 1,000 ₪\nmethod: تحويل بنكي\nreference: TRX-8721"
+            >
+              تفاصيل
+            </button>
+          </div>
+          <div
+            class="audit-log-card"
+            data-date="2026-10-02"
+            data-log-row=""
+            data-search="Patient created appointment P-2048 A-9012"
+            data-type="domain"
+          >
+            <span class="audit-time">08:42</span
+            ><span class="audit-actor">P-2048</span
+            ><span class="audit-icon"
+              ><i class="bi bi-calendar2-plus"></i
+            ></span>
+            <div class="audit-main">
+              <strong>المريض أنشأ موعدًا</strong
+              ><small>Appointment • A-9012</small>
+              <p>حجز متابعة علاج جذور مع د. عمر ناصر.</p>
+            </div>
+            <span class="badge text-bg-light border">Domain</span
+            ><button
+              class="btn btn-sm btn-light"
+              data-log-view="إنشاء موعد|A-9012|created_by: P-2048\nsource: patient"
+            >
+              تفاصيل
+            </button>
+          </div>
+          <div
+            class="audit-log-card"
+            data-date="2026-10-02"
+            data-log-row=""
+            data-search="Doctor approved medical report D-108 RPT-2026-014"
+            data-type="domain"
+          >
+            <span class="audit-time">08:10</span
+            ><span class="audit-actor">D-108</span
+            ><span class="audit-icon success"
+              ><i class="bi bi-file-medical"></i
+            ></span>
+            <div class="audit-main">
+              <strong>الطبيب اعتمد تقريرًا طبيًا</strong
+              ><small>Medical Report • RPT-2026-014</small>
+              <p>اعتماد التقرير السريري للمريض P-2048.</p>
+            </div>
+            <span class="badge text-bg-success">سريري</span
+            ><button
+              class="btn btn-sm btn-light"
+              data-log-view="اعتماد تقرير|RPT-2026-014|clinical_owner: D-108"
+            >
+              تفاصيل
+            </button>
+          </div>
+          <div
+            class="audit-log-card"
+            data-date="2026-10-02"
+            data-log-row=""
+            data-search="تسجيل دخول Super Admin"
+            data-type="login"
+          >
+            <span class="audit-time">07:33</span
+            ><span class="audit-actor">Super Admin</span
+            ><span class="audit-icon dark"
+              ><i class="bi bi-shield-lock"></i
+            ></span>
+            <div class="audit-main">
+              <strong>تسجيل دخول ناجح</strong
+              ><small>Auth Session • ADM-SESSION-22B</small>
+              <p>بدء جلسة إدارة النظام.</p>
+            </div>
+            <span class="badge text-bg-dark">أمان</span
+            ><button
+              class="btn btn-sm btn-light"
+              data-log-view="تسجيل دخول|ADM-SESSION-22B|status: success"
+            >
+              تفاصيل
+            </button>
+          </div>
+        </div>
+        <div class="empty-state d-none" id="logEmpty">
+          لا توجد سجلات مطابقة للفلاتر.
+        </div>
+      </section>
+    </main>
+    <div class="modal fade" id="viewModal" tabindex="-1">
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content border-0 rounded-4">
+          <div class="modal-header">
+            <div>
+              <h5 class="modal-title fw-bold" id="viewTitle"></h5>
+              <small class="text-secondary" id="viewSubtitle"></small>
+            </div>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body" id="viewBody"></div>
+          <div class="modal-footer">
+            <button class="btn btn-light" data-bs-dismiss="modal">إغلاق</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="sensitiveActionModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-4">
+          <div class="modal-header">
+            <div>
+              <h5 class="modal-title fw-bold" id="sensitiveActionTitle">
+                تأكيد إجراء إداري
+              </h5>
+              <small
+                class="text-secondary"
+                id="sensitiveActionSubtitle"
+              ></small>
+            </div>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-warning rounded-4">
+              <i class="bi bi-shield-exclamation ms-1"></i>هذا إجراء حساس،
+              والسبب سيكون إلزاميًا في الـBackend وسيظهر في Audit Log.
+            </div>
+            <label class="form-label">سبب الإجراء الإداري *</label
+            ><textarea
+              class="form-control"
+              id="sensitiveActionReason"
+              placeholder="اكتب سببًا واضحًا..."
+              rows="4"
+            ></textarea>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-light" data-bs-dismiss="modal">إلغاء</button
+            ><button class="btn btn-primary" id="confirmSensitiveAction">
+              تأكيد
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+      <div
+        class="toast align-items-center text-bg-primary border-0"
+        id="appToast"
+      >
+        <div class="d-flex">
+          <div class="toast-body">تمت العملية</div>
+          <button
+            class="btn-close btn-close-white m-auto ms-2"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

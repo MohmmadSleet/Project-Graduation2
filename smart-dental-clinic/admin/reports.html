@@ -1,0 +1,844 @@
+<!doctype html>
+
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>التقارير | Smart Dental Clinic</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar clinic-navbar bg-white border-bottom sticky-top">
+      <div class="container-fluid clinic-nav-layout px-3 px-lg-4">
+        <a class="clinic-brand clinic-brand-left" href="index.html">
+          <span class="clinic-brand-mark"
+            ><i class="bi bi-shield-check"></i
+          ></span>
+          <span class="clinic-brand-copy"
+            ><strong>إدارة Smart Dental</strong><small>Super Admin</small></span
+          >
+        </a>
+        <div class="clinic-desktop-nav d-none d-xl-flex justify-content-center">
+          <ul class="navbar-nav flex-row align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="management-center.html">مركز الإدارة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="users.html">المستخدمون</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doctors.html">الأطباء والتراخيص</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="approvals.html">طلبات الاعتماد</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="finance.html">المالية</a>
+            </li>
+          </ul>
+        </div>
+        <div class="clinic-nav-actions">
+          <div class="dropdown">
+            <button
+              class="top-action mobile-compact-action"
+              data-bs-toggle="dropdown"
+              title="اللغة"
+              type="button"
+            >
+              <i class="bi bi-globe2"></i
+              ><span class="d-none d-xxl-inline">AR</span>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-menu-end clean-dropdown language-menu"
+            >
+              <li>
+                <button class="dropdown-item active" data-language="ar">
+                  العربية <small class="float-start text-secondary">AR</small>
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" data-language="en">
+                  English <small class="float-start text-secondary">EN</small>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown notification-dropdown">
+            <button
+              class="top-action mobile-compact-action"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+              title="الإشعارات"
+              type="button"
+            >
+              <i class="bi bi-bell"></i><span class="notification-dot">5</span>
+            </button>
+            <div
+              class="dropdown-menu clean-dropdown notification-menu mobile-notification-menu notification-menu-safe"
+            >
+              <div
+                class="px-3 py-2 d-flex justify-content-between align-items-center"
+              >
+                <strong>تنبيهات الإدارة</strong
+                ><span class="badge text-bg-primary rounded-pill">5</span>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="notification-entry" href="approvals.html"
+                ><strong>3 طلبات اعتماد عيادات</strong>
+                <div class="small text-secondary">تنتظر المراجعة.</div></a
+              >
+              <a class="notification-entry" href="doctors.html"
+                ><strong>ترخيص طبيب سينتهي قريبًا</strong>
+                <div class="small text-secondary">خلال 28 يومًا.</div></a
+              >
+              <a class="notification-entry" href="finance.html"
+                ><strong>مبالغ متبقية على عيادات</strong>
+                <div class="small text-secondary">تحتاج متابعة مالية.</div></a
+              >
+            </div>
+          </div>
+          <div class="dropdown profile-action-dropdown">
+            <button
+              class="clinic-profile-trigger compact-profile-trigger"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+              title="حساب الأدمن"
+              type="button"
+            >
+              <span class="clinic-avatar">A</span
+              ><i
+                class="bi bi-chevron-down small text-secondary d-none d-sm-inline"
+              ></i>
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-end clean-dropdown profile-dropdown-menu"
+            >
+              <div class="px-3 py-2">
+                <strong class="d-block">مدير النظام</strong
+                ><small class="text-secondary">Super Admin</small>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="settings.html#account"
+                ><i class="bi bi-person-gear"></i>حسابي</a
+              >
+              <a class="dropdown-item" href="system-log.html"
+                ><i class="bi bi-shield-check"></i>سجل النظام</a
+              >
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item text-danger" data-logout="">
+                <i class="bi bi-box-arrow-right"></i>تسجيل الخروج
+              </button>
+            </div>
+          </div>
+          <button
+            class="btn btn-outline-primary sections-trigger mobile-sections-trigger"
+            data-bs-target="#sectionsDrawer"
+            data-bs-toggle="offcanvas"
+            title="كل الأقسام"
+            type="button"
+          >
+            <i class="bi bi-grid-3x3-gap"></i
+            ><span class="d-none d-xxl-inline me-1">كل الأقسام</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="offcanvas offcanvas-start mobile-drawer sections-drawer"
+      id="sectionsDrawer"
+      tabindex="-1"
+    >
+      <div class="drawer-header">
+        <div class="drawer-clinic">
+          <div class="drawer-avatar">A</div>
+          <div>
+            <h6 class="mb-1 fw-bold">مدير النظام</h6>
+            <small class="opacity-75">كل أقسام الإدارة</small>
+          </div>
+        </div>
+        <button class="drawer-close" data-bs-dismiss="offcanvas">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <div class="drawer-content">
+          <div class="drawer-title mt-3">الأساسية</div>
+          <a class="drawer-link" href="index.html">
+            <span class="drawer-icon"><i class="bi bi-house-door"></i></span>
+            <span class="flex-grow-1">الرئيسية</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="management-center.html"
+            ><span class="drawer-icon"><i class="bi bi-grid-1x2"></i></span
+            ><span class="flex-grow-1">مركز الإدارة والإضافات</span
+            ><i class="bi bi-chevron-left text-secondary small"></i></a
+          ><a class="drawer-link" href="users.html">
+            <span class="drawer-icon"><i class="bi bi-people"></i></span>
+            <span class="flex-grow-1">المستخدمون</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="doctors.html">
+            <span class="drawer-icon"><i class="bi bi-person-badge"></i></span>
+            <span class="flex-grow-1">الأطباء والتراخيص</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="approvals.html">
+            <span class="drawer-icon"><i class="bi bi-patch-check"></i></span>
+            <span class="flex-grow-1">طلبات اعتماد العيادات</span>
+            <i class="bi bi-chevron-left text-secondary small"></i>
+          </a>
+          <div class="drawer-title mt-3">إدارة المنصة</div>
+          <a class="drawer-link" href="specialties.html">
+            <span class="drawer-icon"><i class="bi bi-grid"></i></span>
+            <span class="flex-grow-1">التخصصات</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="finance.html">
+            <span class="drawer-icon"><i class="bi bi-wallet2"></i></span>
+            <span class="flex-grow-1">المالية</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link active" href="reports.html">
+            <span class="drawer-icon"><i class="bi bi-bar-chart"></i></span>
+            <span class="flex-grow-1">التقارير</span>
+            <i class="bi bi-chevron-left text-secondary small"></i>
+          </a>
+          <div class="drawer-title mt-3">النظام</div>
+          <a class="drawer-link" href="system-log.html">
+            <span class="drawer-icon"><i class="bi bi-shield-check"></i></span>
+            <span class="flex-grow-1">سجل النظام</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="settings.html">
+            <span class="drawer-icon"><i class="bi bi-gear"></i></span>
+            <span class="flex-grow-1">إعدادات المنصة</span>
+            <i class="bi bi-chevron-left text-secondary small"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <main class="page-shell">
+      <section class="container py-4 py-lg-5">
+        <div
+          class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4"
+        >
+          <div>
+            <span class="badge badge-soft mb-2">Analytics</span>
+            <h1 class="fw-bold fs-2 mb-2">تقارير المنصة</h1>
+            <p class="text-secondary mb-0">
+              مؤشرات تشغيل ومالية واضحة تساعد Super Admin على المتابعة، بدون
+              خلطها مع التقارير الطبية.
+            </p>
+          </div>
+          <button class="btn btn-outline-primary" id="exportReportsBtn">
+            <i class="bi bi-download"></i>تصدير CSV
+          </button>
+        </div>
+        <div class="filter-panel mb-4">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-4 col-lg-3">
+              <label class="form-label small text-secondary">الفترة</label
+              ><select class="form-select" id="reportPeriod">
+                <option value="today">اليوم</option>
+                <option value="week">هذا الأسبوع</option>
+                <option selected="" value="month">هذا الشهر</option>
+                <option value="year">هذا العام</option>
+                <option value="custom">فترة مخصصة</option>
+              </select>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <label class="form-label small text-secondary">العيادة</label
+              ><select class="form-select" id="reportClinic">
+                <option value="">كل العيادات</option>
+                <option>عيادة الابتسامة الحديثة</option>
+                <option>عيادة النخبة</option>
+                <option>مركز سما</option>
+              </select>
+            </div>
+            <div class="col-md-4 col-lg-4 d-none" id="customReportDates">
+              <label class="form-label small text-secondary"
+                >الفترة المخصصة</label
+              >
+              <div class="d-flex gap-2">
+                <input
+                  class="form-control"
+                  id="reportFrom"
+                  type="date"
+                  value="2026-10-01"
+                /><input
+                  class="form-control"
+                  id="reportTo"
+                  type="date"
+                  value="2026-10-31"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-xl-3">
+            <div class="stat-card">
+              <small class="text-secondary">الحجوزات</small>
+              <div class="stat-value" id="reportBookings">8,420</div>
+              <small class="text-success">+12% عن الشهر السابق</small>
+            </div>
+          </div>
+          <div class="col-6 col-xl-3">
+            <div class="stat-card">
+              <small class="text-secondary">مرضى جدد</small>
+              <div class="stat-value" id="reportPatients">684</div>
+              <small class="text-success">+8%</small>
+            </div>
+          </div>
+          <div class="col-6 col-xl-3">
+            <div class="stat-card">
+              <small class="text-secondary">No-show</small>
+              <div class="stat-value text-danger" id="reportNoshow">4.8%</div>
+              <small>404 مواعيد</small>
+            </div>
+          </div>
+          <div class="col-6 col-xl-3">
+            <div class="stat-card">
+              <small class="text-secondary">تحصيل المنصة</small>
+              <div class="stat-value text-primary" id="reportCollection">
+                62.9%
+              </div>
+              <small>8,250 من 13,110 ₪</small>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 mb-4">
+          <div class="col-xl-7">
+            <div class="soft-card p-4 h-100">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <div>
+                  <h3 class="section-title mb-1">مسار الحجوزات</h3>
+                  <small class="text-secondary">من الطلب حتى الإكمال.</small>
+                </div>
+                <span class="badge badge-soft" id="reportScopeBadge"
+                  >هذا الشهر</span
+                >
+              </div>
+              <div class="report-funnel">
+                <div class="report-funnel-row">
+                  <div>
+                    <strong>إجمالي الطلبات</strong
+                    ><small data-report-funnel-count="0">8,420</small>
+                  </div>
+                  <div class="progress flex-grow-1">
+                    <div
+                      class="progress-bar"
+                      data-report-funnel-bar="0"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                  <span data-report-funnel-pct="0">100%</span>
+                </div>
+                <div class="report-funnel-row">
+                  <div>
+                    <strong>مؤكدة</strong
+                    ><small data-report-funnel-count="1">7,160</small>
+                  </div>
+                  <div class="progress flex-grow-1">
+                    <div
+                      class="progress-bar"
+                      data-report-funnel-bar="1"
+                      style="width: 85%"
+                    ></div>
+                  </div>
+                  <span data-report-funnel-pct="1">85%</span>
+                </div>
+                <div class="report-funnel-row">
+                  <div>
+                    <strong>مكتملة</strong
+                    ><small data-report-funnel-count="2">5,726</small>
+                  </div>
+                  <div class="progress flex-grow-1">
+                    <div
+                      class="progress-bar bg-success"
+                      data-report-funnel-bar="2"
+                      style="width: 68%"
+                    ></div>
+                  </div>
+                  <span data-report-funnel-pct="2">68%</span>
+                </div>
+                <div class="report-funnel-row">
+                  <div>
+                    <strong>ملغاة</strong
+                    ><small data-report-funnel-count="3">886</small>
+                  </div>
+                  <div class="progress flex-grow-1">
+                    <div
+                      class="progress-bar bg-danger"
+                      data-report-funnel-bar="3"
+                      style="width: 10.5%"
+                    ></div>
+                  </div>
+                  <span data-report-funnel-pct="3">10.5%</span>
+                </div>
+                <div class="report-funnel-row">
+                  <div>
+                    <strong>No-show</strong
+                    ><small data-report-funnel-count="4">404</small>
+                  </div>
+                  <div class="progress flex-grow-1">
+                    <div
+                      class="progress-bar bg-warning"
+                      data-report-funnel-bar="4"
+                      style="width: 4.8%"
+                    ></div>
+                  </div>
+                  <span data-report-funnel-pct="4">4.8%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-5">
+            <div class="soft-card p-4 h-100">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <div>
+                  <h3 class="section-title mb-1">المالية</h3>
+                  <small class="text-secondary">مستحقات المنصة.</small>
+                </div>
+                <a class="btn btn-sm btn-light" href="finance.html">التفاصيل</a>
+              </div>
+              <div class="summary-row">
+                <span>المطلوب للمنصة</span
+                ><strong id="reportFinanceDue">13,110 ₪</strong>
+              </div>
+              <div class="summary-row">
+                <span>تم استلامه</span
+                ><strong class="text-success" id="reportFinanceReceived"
+                  >8,250 ₪</strong
+                >
+              </div>
+              <div class="summary-row">
+                <span>المتبقي</span
+                ><strong class="text-danger" id="reportFinanceRemaining"
+                  >4,860 ₪</strong
+                >
+              </div>
+              <div class="summary-row">
+                <span>عيادات مسددة بالكامل</span
+                ><strong id="reportFinancePaidClinics">1 من 4</strong>
+              </div>
+              <div class="mt-3">
+                <small class="text-secondary">نسبة التحصيل</small>
+                <div class="progress mt-2" style="height: 10px">
+                  <div
+                    class="progress-bar bg-success"
+                    id="reportFinanceBar"
+                    style="width: 62.9%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-xl-7">
+            <div class="soft-card p-0 overflow-hidden h-100">
+              <div class="p-4 pb-2">
+                <h3 class="section-title mb-1">أداء العيادات</h3>
+                <small class="text-secondary"
+                  >مقارنة تشغيلية للمتابعة بين العيادات ضمن الفترة
+                  المحددة.</small
+                >
+              </div>
+              <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                  <thead>
+                    <tr>
+                      <th>العيادة</th>
+                      <th>الحجوزات</th>
+                      <th>الإكمال</th>
+                      <th>No-show</th>
+                      <th>المستحق للمنصة</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reportClinicRows">
+                    <tr>
+                      <td data-label="العيادة">
+                        <strong>الابتسامة الحديثة</strong
+                        ><small class="d-block">C-008 • نابلس</small>
+                      </td>
+                      <td data-label="الحجوزات">2,460</td>
+                      <td data-label="الإكمال">
+                        <span class="text-success fw-bold">72%</span>
+                      </td>
+                      <td data-label="No-show">3.9%</td>
+                      <td data-label="المستحق للمنصة">4,200 ₪</td>
+                    </tr>
+                    <tr>
+                      <td data-label="العيادة">
+                        <strong>عيادة النخبة</strong
+                        ><small class="d-block">C-041 • جنين</small>
+                      </td>
+                      <td data-label="الحجوزات">1,920</td>
+                      <td data-label="الإكمال">
+                        <span class="text-success fw-bold">69%</span>
+                      </td>
+                      <td data-label="No-show">4.5%</td>
+                      <td data-label="المستحق للمنصة">3,150 ₪</td>
+                    </tr>
+                    <tr>
+                      <td data-label="العيادة">
+                        <strong>مركز سما</strong
+                        ><small class="d-block">C-052 • طولكرم</small>
+                      </td>
+                      <td data-label="الحجوزات">1,610</td>
+                      <td data-label="الإكمال">
+                        <span class="fw-bold">64%</span>
+                      </td>
+                      <td data-label="No-show">5.2%</td>
+                      <td data-label="المستحق للمنصة">2,760 ₪</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-5">
+            <div class="soft-card p-4 h-100">
+              <h3 class="section-title mb-3">الطلب حسب التخصص</h3>
+              <div class="report-specialty">
+                <div class="d-flex justify-content-between">
+                  <span>طب أسنان عام</span
+                  ><strong data-report-specialty-pct="0">35%</strong>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    data-report-specialty-bar="0"
+                    style="width: 35%"
+                  ></div>
+                </div>
+              </div>
+              <div class="report-specialty">
+                <div class="d-flex justify-content-between">
+                  <span>علاج جذور</span
+                  ><strong data-report-specialty-pct="1">22%</strong>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    data-report-specialty-bar="1"
+                    style="width: 22%"
+                  ></div>
+                </div>
+              </div>
+              <div class="report-specialty">
+                <div class="d-flex justify-content-between">
+                  <span>تقويم الأسنان</span
+                  ><strong data-report-specialty-pct="2">17%</strong>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    data-report-specialty-bar="2"
+                    style="width: 17%"
+                  ></div>
+                </div>
+              </div>
+              <div class="report-specialty">
+                <div class="d-flex justify-content-between">
+                  <span>تركيبات</span
+                  ><strong data-report-specialty-pct="3">12%</strong>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    data-report-specialty-bar="3"
+                    style="width: 12%"
+                  ></div>
+                </div>
+              </div>
+              <div class="report-specialty">
+                <div class="d-flex justify-content-between">
+                  <span>أخرى</span
+                  ><strong data-report-specialty-pct="4">14%</strong>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    data-report-specialty-bar="4"
+                    style="width: 14%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="modal fade" id="viewModal" tabindex="-1">
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content border-0 rounded-4">
+          <div class="modal-header">
+            <div>
+              <h5 class="modal-title fw-bold" id="viewTitle"></h5>
+              <small class="text-secondary" id="viewSubtitle"></small>
+            </div>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body" id="viewBody"></div>
+          <div class="modal-footer">
+            <button class="btn btn-light" data-bs-dismiss="modal">إغلاق</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="sensitiveActionModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-4">
+          <div class="modal-header">
+            <div>
+              <h5 class="modal-title fw-bold" id="sensitiveActionTitle">
+                تأكيد إجراء إداري
+              </h5>
+              <small
+                class="text-secondary"
+                id="sensitiveActionSubtitle"
+              ></small>
+            </div>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-warning rounded-4">
+              <i class="bi bi-shield-exclamation ms-1"></i>هذا إجراء حساس،
+              والسبب سيكون إلزاميًا في الـBackend وسيظهر في Audit Log.
+            </div>
+            <label class="form-label">سبب الإجراء الإداري *</label
+            ><textarea
+              class="form-control"
+              id="sensitiveActionReason"
+              placeholder="اكتب سببًا واضحًا..."
+              rows="4"
+            ></textarea>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-light" data-bs-dismiss="modal">إلغاء</button
+            ><button class="btn btn-primary" id="confirmSensitiveAction">
+              تأكيد
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+      <div
+        class="toast align-items-center text-bg-primary border-0"
+        id="appToast"
+      >
+        <div class="d-flex">
+          <div class="toast-body">تمت العملية</div>
+          <button
+            class="btn-close btn-close-white m-auto ms-2"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const period = document.getElementById("reportPeriod"),
+          dates = document.getElementById("customReportDates");
+        const toggleDates = () => {
+          if (!period || !dates) return;
+          const custom = period.value === "custom";
+          dates.classList.toggle("d-none", !custom);
+          dates.setAttribute("aria-hidden", custom ? "false" : "true");
+          if (custom) {
+            document.getElementById("reportFrom")?.focus();
+          }
+        };
+        period?.addEventListener("change", toggleDates);
+        period?.addEventListener("input", toggleDates);
+        toggleDates();
+      });
+    </script>
+    <div class="d-none" id="adminReportDataHtml">
+      <div data-label="اليوم" data-report-dataset="today">
+        <span data-kpi="0">326</span><span data-kpi="1">28</span
+        ><span data-kpi="2">3.4%</span><span data-kpi="3">72.0%</span
+        ><span data-count="326" data-funnel-index="0" data-pct="100%"></span
+        ><span data-count="291" data-funnel-index="1" data-pct="89%"></span
+        ><span data-count="235" data-funnel-index="2" data-pct="72%"></span
+        ><span data-count="12" data-funnel-index="3" data-pct="3.7%"></span
+        ><span data-count="11" data-funnel-index="4" data-pct="3.4%"></span
+        ><span data-finance="0">510 ₪</span><span data-finance="1">367 ₪</span
+        ><span data-finance="2">143 ₪</span><span data-finance="3">2 من 3</span
+        ><span data-finance="4">72%</span>
+        <div data-clinic-row="0">
+          <span data-col="0">عيادة الابتسامة الحديثة</span
+          ><span data-col="1">C-008 • نابلس</span><span data-col="2">118</span
+          ><span data-col="3">76%</span><span data-col="4">2.5%</span
+          ><span data-col="5">210 ₪</span>
+        </div>
+        <div data-clinic-row="1">
+          <span data-col="0">عيادة النخبة</span
+          ><span data-col="1">C-041 • جنين</span><span data-col="2">96</span
+          ><span data-col="3">71%</span><span data-col="4">3.1%</span
+          ><span data-col="5">165 ₪</span>
+        </div>
+        <div data-clinic-row="2">
+          <span data-col="0">مركز سما</span
+          ><span data-col="1">C-052 • طولكرم</span><span data-col="2">72</span
+          ><span data-col="3">66%</span><span data-col="4">5.0%</span
+          ><span data-col="5">135 ₪</span>
+        </div>
+        <span data-specialty="0">38</span><span data-specialty="1">24</span
+        ><span data-specialty="2">16</span><span data-specialty="3">10</span
+        ><span data-specialty="4">12</span>
+      </div>
+      <div data-label="هذا الأسبوع" data-report-dataset="week">
+        <span data-kpi="0">1,960</span><span data-kpi="1">151</span
+        ><span data-kpi="2">4.3%</span><span data-kpi="3">68.4%</span
+        ><span data-count="1,960" data-funnel-index="0" data-pct="100%"></span
+        ><span data-count="1,704" data-funnel-index="1" data-pct="87%"></span
+        ><span data-count="1,372" data-funnel-index="2" data-pct="70%"></span
+        ><span data-count="108" data-funnel-index="3" data-pct="5.5%"></span
+        ><span data-count="84" data-funnel-index="4" data-pct="4.3%"></span
+        ><span data-finance="0">3,080 ₪</span
+        ><span data-finance="1">2,107 ₪</span><span data-finance="2">973 ₪</span
+        ><span data-finance="3">2 من 4</span><span data-finance="4">68.4%</span>
+        <div data-clinic-row="0">
+          <span data-col="0">عيادة الابتسامة الحديثة</span
+          ><span data-col="1">C-008 • نابلس</span><span data-col="2">610</span
+          ><span data-col="3">73%</span><span data-col="4">3.7%</span
+          ><span data-col="5">980 ₪</span>
+        </div>
+        <div data-clinic-row="1">
+          <span data-col="0">عيادة النخبة</span
+          ><span data-col="1">C-041 • جنين</span><span data-col="2">482</span
+          ><span data-col="3">68%</span><span data-col="4">4.4%</span
+          ><span data-col="5">760 ₪</span>
+        </div>
+        <div data-clinic-row="2">
+          <span data-col="0">مركز سما</span
+          ><span data-col="1">C-052 • طولكرم</span><span data-col="2">391</span
+          ><span data-col="3">63%</span><span data-col="4">5.4%</span
+          ><span data-col="5">650 ₪</span>
+        </div>
+        <span data-specialty="0">36</span><span data-specialty="1">23</span
+        ><span data-specialty="2">17</span><span data-specialty="3">11</span
+        ><span data-specialty="4">13</span>
+      </div>
+      <div data-label="هذا الشهر" data-report-dataset="month">
+        <span data-kpi="0">8,420</span><span data-kpi="1">684</span
+        ><span data-kpi="2">4.8%</span><span data-kpi="3">62.9%</span
+        ><span data-count="8,420" data-funnel-index="0" data-pct="100%"></span
+        ><span data-count="7,160" data-funnel-index="1" data-pct="85%"></span
+        ><span data-count="5,726" data-funnel-index="2" data-pct="68%"></span
+        ><span data-count="886" data-funnel-index="3" data-pct="10.5%"></span
+        ><span data-count="404" data-funnel-index="4" data-pct="4.8%"></span
+        ><span data-finance="0">13,110 ₪</span
+        ><span data-finance="1">8,250 ₪</span
+        ><span data-finance="2">4,860 ₪</span
+        ><span data-finance="3">1 من 4</span><span data-finance="4">62.9%</span>
+        <div data-clinic-row="0">
+          <span data-col="0">عيادة الابتسامة الحديثة</span
+          ><span data-col="1">C-008 • نابلس</span><span data-col="2">2,460</span
+          ><span data-col="3">72%</span><span data-col="4">3.9%</span
+          ><span data-col="5">4,200 ₪</span>
+        </div>
+        <div data-clinic-row="1">
+          <span data-col="0">عيادة النخبة</span
+          ><span data-col="1">C-041 • جنين</span><span data-col="2">1,920</span
+          ><span data-col="3">69%</span><span data-col="4">4.5%</span
+          ><span data-col="5">3,150 ₪</span>
+        </div>
+        <div data-clinic-row="2">
+          <span data-col="0">مركز سما</span
+          ><span data-col="1">C-052 • طولكرم</span
+          ><span data-col="2">1,610</span><span data-col="3">64%</span
+          ><span data-col="4">5.2%</span><span data-col="5">2,760 ₪</span>
+        </div>
+        <span data-specialty="0">35</span><span data-specialty="1">22</span
+        ><span data-specialty="2">17</span><span data-specialty="3">12</span
+        ><span data-specialty="4">14</span>
+      </div>
+      <div data-label="هذا العام" data-report-dataset="year">
+        <span data-kpi="0">72,300</span><span data-kpi="1">5,840</span
+        ><span data-kpi="2">5.1%</span><span data-kpi="3">71.2%</span
+        ><span data-count="72,300" data-funnel-index="0" data-pct="100%"></span
+        ><span data-count="62,880" data-funnel-index="1" data-pct="87%"></span
+        ><span data-count="50,610" data-funnel-index="2" data-pct="70%"></span
+        ><span data-count="7,240" data-funnel-index="3" data-pct="10%"></span
+        ><span data-count="3,687" data-funnel-index="4" data-pct="5.1%"></span
+        ><span data-finance="0">112,400 ₪</span
+        ><span data-finance="1">80,030 ₪</span
+        ><span data-finance="2">32,370 ₪</span
+        ><span data-finance="3">29 من 42</span
+        ><span data-finance="4">71.2%</span>
+        <div data-clinic-row="0">
+          <span data-col="0">عيادة الابتسامة الحديثة</span
+          ><span data-col="1">C-008 • نابلس</span
+          ><span data-col="2">20,420</span><span data-col="3">74%</span
+          ><span data-col="4">4.1%</span><span data-col="5">34,180 ₪</span>
+        </div>
+        <div data-clinic-row="1">
+          <span data-col="0">عيادة النخبة</span
+          ><span data-col="1">C-041 • جنين</span><span data-col="2">15,870</span
+          ><span data-col="3">70%</span><span data-col="4">4.8%</span
+          ><span data-col="5">26,110 ₪</span>
+        </div>
+        <div data-clinic-row="2">
+          <span data-col="0">مركز سما</span
+          ><span data-col="1">C-052 • طولكرم</span
+          ><span data-col="2">13,250</span><span data-col="3">65%</span
+          ><span data-col="4">5.5%</span><span data-col="5">22,460 ₪</span>
+        </div>
+        <span data-specialty="0">34</span><span data-specialty="1">23</span
+        ><span data-specialty="2">18</span><span data-specialty="3">11</span
+        ><span data-specialty="4">14</span>
+      </div>
+      <div data-label="الفترة المخصصة" data-report-dataset="custom">
+        <span data-kpi="0">642</span><span data-kpi="1">51</span
+        ><span data-kpi="2">3.9%</span><span data-kpi="3">66.1%</span
+        ><span data-count="642" data-funnel-index="0" data-pct="100%"></span
+        ><span data-count="558" data-funnel-index="1" data-pct="87%"></span
+        ><span data-count="455" data-funnel-index="2" data-pct="71%"></span
+        ><span data-count="37" data-funnel-index="3" data-pct="5.8%"></span
+        ><span data-count="25" data-funnel-index="4" data-pct="3.9%"></span
+        ><span data-finance="0">1,020 ₪</span><span data-finance="1">674 ₪</span
+        ><span data-finance="2">346 ₪</span><span data-finance="3">2 من 3</span
+        ><span data-finance="4">66.1%</span>
+        <div data-clinic-row="0">
+          <span data-col="0">عيادة الابتسامة الحديثة</span
+          ><span data-col="1">C-008 • نابلس</span><span data-col="2">206</span
+          ><span data-col="3">74%</span><span data-col="4">3.4%</span
+          ><span data-col="5">350 ₪</span>
+        </div>
+        <div data-clinic-row="1">
+          <span data-col="0">عيادة النخبة</span
+          ><span data-col="1">C-041 • جنين</span><span data-col="2">168</span
+          ><span data-col="3">69%</span><span data-col="4">4.0%</span
+          ><span data-col="5">290 ₪</span>
+        </div>
+        <div data-clinic-row="2">
+          <span data-col="0">مركز سما</span
+          ><span data-col="1">C-052 • طولكرم</span><span data-col="2">122</span
+          ><span data-col="3">65%</span><span data-col="4">4.9%</span
+          ><span data-col="5">210 ₪</span>
+        </div>
+        <span data-specialty="0">37</span><span data-specialty="1">22</span
+        ><span data-specialty="2">16</span><span data-specialty="3">11</span
+        ><span data-specialty="4">14</span>
+      </div>
+    </div>
+  </body>
+</html>

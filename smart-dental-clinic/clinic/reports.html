@@ -1,0 +1,926 @@
+<!doctype html>
+
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>التقارير والتحليلات | Smart Dental Clinic</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar clinic-navbar bg-white border-bottom sticky-top">
+      <div class="container-fluid clinic-nav-layout px-3 px-lg-4">
+        <a
+          aria-label="الصفحة الرئيسية"
+          class="clinic-brand clinic-brand-left"
+          href="index.html"
+        >
+          <span class="clinic-brand-mark"
+            ><i class="bi bi-heart-pulse-fill"></i
+          ></span>
+          <span class="clinic-brand-copy"
+            ><strong>عيادة الابتسامة الحديثة</strong
+            ><small>Smart Dental Clinic</small></span
+          >
+        </a>
+        <div class="clinic-desktop-nav d-none d-xl-flex justify-content-center">
+          <ul class="navbar-nav flex-row align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="appointments.html">المواعيد</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="patients.html">المرضى</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doctors.html">الأطباء</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="invoices.html">الفواتير</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="job-applicants.html">المتقدمون</a>
+            </li>
+          </ul>
+        </div>
+        <div class="clinic-nav-actions">
+          <div class="dropdown">
+            <button
+              aria-label="اختيار اللغة"
+              class="top-action mobile-compact-action"
+              data-bs-toggle="dropdown"
+              title="اللغة"
+              type="button"
+            >
+              <i class="bi bi-globe2"></i
+              ><span class="d-none d-xxl-inline">AR</span>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-menu-end clean-dropdown language-menu"
+            >
+              <li>
+                <button class="dropdown-item active" data-language="ar">
+                  العربية <small class="float-start text-secondary">AR</small>
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" data-language="en">
+                  English <small class="float-start text-secondary">EN</small>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown notification-dropdown">
+            <button
+              aria-label="الإشعارات"
+              class="top-action mobile-compact-action"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+              title="الإشعارات"
+              type="button"
+            >
+              <i class="bi bi-bell"></i><span class="notification-dot">5</span>
+            </button>
+            <div
+              class="dropdown-menu clean-dropdown notification-menu mobile-notification-menu notification-menu-safe"
+            >
+              <div
+                class="px-3 py-2 d-flex justify-content-between align-items-center"
+              >
+                <strong>الإشعارات</strong
+                ><span class="badge text-bg-primary rounded-pill">5</span>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="notification-entry" href="appointments.html"
+                ><strong>طلب حجز جديد</strong>
+                <div class="small text-secondary">طلب يحتاج موافقة.</div></a
+              >
+              <a class="notification-entry" href="recalls.html"
+                ><strong>متابعة مستحقة</strong>
+                <div class="small text-secondary">متابعة بانتظار الحجز.</div></a
+              >
+              <a class="notification-entry" href="lab-cases.html"
+                ><strong>حالة مخبرية</strong>
+                <div class="small text-secondary">
+                  تم استلام حالة من المختبر.
+                </div></a
+              >
+              <a class="notification-entry" href="job-applicants.html"
+                ><strong>متقدم جديد</strong>
+                <div class="small text-secondary">
+                  طلب توظيف جديد بانتظار المراجعة.
+                </div></a
+              >
+            </div>
+          </div>
+          <div class="dropdown profile-action-dropdown">
+            <button
+              aria-label="حساب العيادة"
+              class="clinic-profile-trigger compact-profile-trigger"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+              title="الملف الشخصي"
+              type="button"
+            >
+              <span class="clinic-avatar">ع</span
+              ><i
+                class="bi bi-chevron-down small text-secondary d-none d-sm-inline"
+              ></i>
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-end clean-dropdown profile-dropdown-menu"
+            >
+              <a class="dropdown-item" href="profile.html"
+                ><i class="bi bi-hospital"></i>ملف العيادة</a
+              >
+              <a class="dropdown-item" href="staff.html"
+                ><i class="bi bi-person-gear"></i>الموظفون والصلاحيات</a
+              ><a class="dropdown-item" href="account-settings.html"
+                ><i class="bi bi-gear"></i>إعدادات الحساب</a
+              >
+              <a class="dropdown-item" href="job-applicants.html"
+                ><i class="bi bi-person-lines-fill"></i>المتقدمون للوظائف</a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item text-primary fw-bold"
+                href="../doctor/index.html"
+                ><i class="bi bi-arrow-left-right"></i>تبديل لمساحة الطبيب</a
+              >
+              <div class="px-3 py-2 bg-light rounded-3 mx-2 mb-2">
+                <small class="text-secondary d-block">الحساب الحالي</small>
+                <strong class="small">د. عمر ناصر • مالك ومدير العيادة</strong>
+              </div>
+              <button class="dropdown-item text-danger" data-logout="">
+                <i class="bi bi-box-arrow-right"></i>تسجيل الخروج
+              </button>
+            </div>
+          </div>
+          <button
+            aria-controls="sectionsDrawer"
+            aria-label="كل الأقسام"
+            class="btn btn-outline-primary sections-trigger mobile-sections-trigger"
+            data-bs-target="#sectionsDrawer"
+            data-bs-toggle="offcanvas"
+            title="كل الأقسام"
+            type="button"
+          >
+            <i class="bi bi-grid-3x3-gap"></i
+            ><span class="d-none d-xxl-inline me-1">كل الأقسام</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="offcanvas offcanvas-start mobile-drawer sections-drawer"
+      id="sectionsDrawer"
+      tabindex="-1"
+    >
+      <div class="drawer-header">
+        <div class="drawer-clinic">
+          <div class="drawer-avatar">ع</div>
+          <div>
+            <h6 class="mb-1 fw-bold">عيادة الابتسامة الحديثة</h6>
+            <small class="opacity-75">كل الأقسام</small>
+          </div>
+        </div>
+        <button
+          aria-label="إغلاق"
+          class="drawer-close"
+          data-bs-dismiss="offcanvas"
+        >
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <div class="drawer-content">
+          <div class="drawer-title mt-3">الأساسية</div>
+          <a class="drawer-link" href="index.html">
+            <span class="drawer-icon"><i class="bi bi-house"></i></span>
+            <span class="flex-grow-1">الرئيسية</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="appointments.html">
+            <span class="drawer-icon"
+              ><i class="bi bi-calendar2-check"></i
+            ></span>
+            <span class="flex-grow-1">المواعيد</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="new-appointment.html">
+            <span class="drawer-icon"
+              ><i class="bi bi-calendar2-plus"></i
+            ></span>
+            <span class="flex-grow-1">إضافة موعد</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="patients.html">
+            <span class="drawer-icon"><i class="bi bi-people"></i></span>
+            <span class="flex-grow-1">المرضى</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="doctors.html">
+            <span class="drawer-icon"><i class="bi bi-person-badge"></i></span>
+            <span class="flex-grow-1">الأطباء</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="services.html">
+            <span class="drawer-icon"><i class="bi bi-list-check"></i></span>
+            <span class="flex-grow-1">الخدمات</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="specialties.html">
+            <span class="drawer-icon"><i class="bi bi-grid"></i></span>
+            <span class="flex-grow-1">التخصصات</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="invoices.html">
+            <span class="drawer-icon"><i class="bi bi-receipt"></i></span>
+            <span class="flex-grow-1">الفواتير</span>
+            <i class="bi bi-chevron-left text-secondary small"></i>
+          </a>
+          <div class="drawer-title mt-3">التشغيل</div>
+          <a class="drawer-link" href="operations.html">
+            <span class="drawer-icon"
+              ><i class="bi bi-clipboard2-pulse"></i
+            ></span>
+            <span class="flex-grow-1">التشغيل اليومي</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="recalls.html">
+            <span class="drawer-icon"><i class="bi bi-arrow-repeat"></i></span>
+            <span class="flex-grow-1">المتابعات</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="lab-cases.html">
+            <span class="drawer-icon"><i class="bi bi-box-seam"></i></span>
+            <span class="flex-grow-1">الحالات المخبرية</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="reports.html">
+            <span class="drawer-icon"><i class="bi bi-bar-chart"></i></span>
+            <span class="flex-grow-1">التقارير والتحليلات</span>
+            <i class="bi bi-chevron-left text-secondary small"></i>
+          </a>
+          <div class="drawer-title mt-3">التوظيف والإدارة</div>
+          <a class="drawer-link" href="staff.html"
+            ><span class="drawer-icon"><i class="bi bi-person-gear"></i></span
+            ><span class="flex-grow-1">الموظفون والصلاحيات</span
+            ><i class="bi bi-chevron-left text-secondary small"></i></a
+          ><a class="drawer-link" href="jobs.html">
+            <span class="drawer-icon"><i class="bi bi-briefcase"></i></span>
+            <span class="flex-grow-1">الوظائف</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="job-applicants.html">
+            <span class="drawer-icon"
+              ><i class="bi bi-person-lines-fill"></i
+            ></span>
+            <span class="flex-grow-1">المتقدمون للوظائف</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="profile.html">
+            <span class="drawer-icon"><i class="bi bi-hospital"></i></span>
+            <span class="flex-grow-1">ملف العيادة</span>
+            <i class="bi bi-chevron-left text-secondary small"></i> </a
+          ><a class="drawer-link" href="account-settings.html">
+            <span class="drawer-icon"><i class="bi bi-gear"></i></span>
+            <span class="flex-grow-1">إعدادات الحساب</span>
+            <i class="bi bi-chevron-left text-secondary small"></i>
+          </a>
+          <div class="drawer-title mt-4">الحساب</div>
+          <button
+            class="drawer-link border-0 bg-transparent w-100 text-danger"
+            data-logout=""
+          >
+            <span class="drawer-icon"
+              ><i class="bi bi-box-arrow-right"></i></span
+            ><span class="flex-grow-1 text-end">تسجيل الخروج</span>
+          </button>
+          <div class="drawer-title mt-4">تبديل المساحة</div>
+          <a class="drawer-link" href="../doctor/index.html"
+            ><span class="drawer-icon"
+              ><i class="bi bi-arrow-left-right"></i></span
+            ><span class="flex-grow-1">الانتقال لمساحة الطبيب</span
+            ><i class="bi bi-chevron-left text-secondary small"></i
+          ></a>
+          <a class="drawer-link" href="settlements.html"
+            ><span class="drawer-icon"><i class="bi bi-wallet2"></i></span
+            ><span class="flex-grow-1">تسويات المنصة</span></a
+          >
+        </div>
+      </div>
+    </div>
+    <main class="page-shell">
+      <section class="container py-4 py-lg-5">
+        <div
+          class="d-flex flex-column flex-xl-row justify-content-between align-items-xl-end gap-3 mb-4"
+        >
+          <div>
+            <span class="badge badge-soft mb-2">Clinic Analytics</span>
+            <h1 class="fw-bold">التقارير والتحليلات التشغيلية</h1>
+            <p class="text-secondary mb-0">
+              صورة شاملة عن أداء العيادة: المالية، المواعيد، المرضى، الأطباء،
+              الخدمات والتشغيل.
+            </p>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <select
+              class="form-select"
+              id="clinicReportPeriod"
+              style="width: auto"
+            >
+              <option value="month">هذا الشهر</option>
+              <option value="quarter">آخر 3 أشهر</option>
+              <option value="year">هذه السنة</option>
+              <option value="custom">فترة مخصصة</option>
+            </select>
+            <div
+              class="d-none align-items-end gap-2 flex-wrap"
+              id="clinicCustomReportDates"
+            >
+              <div>
+                <label class="form-label small text-secondary mb-1"
+                  >من تاريخ</label
+                >
+                <input
+                  class="form-control"
+                  id="clinicReportFrom"
+                  type="date"
+                  value="2026-10-01"
+                />
+              </div>
+              <div>
+                <label class="form-label small text-secondary mb-1"
+                  >إلى تاريخ</label
+                >
+                <input
+                  class="form-control"
+                  id="clinicReportTo"
+                  type="date"
+                  value="2026-10-31"
+                />
+              </div>
+              <button
+                class="btn btn-primary"
+                id="applyClinicCustomReport"
+                type="button"
+              >
+                تطبيق
+              </button>
+            </div>
+            <button class="btn btn-outline-primary" onclick="window.print()">
+              <i class="bi bi-printer ms-1"></i>طباعة التقرير
+            </button>
+          </div>
+        </div>
+        <div class="row g-3 mb-4">
+          <div class="col-md-6 col-xl-3">
+            <div class="analytics-kpi">
+              <div class="analytics-icon"><i class="bi bi-cash-stack"></i></div>
+              <small>إجمالي قيمة الفواتير</small>
+              <div class="analytics-value" data-clinic-report-kpi="0">
+                18,450 ₪
+              </div>
+              <span class="text-success small">+14.2% عن الشهر السابق</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="analytics-kpi">
+              <div class="analytics-icon"><i class="bi bi-wallet2"></i></div>
+              <small>المبالغ المحصلة</small>
+              <div class="analytics-value" data-clinic-report-kpi="1">
+                15,300 ₪
+              </div>
+              <span class="small text-secondary">82.9% من قيمة الفواتير</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="analytics-kpi">
+              <div class="analytics-icon">
+                <i class="bi bi-hourglass-split"></i>
+              </div>
+              <small>المبالغ المتبقية</small>
+              <div class="analytics-value" data-clinic-report-kpi="2">
+                3,150 ₪
+              </div>
+              <span class="small text-primary">منها 2,100 ₪ تقسيط</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="analytics-kpi">
+              <div class="analytics-icon">
+                <i class="bi bi-calendar2-check"></i>
+              </div>
+              <small>المواعيد</small>
+              <div class="analytics-value" data-clinic-report-kpi="3">184</div>
+              <span class="text-success small">+12% عن الشهر السابق</span>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 mb-4">
+          <div class="col-xl-8">
+            <div class="soft-card p-4 h-100">
+              <div
+                class="d-flex justify-content-between align-items-center mb-4"
+              >
+                <div>
+                  <h4 class="fw-bold mb-1">الإيرادات والتحصيل</h4>
+                  <div class="small text-secondary">آخر 6 أشهر</div>
+                </div>
+                <span class="badge badge-soft">بالشيكل</span>
+              </div>
+              <div class="analytics-bars">
+                <div class="analytics-bar-row">
+                  <span>مايو</span>
+                  <div class="analytics-track">
+                    <div class="analytics-fill" style="width: 58%"></div>
+                  </div>
+                  <strong>10.8K</strong>
+                </div>
+                <div class="analytics-bar-row">
+                  <span>يونيو</span>
+                  <div class="analytics-track">
+                    <div class="analytics-fill" style="width: 66%"></div>
+                  </div>
+                  <strong>12.1K</strong>
+                </div>
+                <div class="analytics-bar-row">
+                  <span>يوليو</span>
+                  <div class="analytics-track">
+                    <div class="analytics-fill" style="width: 72%"></div>
+                  </div>
+                  <strong>13.4K</strong>
+                </div>
+                <div class="analytics-bar-row">
+                  <span>أغسطس</span>
+                  <div class="analytics-track">
+                    <div class="analytics-fill" style="width: 78%"></div>
+                  </div>
+                  <strong>14.2K</strong>
+                </div>
+                <div class="analytics-bar-row">
+                  <span>سبتمبر</span>
+                  <div class="analytics-track">
+                    <div class="analytics-fill" style="width: 85%"></div>
+                  </div>
+                  <strong>15.6K</strong>
+                </div>
+                <div class="analytics-bar-row">
+                  <span>أكتوبر</span>
+                  <div class="analytics-track">
+                    <div class="analytics-fill" style="width: 100%"></div>
+                  </div>
+                  <strong>18.45K</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4">
+            <div class="soft-card p-4 h-100">
+              <h4 class="fw-bold mb-4">حالة الفواتير</h4>
+              <div class="analytics-donut-placeholder">
+                <div class="donut-number">82.9%</div>
+                <small>محصل</small>
+              </div>
+              <div class="mt-4">
+                <div class="d-flex justify-content-between py-2">
+                  <span>مدفوعة</span><strong>64 فاتورة</strong>
+                </div>
+                <div class="d-flex justify-content-between py-2">
+                  <span>تقسيط</span><strong>11 فاتورة</strong>
+                </div>
+                <div class="d-flex justify-content-between py-2">
+                  <span>غير مدفوعة</span><strong>8 فواتير</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 mb-4">
+          <div class="col-lg-6">
+            <div class="soft-card p-4 h-100">
+              <h4 class="fw-bold mb-3">المواعيد والتشغيل</h4>
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="mini-analytics">
+                    <small>مكتملة</small
+                    ><strong data-clinic-report-mini="0">142</strong
+                    ><span class="text-success">77.2%</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="mini-analytics">
+                    <small>ملغاة</small
+                    ><strong data-clinic-report-mini="1">18</strong
+                    ><span class="text-secondary">9.8%</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="mini-analytics">
+                    <small>No-show</small
+                    ><strong data-clinic-report-mini="2">12</strong
+                    ><span class="text-danger">6.5%</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="mini-analytics">
+                    <small>بانتظار الموافقة</small
+                    ><strong data-clinic-report-mini="3">12</strong
+                    ><span class="text-warning">6.5%</span>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between py-2">
+                <span>متوسط مواعيد اليوم</span><strong>8.4</strong>
+              </div>
+              <div class="d-flex justify-content-between py-2">
+                <span>أكثر يوم ازدحاماً</span><strong>الثلاثاء</strong>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="soft-card p-4 h-100">
+              <h4 class="fw-bold mb-3">المرضى</h4>
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="mini-analytics">
+                    <small>مرضى نشطون</small
+                    ><strong data-clinic-report-mini="4">486</strong>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="mini-analytics">
+                    <small>مرضى جدد</small
+                    ><strong data-clinic-report-mini="5">38</strong
+                    ><span class="text-success">+9%</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="mini-analytics">
+                    <small>متابعات بانتظار الحجز</small
+                    ><strong data-clinic-report-mini="6">14</strong>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="mini-analytics">
+                    <small>متابعات متأخرة</small
+                    ><strong data-clinic-report-mini="7">5</strong
+                    ><span class="text-danger">تحتاج إجراء</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 mb-4">
+          <div class="col-xl-6">
+            <div class="soft-card p-4 h-100">
+              <h4 class="fw-bold mb-3">أداء الأطباء</h4>
+              <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>الطبيب</th>
+                      <th>المواعيد</th>
+                      <th>المكتملة</th>
+                      <th>قيمة الخدمات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="clinicReportDoctorsBody">
+                    <tr>
+                      <td data-label="الطبيب">د. ليان الخطيب</td>
+                      <td data-label="المواعيد">48</td>
+                      <td data-label="المكتملة">42</td>
+                      <td data-label="قيمة الخدمات">5,800 ₪</td>
+                    </tr>
+                    <tr>
+                      <td data-label="الطبيب">د. عمر ناصر</td>
+                      <td data-label="المواعيد">39</td>
+                      <td data-label="المكتملة">34</td>
+                      <td data-label="قيمة الخدمات">4,950 ₪</td>
+                    </tr>
+                    <tr>
+                      <td data-label="الطبيب">د. سارة عادل</td>
+                      <td data-label="المواعيد">33</td>
+                      <td data-label="المكتملة">29</td>
+                      <td data-label="قيمة الخدمات">4,100 ₪</td>
+                    </tr>
+                    <tr>
+                      <td data-label="الطبيب">د. يوسف حماد</td>
+                      <td data-label="المواعيد">31</td>
+                      <td data-label="المكتملة">27</td>
+                      <td data-label="قيمة الخدمات">2,900 ₪</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="soft-card p-4 h-100">
+              <h4 class="fw-bold mb-3">أكثر الخدمات طلباً</h4>
+              <div class="service-rank">
+                <div><strong>فحص عام</strong><small>52 حجز</small></div>
+                <div class="progress flex-grow-1">
+                  <div class="progress-bar" style="width: 100%"></div>
+                </div>
+                <strong>28%</strong>
+              </div>
+              <div class="service-rank">
+                <div><strong>تنظيف الأسنان</strong><small>41 حجز</small></div>
+                <div class="progress flex-grow-1">
+                  <div class="progress-bar" style="width: 79%"></div>
+                </div>
+                <strong>22%</strong>
+              </div>
+              <div class="service-rank">
+                <div><strong>علاج جذور</strong><small>28 حجز</small></div>
+                <div class="progress flex-grow-1">
+                  <div class="progress-bar" style="width: 54%"></div>
+                </div>
+                <strong>15%</strong>
+              </div>
+              <div class="service-rank">
+                <div><strong>استشارة تقويم</strong><small>24 حجز</small></div>
+                <div class="progress flex-grow-1">
+                  <div class="progress-bar" style="width: 46%"></div>
+                </div>
+                <strong>13%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="soft-card p-4 h-100">
+              <h5 class="fw-bold">جودة الحجوزات</h5>
+              <div class="d-flex justify-content-between py-2">
+                <span>مواعيد مكتملة</span
+                ><strong class="text-success">128</strong>
+              </div>
+              <div class="d-flex justify-content-between py-2">
+                <span>طلبات تغيير معلقة</span
+                ><strong class="text-warning">3</strong>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="soft-card p-4 h-100">
+              <h5 class="fw-bold">الحالات المخبرية</h5>
+              <div class="d-flex justify-content-between py-2">
+                <span>تم الإرسال</span><strong>4</strong>
+              </div>
+              <div class="d-flex justify-content-between py-2">
+                <span>تم الاستلام</span><strong>3</strong>
+              </div>
+              <a
+                class="btn btn-outline-primary w-100 mt-3"
+                href="lab-cases.html"
+                >عرض الحالات</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="soft-card p-4 h-100">
+              <h5 class="fw-bold">التوظيف</h5>
+              <div class="d-flex justify-content-between py-2">
+                <span>وظائف منشورة</span><strong>2</strong>
+              </div>
+              <div class="d-flex justify-content-between py-2">
+                <span>طلبات قيد المراجعة</span><strong>9</strong>
+              </div>
+              <a
+                class="btn btn-outline-primary w-100 mt-3"
+                href="job-applicants.html"
+                >عرض المتقدمين</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer mt-5">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <a class="footer-brand" href="index.html"
+              ><i class="bi bi-heart-pulse-fill ms-2"></i>Smart Dental Clinic</a
+            >
+            <p class="footer-description mt-3 mb-0">
+              واجهة إدارة العيادة للمواعيد، المرضى، الأطباء، المالية، التشغيل
+              والتوظيف.
+            </p>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h6 class="footer-title">التشغيل</h6>
+            <ul class="footer-links">
+              <li><a href="operations.html">التشغيل اليومي</a></li>
+              <li><a href="recalls.html">المتابعات</a></li>
+              <li><a href="lab-cases.html">الحالات المخبرية</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-4">
+            <h6 class="footer-title">الإدارة</h6>
+            <ul class="footer-links">
+              <li><a href="staff.html">الموظفون والصلاحيات</a></li>
+              <li><a href="invoices.html">الفواتير</a></li>
+              <li><a href="reports.html">التقارير التشغيلية</a></li>
+              <li><a href="job-applicants.html">المتقدمون للوظائف</a></li>
+              <li><a href="account-settings.html">إعدادات الحساب</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="footer-bottom mt-4 pt-4 d-flex flex-column flex-md-row justify-content-between gap-2"
+        >
+          <div>
+            © <span data-year=""></span> Smart Dental Clinic — Graduation
+            Project
+          </div>
+          <div>Clinic Management Front-end Demo</div>
+        </div>
+      </div>
+    </footer>
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+      <div
+        class="toast align-items-center text-bg-primary border-0"
+        id="appToast"
+      >
+        <div class="d-flex">
+          <div class="toast-body">تمت العملية</div>
+          <button
+            class="btn-close btn-close-white m-auto ms-2"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const period = document.getElementById("clinicReportPeriod"),
+          dates = document.getElementById("clinicCustomReportDates"),
+          from = document.getElementById("clinicReportFrom"),
+          to = document.getElementById("clinicReportTo"),
+          apply = document.getElementById("applyClinicCustomReport"),
+          root = document.getElementById("clinicReportDataHtml");
+        if (!root || !period) return;
+        const toast = (m, k = "success") => {
+          const e = document.getElementById("appToast");
+          if (!e) return;
+          e.className = `toast align-items-center text-bg-${k} border-0`;
+          e.querySelector(".toast-body").textContent = m;
+          bootstrap.Toast.getOrCreateInstance(e).show();
+        };
+        const val = (b, sel) => b.querySelector(sel)?.textContent.trim() || "—";
+        function render(key) {
+          const b =
+            root.querySelector(`[data-report-dataset="${CSS.escape(key)}"]`) ||
+            root.querySelector('[data-report-dataset="month"]');
+          if (!b) return;
+          document
+            .querySelectorAll("[data-clinic-report-kpi]")
+            .forEach((e, i) => (e.textContent = val(b, `[data-kpi="${i}"]`)));
+          document
+            .querySelectorAll("[data-clinic-report-mini]")
+            .forEach((e, i) => (e.textContent = val(b, `[data-mini="${i}"]`)));
+          const src = [...b.querySelectorAll("[data-doctor-row]")],
+            rows = [
+              ...document.querySelectorAll("#clinicReportDoctorsBody tr"),
+            ];
+          rows.forEach((row, i) => {
+            const r = src[i];
+            if (!r) {
+              row.classList.add("d-none");
+              return;
+            }
+            row.classList.remove("d-none");
+            const cells = row.querySelectorAll("td");
+            cells.forEach(
+              (c, j) => (c.textContent = val(r, `[data-col="${j}"]`)),
+            );
+          });
+        }
+        function sync() {
+          const custom = period.value === "custom";
+          dates?.classList.toggle("d-none", !custom);
+          dates?.classList.toggle("d-flex", custom);
+          if (!custom) render(period.value);
+        }
+        period.addEventListener("change", sync);
+        sync();
+        apply?.addEventListener("click", () => {
+          if (!from?.value || !to?.value) {
+            toast("حدد تاريخ البداية والنهاية.", "danger");
+            return;
+          }
+          if (from.value > to.value) {
+            toast("تاريخ البداية يجب أن يكون قبل تاريخ النهاية.", "danger");
+            return;
+          }
+          render("custom");
+          toast(`تم تطبيق الفترة المخصصة من ${from.value} إلى ${to.value}.`);
+        });
+      });
+    </script>
+    <div class="d-none" id="clinicReportDataHtml">
+      <div data-report-dataset="month">
+        <span data-kpi="0">18,450 ₪</span><span data-kpi="1">15,300 ₪</span
+        ><span data-kpi="2">3,150 ₪</span><span data-kpi="3">184</span
+        ><span data-mini="0">142</span><span data-mini="1">18</span
+        ><span data-mini="2">12</span><span data-mini="3">12</span
+        ><span data-mini="4">486</span><span data-mini="5">38</span
+        ><span data-mini="6">14</span><span data-mini="7">5</span>
+        <div data-doctor-row="0">
+          <span data-col="0">د. ليان الخطيب</span><span data-col="1">48</span
+          ><span data-col="2">42</span><span data-col="3">5,800 ₪</span>
+        </div>
+        <div data-doctor-row="1">
+          <span data-col="0">د. عمر ناصر</span><span data-col="1">39</span
+          ><span data-col="2">34</span><span data-col="3">4,950 ₪</span>
+        </div>
+        <div data-doctor-row="2">
+          <span data-col="0">د. سارة عادل</span><span data-col="1">33</span
+          ><span data-col="2">29</span><span data-col="3">4,100 ₪</span>
+        </div>
+        <div data-doctor-row="3">
+          <span data-col="0">د. يوسف حماد</span><span data-col="1">31</span
+          ><span data-col="2">27</span><span data-col="3">2,900 ₪</span>
+        </div>
+      </div>
+      <div data-report-dataset="quarter">
+        <span data-kpi="0">52,800 ₪</span><span data-kpi="1">43,700 ₪</span
+        ><span data-kpi="2">9,100 ₪</span><span data-kpi="3">532</span
+        ><span data-mini="0">411</span><span data-mini="1">49</span
+        ><span data-mini="2">34</span><span data-mini="3">38</span
+        ><span data-mini="4">512</span><span data-mini="5">96</span
+        ><span data-mini="6">31</span><span data-mini="7">12</span>
+        <div data-doctor-row="0">
+          <span data-col="0">د. ليان الخطيب</span><span data-col="1">137</span
+          ><span data-col="2">122</span><span data-col="3">16,900 ₪</span>
+        </div>
+        <div data-doctor-row="1">
+          <span data-col="0">د. عمر ناصر</span><span data-col="1">116</span
+          ><span data-col="2">101</span><span data-col="3">14,600 ₪</span>
+        </div>
+        <div data-doctor-row="2">
+          <span data-col="0">د. سارة عادل</span><span data-col="1">102</span
+          ><span data-col="2">88</span><span data-col="3">11,900 ₪</span>
+        </div>
+        <div data-doctor-row="3">
+          <span data-col="0">د. يوسف حماد</span><span data-col="1">91</span
+          ><span data-col="2">78</span><span data-col="3">9,400 ₪</span>
+        </div>
+      </div>
+      <div data-report-dataset="year">
+        <span data-kpi="0">176,400 ₪</span><span data-kpi="1">145,900 ₪</span
+        ><span data-kpi="2">30,500 ₪</span><span data-kpi="3">1,820</span
+        ><span data-mini="0">1,412</span><span data-mini="1">166</span
+        ><span data-mini="2">118</span><span data-mini="3">124</span
+        ><span data-mini="4">684</span><span data-mini="5">286</span
+        ><span data-mini="6">82</span><span data-mini="7">27</span>
+        <div data-doctor-row="0">
+          <span data-col="0">د. ليان الخطيب</span><span data-col="1">482</span
+          ><span data-col="2">427</span><span data-col="3">56,600 ₪</span>
+        </div>
+        <div data-doctor-row="1">
+          <span data-col="0">د. عمر ناصر</span><span data-col="1">406</span
+          ><span data-col="2">358</span><span data-col="3">49,100 ₪</span>
+        </div>
+        <div data-doctor-row="2">
+          <span data-col="0">د. سارة عادل</span><span data-col="1">345</span
+          ><span data-col="2">304</span><span data-col="3">39,700 ₪</span>
+        </div>
+        <div data-doctor-row="3">
+          <span data-col="0">د. يوسف حماد</span><span data-col="1">319</span
+          ><span data-col="2">278</span><span data-col="3">31,000 ₪</span>
+        </div>
+      </div>
+      <div data-report-dataset="custom">
+        <span data-kpi="0">6,940 ₪</span><span data-kpi="1">5,780 ₪</span
+        ><span data-kpi="2">1,160 ₪</span><span data-kpi="3">71</span
+        ><span data-mini="0">55</span><span data-mini="1">7</span
+        ><span data-mini="2">4</span><span data-mini="3">5</span
+        ><span data-mini="4">493</span><span data-mini="5">16</span
+        ><span data-mini="6">6</span><span data-mini="7">2</span>
+        <div data-doctor-row="0">
+          <span data-col="0">د. ليان الخطيب</span><span data-col="1">19</span
+          ><span data-col="2">17</span><span data-col="3">2,150 ₪</span>
+        </div>
+        <div data-doctor-row="1">
+          <span data-col="0">د. عمر ناصر</span><span data-col="1">16</span
+          ><span data-col="2">14</span><span data-col="3">1,880 ₪</span>
+        </div>
+        <div data-doctor-row="2">
+          <span data-col="0">د. سارة عادل</span><span data-col="1">13</span
+          ><span data-col="2">11</span><span data-col="3">1,540 ₪</span>
+        </div>
+        <div data-doctor-row="3">
+          <span data-col="0">د. يوسف حماد</span><span data-col="1">12</span
+          ><span data-col="2">10</span><span data-col="3">1,110 ₪</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

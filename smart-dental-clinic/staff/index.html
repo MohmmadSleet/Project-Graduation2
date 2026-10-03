@@ -1,0 +1,273 @@
+<!doctype html>
+
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>الرئيسية | Clinic Staff</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    data-staff-account-status="active"
+    data-staff-permissions="appointments.view appointments.manage patients.view patients.create invoices.view invoices.payments.create"
+  >
+    <nav class="navbar clinic-navbar bg-white border-bottom sticky-top">
+      <div class="container-fluid clinic-nav-layout px-3 px-lg-4">
+        <a class="clinic-brand clinic-brand-left" href="index.html"
+          ><span class="clinic-brand-mark"
+            ><i class="bi bi-person-workspace"></i></span
+          ><span class="clinic-brand-copy"
+            ><strong>مساحة موظف العيادة</strong
+            ><small>عيادة الابتسامة الحديثة</small></span
+          ></a
+        >
+        <div class="clinic-desktop-nav d-none d-xl-flex justify-content-center">
+          <ul class="navbar-nav flex-row align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-requires-permission="appointments.view"
+                href="appointments.html"
+                >المواعيد</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-requires-permission="patients.view"
+                href="patients.html"
+                >المرضى</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-requires-permission="invoices.view"
+                href="invoices.html"
+                >الفواتير</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="clinic-nav-actions">
+          <div class="dropdown profile-action-dropdown">
+            <button
+              class="clinic-profile-trigger compact-profile-trigger"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+            >
+              <span class="clinic-avatar">ن</span
+              ><i
+                class="bi bi-chevron-down small text-secondary d-none d-sm-inline"
+              ></i>
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-end clean-dropdown profile-dropdown-menu"
+            >
+              <div class="px-3 py-2">
+                <strong class="d-block">نور علي</strong
+                ><small class="text-secondary">منسق عيادة • STAFF-166</small>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="profile.html"
+                ><i class="bi bi-person"></i>الملف والصلاحيات</a
+              >
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item text-danger" data-logout="">
+                <i class="bi bi-box-arrow-right"></i>تسجيل الخروج
+              </button>
+            </div>
+          </div>
+          <button
+            class="btn btn-outline-primary sections-trigger"
+            data-bs-target="#sectionsDrawer"
+            data-bs-toggle="offcanvas"
+          >
+            <i class="bi bi-grid-3x3-gap"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="offcanvas offcanvas-start mobile-drawer sections-drawer"
+      id="sectionsDrawer"
+      tabindex="-1"
+    >
+      <div class="drawer-header">
+        <div class="drawer-clinic">
+          <div class="drawer-avatar">ن</div>
+          <div>
+            <h6 class="mb-1 fw-bold">نور علي</h6>
+            <small class="opacity-75">منسق عيادة</small>
+          </div>
+        </div>
+        <button class="drawer-close" data-bs-dismiss="offcanvas">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <div class="drawer-content">
+          <div class="drawer-title">المتاح لك</div>
+          <a class="drawer-link active" href="index.html"
+            ><span class="drawer-icon"><i class="bi bi-house"></i></span
+            ><span class="flex-grow-1">الرئيسية</span></a
+          ><a
+            class="drawer-link"
+            data-requires-permission="appointments.view"
+            href="appointments.html"
+            ><span class="drawer-icon"
+              ><i class="bi bi-calendar2-check"></i></span
+            ><span class="flex-grow-1">المواعيد</span></a
+          ><a
+            class="drawer-link"
+            data-requires-permission="patients.view"
+            href="patients.html"
+            ><span class="drawer-icon"><i class="bi bi-people"></i></span
+            ><span class="flex-grow-1">المرضى</span></a
+          ><a
+            class="drawer-link"
+            data-requires-permission="invoices.view"
+            href="invoices.html"
+            ><span class="drawer-icon"><i class="bi bi-receipt"></i></span
+            ><span class="flex-grow-1">الفواتير</span></a
+          >
+          <div class="drawer-title mt-4">الحساب</div>
+          <a class="drawer-link" href="profile.html"
+            ><span class="drawer-icon"><i class="bi bi-person-gear"></i></span
+            ><span class="flex-grow-1">الملف والصلاحيات</span></a
+          >
+        </div>
+      </div>
+    </div>
+    <main class="page-shell">
+      <section class="container py-4 py-lg-5">
+        <div class="dashboard-hero mb-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="badge bg-white text-primary px-3 py-2 mb-3"
+                >Clinic Staff</span
+              >
+              <h1 class="fw-bold mb-3">أهلاً نور، مساحة العمل الخاصة بك</h1>
+              <p class="mb-0 opacity-75">
+                تظهر هنا فقط الوحدات التي سمح لك مدير العيادة باستخدامها.
+              </p>
+            </div>
+            <div class="col-lg-4">
+              <div class="dashboard-hero-card">
+                <small class="opacity-75">دورك الحالي</small
+                ><strong class="d-block mt-1">منسق عيادة</strong
+                ><small class="opacity-75"
+                  >8 صلاحيات تشغيلية • بدون صلاحيات سريرية</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-lg-3">
+            <a class="stat-card d-block text-dark" href="appointments.html"
+              ><small class="text-secondary">مواعيد اليوم</small>
+              <div class="stat-value">18</div>
+              <small class="text-warning">3 بانتظار الموافقة</small></a
+            >
+          </div>
+          <div class="col-6 col-lg-3">
+            <a class="stat-card d-block text-dark" href="patients.html"
+              ><small class="text-secondary">مرضى اليوم</small>
+              <div class="stat-value">14</div>
+              <small>2 مرضى جدد</small></a
+            >
+          </div>
+          <div class="col-6 col-lg-3">
+            <a class="stat-card d-block text-dark" href="invoices.html"
+              ><small class="text-secondary">دفعات اليوم</small>
+              <div class="stat-value">2,350 ₪</div>
+              <small class="text-success">8 عمليات</small></a
+            >
+          </div>
+          <div class="col-6 col-lg-3"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="soft-card p-4 h-100">
+              <h3 class="section-title mb-3">مهام سريعة</h3>
+              <div class="action-row">
+                <span class="icon-box"
+                  ><i class="bi bi-calendar-check"></i
+                ></span>
+                <div class="flex-grow-1">
+                  <strong>مراجعة طلبات مواعيد جديدة</strong>
+                  <div class="small text-secondary">3 طلبات تحتاج إجراء.</div>
+                </div>
+                <a class="btn btn-sm btn-primary" href="appointments.html"
+                  >فتح</a
+                >
+              </div>
+              <div class="action-row">
+                <span class="icon-box"><i class="bi bi-receipt"></i></span>
+                <div class="flex-grow-1">
+                  <strong>تسجيل دفعة فاتورة</strong>
+                  <div class="small text-secondary">ضمن صلاحية الفواتير.</div>
+                </div>
+                <a class="btn btn-sm btn-outline-primary" href="invoices.html"
+                  >الفواتير</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="soft-card p-4 h-100">
+              <h3 class="section-title mb-3">الصلاحيات الحالية</h3>
+              <div class="summary-row">
+                <span>المواعيد</span
+                ><strong class="text-success">عرض + إدارة</strong>
+              </div>
+              <div class="summary-row">
+                <span>المرضى</span
+                ><strong class="text-success">بيانات إدارية</strong>
+              </div>
+              <div class="summary-row">
+                <span>الفواتير</span
+                ><strong class="text-success">عرض + دفعات</strong>
+              </div>
+              <div class="summary-row">
+                <span>التشخيص/الوصفات</span
+                ><strong class="text-danger">غير مسموح</strong>
+              </div>
+              <a class="btn btn-sm btn-light mt-3" href="profile.html"
+                >كل الصلاحيات</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+      <div
+        class="toast align-items-center text-bg-primary border-0"
+        id="appToast"
+      >
+        <div class="d-flex">
+          <div class="toast-body">تمت العملية</div>
+          <button
+            class="btn-close btn-close-white m-auto ms-2"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

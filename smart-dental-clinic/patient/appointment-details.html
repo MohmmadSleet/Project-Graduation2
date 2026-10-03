@@ -1,0 +1,523 @@
+<!doctype html>
+
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>سجل الزيارة | Smart Dental Clinic</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar patient-navbar bg-white border-bottom sticky-top">
+      <div class="container">
+        <a class="navbar-brand patient-brand" href="index.html">
+          <i class="bi bi-heart-pulse-fill"></i>
+          <span class="brand-main">Smart</span>
+          <span class="brand-accent">Dental</span>
+        </a>
+        <div class="patient-desktop-nav d-none d-lg-flex">
+          <ul class="navbar-nav flex-row align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="clinics.html">العيادات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doctors.html">الأطباء</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="appointments.html"
+                >مواعيدي</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ai-diagnosis.html">التشخيص الذكي</a>
+            </li>
+          </ul>
+        </div>
+        <div class="patient-nav-actions d-none d-lg-flex">
+          <a class="top-action-btn" href="notifications.html" title="الإشعارات">
+            <i class="bi bi-bell"></i>
+            <span class="notification-dot">3</span>
+          </a>
+          <div class="dropdown">
+            <button
+              aria-expanded="false"
+              class="top-action-btn language-toggle"
+              data-bs-toggle="dropdown"
+              type="button"
+            >
+              <i class="bi bi-globe2"></i>
+              <span class="language-current">AR</span>
+              <i class="bi bi-chevron-down small"></i>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-menu-end clean-dropdown language-dropdown"
+            >
+              <li>
+                <button
+                  class="dropdown-item language-option active"
+                  data-language="ar"
+                  type="button"
+                >
+                  <span>العربية</span><small>AR</small>
+                </button>
+              </li>
+              <li>
+                <button
+                  class="dropdown-item language-option"
+                  data-language="en"
+                  type="button"
+                >
+                  <span>English</span><small>EN</small>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button
+              aria-expanded="false"
+              class="patient-profile-trigger"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+              type="button"
+            >
+              <span class="patient-initials">أخ</span>
+              <span class="profile-trigger-copy">
+                <strong>أحمد خالد</strong>
+                <small>مريض</small>
+              </span>
+              <i class="bi bi-chevron-down profile-trigger-arrow"></i>
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-end clean-dropdown profile-dropdown"
+            >
+              <div class="profile-dropdown-header">
+                <span class="patient-initials large">أخ</span>
+                <div>
+                  <div class="fw-bold">أحمد خالد</div>
+                  <small class="text-secondary">Patient #P-2048</small>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="profile.html"
+                ><i class="bi bi-person"></i><span>بيانات حسابي</span></a
+              >
+              <a class="dropdown-item" href="diagnosis-history.html"
+                ><i class="bi bi-file-medical"></i><span>السجل الطبي</span></a
+              >
+              <a class="dropdown-item" href="invoices.html"
+                ><i class="bi bi-receipt"></i><span>فواتيري</span></a
+              >
+              <a class="dropdown-item" href="notifications.html"
+                ><i class="bi bi-bell"></i><span>الإشعارات</span></a
+              >
+              <div class="dropdown-divider"></div>
+              <button
+                class="dropdown-item logout-item"
+                data-logout=""
+                type="button"
+              >
+                <i class="bi bi-box-arrow-right"></i><span>تسجيل الخروج</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="patient-mobile-actions d-flex d-lg-none">
+          <a
+            aria-label="الإشعارات"
+            class="mobile-action-btn"
+            href="notifications.html"
+          >
+            <i class="bi bi-bell"></i>
+            <span class="notification-dot">3</span>
+          </a>
+          <a aria-label="حسابي" class="mobile-avatar-link" href="profile.html">
+            <span class="patient-initials mobile">أخ</span>
+          </a>
+          <button
+            aria-controls="patientMobileDrawer"
+            aria-label="فتح القائمة"
+            class="mobile-drawer-trigger"
+            data-bs-target="#patientMobileDrawer"
+            data-bs-toggle="offcanvas"
+            type="button"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div
+      aria-labelledby="patientMobileDrawerLabel"
+      class="offcanvas offcanvas-start patient-mobile-drawer"
+      id="patientMobileDrawer"
+      tabindex="-1"
+    >
+      <div class="drawer-header">
+        <div class="drawer-patient">
+          <span class="patient-initials drawer-avatar">أخ</span>
+          <div>
+            <h5 class="mb-1" id="patientMobileDrawerLabel">أحمد خالد</h5>
+            <small>Patient #P-2048</small>
+          </div>
+        </div>
+        <button
+          aria-label="إغلاق"
+          class="drawer-close"
+          data-bs-dismiss="offcanvas"
+          type="button"
+        >
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <div class="drawer-content">
+          <div class="drawer-section-title">القائمة الرئيسية</div>
+          <div class="drawer-links">
+            <a class="drawer-link" href="index.html">
+              <span class="drawer-icon"><i class="bi bi-house-door"></i></span>
+              <span class="flex-grow-1">الرئيسية</span>
+              <i class="bi bi-chevron-left drawer-chevron"></i>
+            </a>
+            <a class="drawer-link" href="clinics.html">
+              <span class="drawer-icon"><i class="bi bi-hospital"></i></span>
+              <span class="flex-grow-1">العيادات</span>
+              <i class="bi bi-chevron-left drawer-chevron"></i>
+            </a>
+            <a class="drawer-link" href="doctors.html">
+              <span class="drawer-icon"
+                ><i class="bi bi-person-badge"></i
+              ></span>
+              <span class="flex-grow-1">الأطباء</span>
+              <i class="bi bi-chevron-left drawer-chevron"></i>
+            </a>
+            <a class="drawer-link active" href="appointments.html">
+              <span class="drawer-icon"
+                ><i class="bi bi-calendar2-check"></i
+              ></span>
+              <span class="flex-grow-1">مواعيدي</span>
+              <i class="bi bi-chevron-left drawer-chevron"></i>
+            </a>
+            <a class="drawer-link" href="ai-diagnosis.html">
+              <span class="drawer-icon"><i class="bi bi-stars"></i></span>
+              <span class="flex-grow-1">التشخيص الذكي</span>
+              <i class="bi bi-chevron-left drawer-chevron"></i>
+            </a>
+            <a class="drawer-link" href="diagnosis-history.html">
+              <span class="drawer-icon"
+                ><i class="bi bi-file-medical"></i
+              ></span>
+              <span class="flex-grow-1">السجل الطبي</span>
+              <i class="bi bi-chevron-left drawer-chevron"></i>
+            </a>
+            <a class="drawer-link" href="invoices.html">
+              <span class="drawer-icon"><i class="bi bi-receipt"></i></span>
+              <span class="flex-grow-1">فواتيري</span>
+              <i class="bi bi-chevron-left drawer-chevron"></i>
+            </a>
+            <a class="drawer-link" href="profile.html">
+              <span class="drawer-icon"><i class="bi bi-person"></i></span>
+              <span class="flex-grow-1">حسابي</span>
+              <i class="bi bi-chevron-left drawer-chevron"></i>
+            </a>
+          </div>
+          <div class="drawer-section-title mt-4">اللغة</div>
+          <div class="drawer-language-switch">
+            <button class="active" data-language="ar" type="button">
+              العربية
+            </button>
+            <button data-language="en" type="button">English</button>
+          </div>
+        </div>
+        <div class="drawer-footer">
+          <button class="drawer-logout" data-logout="" type="button">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>تسجيل الخروج</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <main class="page-shell">
+      <section class="container py-4 py-lg-5">
+        <nav aria-label="breadcrumb" class="no-print">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="diagnosis-history.html">السجل الطبي</a>
+            </li>
+            <li class="breadcrumb-item active">التقرير الطبي</li>
+          </ol>
+        </nav>
+        <div class="report-page-toolbar no-print">
+          <div>
+            <span class="badge text-bg-success mb-2">تقرير معتمد</span>
+            <h1 class="fw-bold mb-1">تقرير الزيارة</h1>
+            <p class="text-secondary mb-0">
+              نفس التقرير الطبي المعتمد الظاهر للطبيب والعيادة، مع صلاحية قراءة
+              فقط للمريض.
+            </p>
+          </div>
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-light" href="diagnosis-history.html"
+              >رجوع للسجل الطبي</a
+            >
+            <button class="btn btn-outline-primary" onclick="window.print()">
+              <i class="bi bi-printer ms-1"></i>طباعة
+            </button>
+          </div>
+        </div>
+        <div class="report-preview unified-system-report">
+          <div class="report-header unified-report-header">
+            <div class="report-brand">
+              <span class="report-logo"
+                ><i class="bi bi-heart-pulse-fill"></i
+              ></span>
+              <div>
+                <h3 class="fw-bold mb-1">عيادة الابتسامة الحديثة</h3>
+                <div class="text-secondary">
+                  Smart Dental Clinic • Dental Visit Report
+                </div>
+              </div>
+            </div>
+            <div class="report-meta text-start">
+              <span class="report-status-line"
+                ><i class="bi bi-patch-check-fill"></i> تقرير معتمد</span
+              >
+              <strong>RPT-2026-014</strong>
+              <span>12 سبتمبر 2026</span>
+              <span>زيارة علاج جذور</span>
+            </div>
+          </div>
+          <div class="report-identity-grid">
+            <div><small>المريض</small><strong>أحمد خالد</strong></div>
+            <div><small>رقم الملف</small><strong>P-2048</strong></div>
+            <div><small>الطبيب</small><strong>د. عمر ناصر</strong></div>
+            <div><small>التخصص</small><strong>علاج الجذور</strong></div>
+            <div><small>الخدمة</small><strong>علاج جذور</strong></div>
+            <div><small>السن</small><strong>46</strong></div>
+          </div>
+          <div class="report-section">
+            <h5><i class="bi bi-chat-left-text ms-2"></i>سبب الزيارة</h5>
+            <p class="mb-0">
+              ألم متكرر في الضرس السفلي الأيمن مع حساسية عند المضغ.
+            </p>
+          </div>
+          <div class="report-section">
+            <h5><i class="bi bi-clipboard2-pulse ms-2"></i>الفحص السريري</h5>
+            <p class="mb-0">
+              تسوس عميق في السن 46، ألم عند الضغط، دون تورم ظاهر.
+            </p>
+          </div>
+          <div class="report-section">
+            <h5><i class="bi bi-activity ms-2"></i>التشخيص</h5>
+            <p class="mb-0">التهاب لب غير قابل للعكس في السن 46.</p>
+          </div>
+          <div class="report-section">
+            <h5><i class="bi bi-bandaid ms-2"></i>الإجراء / العلاج</h5>
+            <p class="mb-0">
+              بدء علاج جذور للسن 46، تنظيف القنوات ووضع حشوة مؤقتة حسب الخطة
+              العلاجية.
+            </p>
+          </div>
+          <div class="report-section">
+            <h5><i class="bi bi-list-check ms-2"></i>خطة العلاج</h5>
+            <ol class="mb-0 pe-3">
+              <li>تنظيف وتحضير القنوات.</li>
+              <li>حشو القنوات في الجلسة التالية.</li>
+              <li>تقييم الترميم النهائي وإمكانية تركيب تاج.</li>
+            </ol>
+          </div>
+          <div class="report-section">
+            <h5><i class="bi bi-capsule ms-2"></i>الوصفة والتوصيات</h5>
+            <p class="mb-0">
+              مسكن مناسب عند الحاجة حسب تعليمات الطبيب، مع تجنب المضغ على السن
+              المعالج لحين استكمال العلاج.
+            </p>
+          </div>
+          <div class="report-section">
+            <div
+              class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3"
+            >
+              <h5 class="mb-0">
+                <i class="bi bi-paperclip ms-2"></i>الأشعة والمرفقات
+              </h5>
+              <span class="badge badge-soft">2 ملفات</span>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="report-attachment">
+                  <div class="attachment-icon"><i class="bi bi-image"></i></div>
+                  <div class="flex-grow-1">
+                    <strong>xray_46_sep_2026.jpg</strong>
+                    <div class="small text-secondary">
+                      Periapical • قبل العلاج
+                    </div>
+                  </div>
+                  <button
+                    class="btn btn-sm btn-outline-primary no-print"
+                    data-toast="عرض الأشعة تجريبياً"
+                  >
+                    عرض
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="report-attachment">
+                  <div class="attachment-icon">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                  </div>
+                  <div class="flex-grow-1">
+                    <strong>clinical_note_12sep.pdf</strong>
+                    <div class="small text-secondary">مرفق سريري • PDF</div>
+                  </div>
+                  <button
+                    class="btn btn-sm btn-outline-primary no-print"
+                    data-toast="عرض المرفق تجريبياً"
+                  >
+                    عرض
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="report-section">
+            <h5><i class="bi bi-arrow-repeat ms-2"></i>المتابعة المقترحة</h5>
+            <div class="followup-summary">
+              <div>
+                <small>نوع المتابعة</small>
+                <strong>متابعة علاج جذور</strong>
+              </div>
+              <div>
+                <small>الموعد المقترح</small>
+                <strong>11 أكتوبر 2026</strong>
+              </div>
+              <div>
+                <small>الحالة</small>
+                <span class="badge text-bg-success">تم الحجز</span>
+              </div>
+            </div>
+          </div>
+          <div class="report-signature">
+            <div>
+              <small>اعتماد الطبيب</small>
+              <strong>د. عمر ناصر</strong>
+              <span>تم الاعتماد إلكترونياً بتاريخ 12 سبتمبر 2026</span>
+            </div>
+            <div aria-label="تقرير معتمد" class="report-seal">
+              <i class="bi bi-patch-check-fill"></i>
+            </div>
+          </div>
+        </div>
+        <div class="role-permission-note no-print">
+          <i class="bi bi-shield-lock-fill ms-2"></i>
+          <div>
+            <strong>صلاحية المريض: قراءة فقط</strong>
+            <div class="small">
+              هذا تقرير طبي معتمد من الطبيب. لا يمكن للمريض تعديل التشخيص أو
+              العلاج أو المرفقات.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer mt-5">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <a class="footer-brand text-decoration-none" href="index.html">
+              <i class="bi bi-heart-pulse-fill ms-2"></i>
+              Smart <span>Dental</span>
+            </a>
+            <p class="footer-description mt-3 mb-3">
+              منصة ذكية تساعد المريض على استعراض العيادات والأطباء، حجز
+              المواعيد، متابعة السجل الطبي والفواتير، والاستفادة من التشخيص
+              الذكي الأولي.
+            </p>
+            <div class="medical-note">
+              <i class="bi bi-shield-check ms-2"></i>
+              نتائج التشخيص الذكي إرشادية ولا تغني عن الفحص السريري لدى طبيب
+              الأسنان.
+            </div>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-title">روابط سريعة</h6>
+            <ul class="footer-links">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="clinics.html">العيادات</a></li>
+              <li><a href="doctors.html">الأطباء</a></li>
+              <li><a href="appointments.html">مواعيدي</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-title">خدمات المريض</h6>
+            <ul class="footer-links">
+              <li><a href="ai-diagnosis.html">التشخيص الذكي</a></li>
+              <li><a href="diagnosis-history.html">السجل الطبي</a></li>
+              <li><a href="invoices.html">فواتيري</a></li>
+              <li><a href="notifications.html">الإشعارات</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h6 class="footer-title">تواصل معنا</h6>
+            <div class="footer-contact">
+              <div>
+                <i class="bi bi-envelope ms-2"></i> support@smartdental.example
+              </div>
+              <div><i class="bi bi-telephone ms-2"></i> 0590 000 000</div>
+              <div>
+                <i class="bi bi-clock ms-2"></i> السبت – الخميس، 9:00 ص – 8:00 م
+              </div>
+            </div>
+            <a class="btn footer-cta mt-3" href="clinics.html">
+              <i class="bi bi-hospital ms-1"></i>استعرض العيادات
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom mt-4 pt-4">
+          <div
+            class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-2"
+          >
+            <div>
+              © <span data-year=""></span> Smart Dental Clinic — Graduation
+              Project
+            </div>
+            <div class="footer-bottom-links">
+              <span>خصوصية المريض</span>
+              <span class="separator">•</span>
+              <span>الشروط والأحكام</span>
+              <span class="separator">•</span>
+              <span>إخلاء المسؤولية الطبية</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+      <div
+        class="toast align-items-center text-bg-primary border-0"
+        id="appToast"
+        role="alert"
+      >
+        <div class="d-flex">
+          <div class="toast-body">تمت العملية بنجاح</div>
+          <button
+            class="btn-close btn-close-white ms-2 m-auto"
+            data-bs-dismiss="toast"
+            type="button"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
